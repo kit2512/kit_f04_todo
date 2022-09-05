@@ -5,7 +5,7 @@ class TaskManager {
   void addTask(Task task) {
     tasks.add(task);
   }
-
+  
   void removeTask(Task task) {
     tasks.remove(task);
   }

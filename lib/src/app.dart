@@ -1,5 +1,9 @@
 import 'package:demo_state_app/src/ui/profile_body/profile.dart';
+import 'package:demo_state_app/src/ui/task_config/task_color.dart';
+import 'package:demo_state_app/src/ui/task_config/task_name.dart';
 import 'package:flutter/material.dart';
+
+import 'ui/task_config/task_time.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -8,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      body: Center(child: ProfileCard()),
+      body: Center(child: TaskTime()),
     ));
   }
 }

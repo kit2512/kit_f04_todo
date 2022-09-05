@@ -30,7 +30,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  flutter_svg: ^0.22.0
+  hexcolor: ^2.0.7
   http: ^0.13.5
+  svg_icon: ^0.0.1
 
 dev_dependencies:
 
