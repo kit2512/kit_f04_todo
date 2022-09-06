@@ -40,7 +40,7 @@ class _HomeScreen extends State<HomeScreen> {
       body: Column(children: [
         BuildAppBar(),
         Padding(
-          padding: EdgeInsets.all(30),
+          padding: EdgeInsets.all(20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

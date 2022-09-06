@@ -1,3 +1,5 @@
+import 'package:demo_state_app/src/ui/home_body/home.dart';
+import 'package:demo_state_app/src/ui/screen/home_screen.dart';
 import 'package:demo_state_app/src/ui/task_config/task_config.dart';
 
 import 'package:flutter/material.dart';
@@ -11,12 +13,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      appBar: AppBar(
-        title: const Text('demo app bar'),
-      ),
       body: const Padding(
         padding: EdgeInsets.all(10.0),
-        child: Center(child: TaskConfig()),
+        child: Center(child: HomeScreen(title: "task manager")),
       ),
     ));
   }
