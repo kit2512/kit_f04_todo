@@ -15,10 +15,13 @@ class MyApp extends StatelessWidget {
       appBar: AppBar(
         title: const Text('demo app bar'),
       ),
-      body: Center(
-          child: TodoCardScreen(
-        value: 1,
-      )),
+      body: const Padding(
+        padding: EdgeInsets.all(10.0),
+        child: Center(
+            child: TodoCardScreen(
+          value: 2,
+        )),
+      ),
     ));
   }
 }

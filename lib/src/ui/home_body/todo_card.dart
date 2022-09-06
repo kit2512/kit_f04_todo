@@ -19,9 +19,10 @@ class TodoCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
           ),
           child: Padding(
-            padding: const EdgeInsets.only(left: 30, top: 10, right: 15),
+            padding:
+                const EdgeInsets.only(left: 30, top: 10, right: 15, bottom: 15),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
@@ -88,7 +89,7 @@ class TodoCard extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.only(left: 30, bottom: 10, right: 15),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
