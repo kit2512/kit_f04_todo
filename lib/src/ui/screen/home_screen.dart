@@ -11,7 +11,6 @@ class MyApp2 extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -20,17 +19,6 @@ class MyApp2 extends StatelessWidget {
       home: const HomeScreen(title: 'Flutter to do app'),
       debugShowCheckedModeBanner: false,
     );
-=======
-    return ScreenUtilInit(
-        builder: (context,child) => MaterialApp(
-              title: 'Flutter Demo',
-              theme: ThemeData(
-                primarySwatch: Colors.blue,
-              ),
-              home: const HomeScreen(title: 'Flutter to do app'),
-              debugShowCheckedModeBanner: false,
-            ));
->>>>>>> 16691acbd5a56c5520cf3b35a2ec8727bb29e584
   }
 }
 
