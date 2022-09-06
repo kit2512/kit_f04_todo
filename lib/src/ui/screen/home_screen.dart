@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:demo_state_app/src/ui/home_body/home.dart';
@@ -33,15 +32,26 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreen extends State<HomeScreen> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingButton(title: 'add task', icon: Icon(Icons.add_box)),
+      floatingActionButton:
+          FloatingButton(title: 'add task', icon: Icon(Icons.add_box)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      //appBar: BuildAppBar(),
+      appBar: BuildAppBar(
+          title: 'test title',
+          prefixIcon: Icon(
+            Icons.widgets,
+            color: Colors.white,
+          ),
+          suffixIcon: Icon(
+            Icons.notifications_none,
+            color: blackColor,
+          )
+          
+          ),
       body: Column(children: [
-        BuildAppBar(),
+        //BuildAppBar(),
         Padding(
           padding: EdgeInsets.all(30.h),
           child: Row(
@@ -78,7 +88,6 @@ class _HomeScreen extends State<HomeScreen> {
           ),
         ),
         AppBarButton(),
-        
       ]),
     );
   }

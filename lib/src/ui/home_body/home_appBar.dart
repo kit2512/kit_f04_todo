@@ -1,4 +1,66 @@
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
+// import 'package:demo_state_app/src/ui/screen/profile_screen.dart';
+// import 'package:demo_state_app/src/ui/screen/home_screen.dart';
+
+
+
+// class BuildAppBar extends StatefulWidget {
+//   const BuildAppBar({
+//     Key? key,
+//   }) : super(key: key);
+
+//   @override
+//   State<BuildAppBar> createState() => _BuildAppBarState();
+// }
+
+// class _BuildAppBarState extends State<BuildAppBar> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return AppBar(
+//       elevation: 0,
+//       leading: Padding(
+//         padding: EdgeInsets.fromLTRB(20.h, 0, 0, 0),
+//         child: GestureDetector(
+//           child: const CircleAvatar(
+//             backgroundColor: blackColor,
+//             child: Icon(
+//               Icons.widgets,
+//               color: Colors.white,
+//             ),
+//           ),
+//           onTap: () {
+//             setState(() {
+//               Navigator.push(
+//     context, MaterialPageRoute(builder: (context) {
+//     // do something
+//         return ProfileScreen();
+//     }));
+//             });
+//           },
+//         ),
+//       ),
+//       centerTitle: true,
+//       title: const Text(
+//         'Task Manager',
+//         style: TextStyle(color: blackColor),
+//       ),
+//       backgroundColor: whiteColor,
+//       actions: [
+//         Padding(
+//           padding: EdgeInsets.fromLTRB(0, 0, 20.h, 0),
+//           child: IconButton(
+//               onPressed: () {},
+//               icon: const Icon(
+//                 Icons.notifications_none,
+//                 color: blackColor,
+//               )),
+//         )
+//       ],
+//     );
+//   }
+// }
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:demo_state_app/src/ui/screen/profile_screen.dart';
@@ -6,29 +68,39 @@ import 'package:demo_state_app/src/ui/screen/home_screen.dart';
 
 
 
-class BuildAppBar extends StatefulWidget {
-  const BuildAppBar({
-    Key? key,
+class BuildAppBar extends StatefulWidget implements PreferredSizeWidget {
+   BuildAppBar({
+    Key? key, required this.title, this.prefixIcon, this.suffixIcon
   }) : super(key: key);
-
+String title;
+Icon? prefixIcon;
+Icon? suffixIcon;
   @override
-  State<BuildAppBar> createState() => _BuildAppBarState();
+  State<BuildAppBar> createState() => _BuildAppBarState(title: title, prefixIcon: prefixIcon, suffixIcon: suffixIcon);
+  
+  @override
+  // TODO: implement preferredSize
+  //Size get preferredSize => throw UnimplementedError();
+  Size get preferredSize => const Size.fromHeight(50);
 }
 
 class _BuildAppBarState extends State<BuildAppBar> {
+  _BuildAppBarState({
+    Key? key, required this.title, this.prefixIcon, this.suffixIcon
+  }) ;
+  String title;
+Icon? prefixIcon;
+Icon? suffixIcon;
   @override
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      leading: Padding(
+      leading: prefixIcon != null? Padding(
         padding: EdgeInsets.fromLTRB(20.h, 0, 0, 0),
         child: GestureDetector(
-          child: const CircleAvatar(
+          child: CircleAvatar(
             backgroundColor: blackColor,
-            child: Icon(
-              Icons.widgets,
-              color: Colors.white,
-            ),
+            child: prefixIcon
           ),
           onTap: () {
             setState(() {
@@ -40,24 +112,24 @@ class _BuildAppBarState extends State<BuildAppBar> {
             });
           },
         ),
-      ),
+      ) : SizedBox(),
       centerTitle: true,
-      title: const Text(
-        'Task Manager',
+      title:  Text(
+        title,
         style: TextStyle(color: blackColor),
       ),
       backgroundColor: whiteColor,
-      actions: [
+      actions: suffixIcon != null?[
         Padding(
           padding: EdgeInsets.fromLTRB(0, 0, 20.h, 0),
           child: IconButton(
               onPressed: () {},
-              icon: const Icon(
-                Icons.notifications_none,
-                color: blackColor,
-              )),
+              icon: suffixIcon?? suffixIcon!
+              
+              ),
         )
-      ],
+      ]
+      : [],
     );
   }
 }
