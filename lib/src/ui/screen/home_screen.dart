@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:demo_state_app/src/ui/home_body/home.dart';
 
 const blackColor = Color(0xff191919);
 const whiteColor = Colors.white; // Color(0xffB6B6B6);
@@ -18,20 +19,20 @@ class MyApp2 extends StatelessWidget {
               theme: ThemeData(
                 primarySwatch: Colors.blue,
               ),
-              home: const MyHomePage(title: 'Flutter to do app'),
+              home: const HomeScreen(title: 'Flutter to do app'),
               debugShowCheckedModeBanner: false,
             ));
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key, required this.title}) : super(key: key);
   final String title;
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomeScreen> createState() => _HomeScreen();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomeScreen extends State<HomeScreen> {
   
   @override
   Widget build(BuildContext context) {
@@ -45,40 +46,9 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: blackColor,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      appBar: AppBar(
-        elevation: 0,
-        leading: Padding(
-          padding: EdgeInsets.fromLTRB(20.h, 0, 0, 0),
-          child: GestureDetector(
-            child: const CircleAvatar(
-              backgroundColor: blackColor,
-              child: Icon(
-                Icons.widgets,
-                color: Colors.white,
-              ),
-            ),
-            onTap: () {},
-          ),
-        ),
-        centerTitle: true,
-        title: const Text(
-          'Task Manager',
-          style: TextStyle(color: blackColor),
-        ),
-        backgroundColor: whiteColor,
-        actions: [
-          Padding(
-            padding: EdgeInsets.fromLTRB(0, 0, 20.h, 0),
-            child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.notifications_none,
-                  color: blackColor,
-                )),
-          )
-        ],
-      ),
+      //appBar: BuildAppBar(),
       body: Column(children: [
+        BuildAppBar(),
         Padding(
           padding: EdgeInsets.all(30.h),
           child: Row(
@@ -121,50 +91,3 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class AppBarButton extends StatefulWidget {
-  const AppBarButton({Key? key}) : super(key: key);
-
-  @override
-  _AppBarButton createState() => _AppBarButton();
-}
-
-class _AppBarButton extends State<AppBarButton> {
-  List<String> appBarButton = ['Today', 'Upcoming', 'Finished'];
-  int selectedIndex = 0;
-  
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 25.h,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-          itemCount: appBarButton.length,
-          itemBuilder: (context, index) {
-            return buildAppBarButton(index);
-          }),
-    );
-  }
-
-  Widget buildAppBarButton(int index)
-  {
- return Container(
-  width: 130.w,
-        decoration: BoxDecoration(
-          color: selectedIndex == index ? blackColor : whiteColor,
-          borderRadius: BorderRadius.circular(20),
-        ),
-        padding: EdgeInsets.fromLTRB(0, 5.h, 0, 5.h),
-        margin: EdgeInsets.fromLTRB(20.w, 0, 20.w, 0),
-        child: TextButton(
-          onPressed: () {
-            setState(() {
-              selectedIndex = index;
-            });
-          },
-          child: Text(
-            appBarButton[index],
-            style: TextStyle(color: selectedIndex == index ? whiteColor : blackColor),
-          ),
-        ));
-  }
-}
