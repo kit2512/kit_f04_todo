@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:demo_state_app/src/ui/home_body/home.dart';
 
 const blackColor = Color(0xff191919);
@@ -12,16 +11,14 @@ class MyApp2 extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-        allowFontScaling: false,
-        builder: () => MaterialApp(
-              title: 'Flutter Demo',
-              theme: ThemeData(
-                primarySwatch: Colors.blue,
-              ),
-              home: const HomeScreen(title: 'Flutter to do app'),
-              debugShowCheckedModeBanner: false,
-            ));
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const HomeScreen(title: 'Flutter to do app'),
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
 
@@ -33,17 +30,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreen extends State<HomeScreen> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingButton(title: 'add task', icon: Icon(Icons.add_box)),
+      floatingActionButton:
+          FloatingButton(title: 'add task', icon: Icon(Icons.add_box)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       //appBar: BuildAppBar(),
       body: Column(children: [
         BuildAppBar(),
         Padding(
-          padding: EdgeInsets.all(30.h),
+          padding: EdgeInsets.all(30),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -69,8 +66,8 @@ class _HomeScreen extends State<HomeScreen> {
                 child: Container(
                   decoration: const BoxDecoration(
                       shape: BoxShape.circle, color: blackColor),
-                  width: 50.w,
-                  height: 50.h,
+                  width: 50,
+                  height: 50,
                   child: const Icon(Icons.search, color: whiteColor),
                 ),
               )
@@ -78,7 +75,6 @@ class _HomeScreen extends State<HomeScreen> {
           ),
         ),
         AppBarButton(),
-        
       ]),
     );
   }
