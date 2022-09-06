@@ -37,14 +37,7 @@ class _HomeScreen extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
-        label: const Text(
-          "Add Task",
-        ),
-        icon: const Icon(Icons.add_box),
-        backgroundColor: blackColor,
-      ),
+      floatingActionButton: FloatingButton(title: 'add task', icon: Icon(Icons.add_box)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       //appBar: BuildAppBar(),
       body: Column(children: [
@@ -90,4 +83,3 @@ class _HomeScreen extends State<HomeScreen> {
     );
   }
 }
-
