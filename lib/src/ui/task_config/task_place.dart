@@ -27,7 +27,7 @@ class TaskPlace extends StatelessWidget {
               color: HexColor("#191919"),
               fontStyle: FontStyle.normal,
               fontWeight: FontWeight.w700,
-              fontSize: 23,
+              fontSize: 16,
             ),
             decoration: InputDecoration(
               // suffixIconConstraints:
