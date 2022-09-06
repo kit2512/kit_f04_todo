@@ -12,8 +12,7 @@ class MyApp2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        allowFontScaling: false,
-        builder: () => MaterialApp(
+        builder: (context,child) => MaterialApp(
               title: 'Flutter Demo',
               theme: ThemeData(
                 primarySwatch: Colors.blue,
