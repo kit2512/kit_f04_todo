@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-=======
 
->>>>>>> 18155ec952220b5864b324b24f2ce86ea3dd5a80
+
 import 'package:demo_state_app/src/ui/screen/profile_screen.dart';
 import 'package:demo_state_app/src/ui/screen/home_screen.dart';
 
@@ -22,11 +20,7 @@ class _BuildAppBarState extends State<BuildAppBar> {
     return AppBar(
       elevation: 0,
       leading: Padding(
-<<<<<<< HEAD
-        padding: EdgeInsets.fromLTRB(20.0, 0, 0, 0),
-=======
         padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
->>>>>>> 18155ec952220b5864b324b24f2ce86ea3dd5a80
         child: GestureDetector(
           child: const CircleAvatar(
             backgroundColor: blackColor,
@@ -53,11 +47,8 @@ class _BuildAppBarState extends State<BuildAppBar> {
       backgroundColor: whiteColor,
       actions: [
         Padding(
-<<<<<<< HEAD
-          padding: EdgeInsets.fromLTRB(0, 0, 20.0, 0),
-=======
+
           padding: EdgeInsets.only(left: 20),
->>>>>>> 18155ec952220b5864b324b24f2ce86ea3dd5a80
           child: IconButton(
               onPressed: () {},
               icon: const Icon(
