@@ -33,7 +33,13 @@ dependencies:
   flutter_svg: ^0.22.0
   hexcolor: ^2.0.7
   http: ^0.13.5
+<<<<<<< HEAD
   svgpath: ^1.1.0
+=======
+  #flutter_screenutil: ^4.0.2+3
+  intl: ^0.17.0
+
+>>>>>>> master
 dev_dependencies:
 
   # The "flutter_lints" package below contains a set of recommended lints to

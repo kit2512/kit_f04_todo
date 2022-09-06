@@ -22,4 +22,8 @@ class Task {
       this.isFinish = false})
       : date = date ?? DateTime.now(),
         time = time ?? TimeOfDay.now();
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master

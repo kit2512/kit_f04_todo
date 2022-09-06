@@ -23,9 +23,9 @@ class ProfileCard extends StatelessWidget {
             //mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Expanded(
-                flex: 2,
+                flex: 3,
                 child: CircleAvatar(
-                  radius: 35,
+                  radius: 30,
                   backgroundImage: AssetImage("asset/profile/avatar.jpg"),
                 ),
               ),
