@@ -39,7 +39,7 @@ class _HomeScreen extends State<HomeScreen> {
           FloatingButton(title: 'add task', icon: Icon(Icons.add_box)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       appBar: BuildAppBar(
-          title: 'test title',
+          title: 'Task Manager',
           prefixIcon: Icon(
             Icons.widgets,
             color: Colors.white,
