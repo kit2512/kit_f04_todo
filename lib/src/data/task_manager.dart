@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import 'task.dart';
 
 class TaskManager {
@@ -10,7 +12,7 @@ class TaskManager {
   void addTask(Task task) {
     tasks.add(task);
   }
-
+  
   void removeTask(Task task) {
     tasks.remove(task);
   }

@@ -1,9 +1,10 @@
-import 'package:demo_state_app/src/data/task.dart';
-import 'package:demo_state_app/src/ui/home_body/todo_screen.dart';
-
+import 'package:demo_state_app/src/ui/profile_body/profile.dart';
+import 'package:demo_state_app/src/ui/task_config/task_color.dart';
+import 'package:demo_state_app/src/ui/task_config/task_name.dart';
+import 'package:demo_state_app/src/ui/task_config/task_place.dart';
 import 'package:flutter/material.dart';
 
-import 'ui/home_body/todo_card.dart';
+import 'ui/task_config/task_time.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -12,6 +13,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
+<<<<<<< HEAD
+      body: TaskName(),
+=======
       appBar: AppBar(
         title: const Text('demo app bar'),
       ),
@@ -22,6 +26,7 @@ class MyApp extends StatelessWidget {
           value: 2,
         )),
       ),
+>>>>>>> 18155ec952220b5864b324b24f2ce86ea3dd5a80
     ));
   }
 }
