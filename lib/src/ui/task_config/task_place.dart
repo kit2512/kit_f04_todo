@@ -2,19 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:hexcolor/hexcolor.dart';
-
 class TaskPlace extends StatelessWidget {
   const TaskPlace({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: 100),
-      child: Column(
+    return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Due Time",
+            "Place",
             style: TextStyle(
               color: HexColor("#B6B6B6"),
               fontStyle: FontStyle.normal,
@@ -50,7 +47,6 @@ class TaskPlace extends StatelessWidget {
             ),
           ),
         ],
-      ),
     );
   }
 }

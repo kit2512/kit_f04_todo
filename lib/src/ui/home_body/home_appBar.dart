@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 16691acbd5a56c5520cf3b35a2ec8727bb29e584
 import 'package:demo_state_app/src/ui/screen/profile_screen.dart';
 import 'package:demo_state_app/src/ui/screen/home_screen.dart';
 
@@ -45,6 +49,10 @@ class _BuildAppBarState extends State<BuildAppBar> {
       backgroundColor: whiteColor,
       actions: [
         Padding(
+<<<<<<< HEAD
+=======
+
+>>>>>>> 16691acbd5a56c5520cf3b35a2ec8727bb29e584
           padding: EdgeInsets.only(left: 20),
           child: IconButton(
               onPressed: () {},
