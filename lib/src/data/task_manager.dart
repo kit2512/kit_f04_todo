@@ -4,7 +4,7 @@ import 'task.dart';
 
 class TaskManager {
   List<Task> tasks = [
-    Task(name: "Hello! I am Linh"),
+    Task(name: "Hello! I am Linh", isFinish: true),
     Task(name: "Hello! I am Mai"),
     Task(name: "Hello! I am Vu"),
     Task(name: "Hello! I am Trang")

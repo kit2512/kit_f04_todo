@@ -13,7 +13,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
+<<<<<<< HEAD
       body: TaskName(),
+=======
+      appBar: AppBar(
+        title: const Text('demo app bar'),
+      ),
+      body: const Padding(
+        padding: EdgeInsets.all(10.0),
+        child: Center(
+            child: TodoCardScreen(
+          value: 2,
+        )),
+      ),
+>>>>>>> 18155ec952220b5864b324b24f2ce86ea3dd5a80
     ));
   }
 }
