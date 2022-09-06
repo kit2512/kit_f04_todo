@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-class TaskTime extends StatelessWidget {
-  const TaskTime({super.key});
+class TaskPlace extends StatelessWidget {
+  const TaskPlace({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,15 +34,18 @@ class TaskTime extends StatelessWidget {
               //     BoxConstraints(minHeight: 24, minWidth: 24),
               suffixIcon: IconButton(
                 onPressed: () {},
-                icon: 
-                Image(
-                  image: const AssetImage(
-                    'asset/task/calendar.png',
-                  ),
-                  height: 19.31,
-                  width: 18,
-                  color: HexColor("#191919"),
+                icon: Icon(
+                  Icons.place_outlined,
+                  color: HexColor("#000000"),
                 ),
+                // Image(
+                //   image: const AssetImage(
+                //     'asset/task/calendar.png',
+                //   ),
+                //   height: 19.31,
+                //   width: 18,
+                //   color: HexColor("#191919"),
+                // ),
               ),
             ),
           ),
