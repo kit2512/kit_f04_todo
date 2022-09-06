@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:hexcolor/hexcolor.dart';
+
 class TaskPlace extends StatelessWidget {
   const TaskPlace({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Container(
+      margin: const EdgeInsets.only(top: 20),
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
@@ -47,6 +50,7 @@ class TaskPlace extends StatelessWidget {
             ),
           ),
         ],
+      ),
     );
   }
 }
