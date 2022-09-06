@@ -1,7 +1,12 @@
 import 'task.dart';
 
 class TaskManager {
-  List<Task> tasks = [];
+  List<Task> tasks = [
+    Task(name: "Hello! I am Linh"),
+    Task(name: "Hello! I am Mai"),
+    Task(name: "Hello! I am Vu"),
+    Task(name: "Hello! I am Trang")
+  ];
   void addTask(Task task) {
     tasks.add(task);
   }
