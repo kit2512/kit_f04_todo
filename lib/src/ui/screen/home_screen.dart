@@ -36,15 +36,15 @@ class _HomeScreen extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton:
-          FloatingButton(title: 'add task', icon: Icon(Icons.add_box)),
+          FloatingButton(title: 'add task', icon: const Icon(Icons.add_box)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       appBar: BuildAppBar(
           title: 'Task Manager',
-          prefixIcon: Icon(
+          prefixIcon: const Icon(
             Icons.widgets,
             color: Colors.white,
           ),
-          suffixIcon: Icon(
+          suffixIcon: const Icon(
             Icons.notifications_none,
             color: blackColor,
           )
