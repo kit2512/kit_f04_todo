@@ -52,21 +52,9 @@ class _BuildAppBarState extends State<BuildAppBar> {
                 },
               ),
             )
-<<<<<<< HEAD
-          : GestureDetector(
-              onTap: () {
-                setState(() {
-                  Navigator.pop(context, MaterialPageRoute(builder: (context) {
-                    // do something
-                    return const ProfileScreen();
-                  }));
-                });
-              },
-=======
           : IconButton(
               icon: const Icon(Icons.arrow_back, color: Colors.black),
               onPressed: () => Navigator.of(context).pop(),
->>>>>>> master
             ),
       centerTitle: true,
       title: Text(
