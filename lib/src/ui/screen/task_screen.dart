@@ -13,18 +13,21 @@ class TaskConfig extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: BuildAppBar(title: "Edit task"),
-      body: Container(
-        margin: const EdgeInsets.only(left: 10, right: 10),
-        child: Column(
-          children: const [
-            TaskName(),
-            TaskColor(),
-            TaskTime(),
-            TaskPlace(),
-            TaskLevel(),
-            TasKButtonSave(),
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          margin: const EdgeInsets.only(left: 10, right: 10),
+          child: Column(
+            children: const [
+              TaskName(),
+              TaskColor(),
+              TaskTime(),
+              TaskPlace(),
+              TaskLevel(),
+              TasKButtonSave(),
+            ],
+          ),
         ),
       ),
     );
