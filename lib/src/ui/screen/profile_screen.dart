@@ -8,7 +8,8 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BuildAppBar(title: "Profile"),
+      // appBar: BuildAppBar(title: "Profile"),
+      appBar: AppBar(),
       body: Container(
         margin: const EdgeInsets.only(left: 20, right: 20, top: 15),
         child: Column(
