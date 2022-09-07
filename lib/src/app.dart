@@ -16,10 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Padding(
-        padding: EdgeInsets.all(10.0),
-        child: Center(child: HomeScreen()),
-      ),
+      home: TaskConfig(),
     );
   }
 }
