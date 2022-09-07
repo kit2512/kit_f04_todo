@@ -16,15 +16,17 @@ class MyApp2 extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(title: 'Flutter to do app'),
+      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key, required this.title}) : super(key: key);
-  final String title;
+  const HomeScreen({
+    Key? key,
+  }) : super(key: key);
+
   @override
   State<HomeScreen> createState() => _HomeScreen();
 }
@@ -36,9 +38,17 @@ class _HomeScreen extends State<HomeScreen> {
       floatingActionButton:
           FloatingButton(title: 'add task', icon: Icon(Icons.add_box)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      //appBar: BuildAppBar(),
+      appBar: BuildAppBar(
+          title: 'Task Manager',
+          prefixIcon: const Icon(
+            Icons.widgets,
+            color: Colors.white,
+          ),
+          suffixIcon: const Icon(
+            Icons.notifications_none,
+            color: blackColor,
+          )),
       body: Column(children: [
-        BuildAppBar(),
         Padding(
           padding: EdgeInsets.all(20),
           child: Row(

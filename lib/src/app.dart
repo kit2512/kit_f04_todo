@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
       body: const Padding(
         padding: EdgeInsets.all(10.0),
-        child: Center(child: HomeScreen(title: "task manager")),
+        child: Center(child: HomeScreen()),
       ),
     ));
   }
