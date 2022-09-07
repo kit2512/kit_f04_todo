@@ -9,7 +9,7 @@ import 'ui/home_body/todo_screen.dart';
 import 'ui/task_config/task_time.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       appBar: AppBar(
         title: const Text('demo app bar'),
       ),
-      body: const Padding(
+      body: Padding(
         padding: EdgeInsets.all(10.0),
         child: Center(child: TaskConfig()),
       ),

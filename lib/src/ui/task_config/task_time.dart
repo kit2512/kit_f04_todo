@@ -8,7 +8,7 @@ class TaskTime extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin:const EdgeInsets.only(top: 20),
+      margin: const EdgeInsets.only(top: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -21,28 +21,34 @@ class TaskTime extends StatelessWidget {
               fontSize: 15,
             ),
           ),
-          TextFormField(
-            style: TextStyle(
-              color: HexColor("#191919"),
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w700,
-              fontSize: 23,
-            ),
-            decoration: InputDecoration(
-              // suffixIconConstraints:
-              //     BoxConstraints(minHeight: 24, minWidth: 24),
-              suffixIcon: IconButton(
-                onPressed: () {},
-                icon: Image(
-                  image: const AssetImage(
-                    'asset/task/calendar.png',
-                  ),
-                  height: 19.31,
-                  width: 18,
-                  color: HexColor("#191919"),
+          Column(
+            children: [
+              SizedBox(
+                height: 35,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                  const  Text(""),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Image(
+                        image: const AssetImage(
+                          'asset/task/calendar.png',
+                        ),
+                        height: 19.31,
+                        width: 18,
+                        color: HexColor("#191919"),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ),
+            const  Divider(
+                color: Color.fromARGB(255, 208, 206, 206),
+                height: 20,
+                thickness: 1.8,
+              ),
+            ],
           ),
         ],
       ),

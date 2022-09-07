@@ -9,13 +9,16 @@ class TaskConfig extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [
-        TaskName(),
-        TaskColor(),
-        TaskTime(),
-        TaskPlace(),
-      ],
+    return Container(
+      margin: const EdgeInsets.only(left: 10, right: 10),
+      child: Column(
+        children: const [
+          TaskName(),
+          TaskColor(),
+          TaskTime(),
+          TaskPlace(),
+        ],
+      ),
     );
   }
 }

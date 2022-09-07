@@ -20,20 +20,27 @@ class TaskColor extends StatelessWidget {
               fontSize: 15,
             ),
           ),
-          TextFormField(
-            style: TextStyle(
-              color: HexColor("#191919"),
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w700,
-              fontSize: 23,
-            ),
-            decoration: InputDecoration(
-                // suffixIcon: IconButton(
-                //     onPressed: () {},
-                //     icon: Icon(
-                //       Icons.add_circle_outline_sharp,
-                //     )),
+          Column(
+            children: [
+              SizedBox(
+                height: 35,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(""),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.add_circle_outlined),
+                    ),
+                  ],
                 ),
+              ),
+             const Divider(
+                color: Color.fromARGB(255, 208, 206, 206),
+                height: 20,
+                thickness: 1.8,
+              ),
+            ],
           ),
         ],
       ),

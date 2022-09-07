@@ -27,14 +27,9 @@ class TaskName extends StatelessWidget {
               fontWeight: FontWeight.w700,
               fontSize: 23,
             ),
-            decoration: InputDecoration(
-              
-                // suffixIcon: IconButton(
-                //     onPressed: () {},
-                //     icon: Icon(
-                //       Icons.add_circle_outline_sharp,
-                //     )),
-                ),
+            decoration: const InputDecoration(
+              hintText: "Enter Task Name",
+            ),
           ),
         ],
       ),
