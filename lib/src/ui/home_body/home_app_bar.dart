@@ -53,7 +53,7 @@ class _BuildAppBarState extends State<BuildAppBar> {
               ),
             )
           : IconButton(
-              icon: Icon(Icons.arrow_back, color: Colors.black),
+              icon: const Icon(Icons.arrow_back, color: Colors.black),
               onPressed: () => Navigator.of(context).pop(),
             ),
       centerTitle: true,
