@@ -1,5 +1,3 @@
-import 'package:demo_state_app/src/ui/home_body/home.dart';
-import 'package:demo_state_app/src/ui/task_config/task_button_save.dart';
 import 'package:demo_state_app/src/ui/task_config/task_color.dart';
 import 'package:demo_state_app/src/ui/task_config/task_level.dart';
 import 'package:demo_state_app/src/ui/task_config/task_name.dart';
@@ -13,7 +11,6 @@ class TaskConfig extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BuildAppBar(title: "Edit task"),
       body: Container(
         margin: const EdgeInsets.only(left: 10, right: 10),
         child: Column(
@@ -23,7 +20,6 @@ class TaskConfig extends StatelessWidget {
             TaskTime(),
             TaskPlace(),
             TaskLevel(),
-            TasKButtonSave(),
           ],
         ),
       ),
