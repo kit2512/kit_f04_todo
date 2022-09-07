@@ -14,41 +14,39 @@ class _TaskLevelState extends State<TaskLevel> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          "Level",
-          style: TextStyle(
-            color: HexColor("#B6B6B6"),
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w500,
-            fontSize: 15,
+    return Container(
+      margin: const EdgeInsets.only(top: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Level",
+            style: TextStyle(
+              color: HexColor("#B6B6B6"),
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w500,
+              fontSize: 15,
+            ),
           ),
-        ),
-        Column(
-          children: [
-            SizedBox(
-              height: 45,
-              child: ListView.builder(
-                itemBuilder: (context, index) => buildTaskLevel(index),
-                itemCount: taskLevel.length,
-                scrollDirection: Axis.horizontal,
+          Column(
+            children: [
+              SizedBox(
+                height: 45,
+                child: ListView.builder(
+                  itemBuilder: (context, index) => buildTaskLevel(index),
+                  itemCount: taskLevel.length,
+                  scrollDirection: Axis.horizontal,
+                ),
               ),
-            ),
-            const Divider(
-              color: Color.fromARGB(255, 208, 206, 206),
-              height: 20,
-              thickness: 1.8,
-            ),
-          ],
-        ),
-        Container(
-          margin: const EdgeInsets.only(top: 195),
-          width: 500,
-          child: FloatingButton(title: "Save Task"),
-        ),
-      ],
+              const Divider(
+                color: Color.fromARGB(255, 208, 206, 206),
+                height: 20,
+                thickness: 1.8,
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 

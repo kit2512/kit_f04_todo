@@ -7,7 +7,7 @@ class TaskColor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 20),
+      margin: const EdgeInsets.only(top: 25),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -35,7 +35,7 @@ class TaskColor extends StatelessWidget {
                   ],
                 ),
               ),
-             const Divider(
+              const Divider(
                 color: Color.fromARGB(255, 208, 206, 206),
                 height: 20,
                 thickness: 1.8,
