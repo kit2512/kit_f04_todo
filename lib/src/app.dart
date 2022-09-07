@@ -1,4 +1,5 @@
 import 'package:demo_state_app/src/ui/profile_body/profile.dart';
+import 'package:demo_state_app/src/ui/screen/home_screen.dart';
 import 'package:demo_state_app/src/ui/task_config/task_color.dart';
 import 'package:demo_state_app/src/ui/task_config/task_config.dart';
 import 'package:demo_state_app/src/ui/task_config/task_level.dart';
@@ -15,14 +16,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-      appBar: AppBar(
-        title: const Text('demo app bar'),
-      ),
-      body: Padding(
+      home: Padding(
         padding: EdgeInsets.all(10.0),
-        child: Center(child: TaskConfig()),
+        child: Center(child: HomeScreen()),
       ),
-    ));
+    );
   }
 }

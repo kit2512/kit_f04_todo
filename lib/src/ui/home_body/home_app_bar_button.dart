@@ -1,6 +1,7 @@
 import 'package:demo_state_app/src/ui/home_body/todo_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:demo_state_app/src/ui/screen/home_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppBarButton extends StatefulWidget {
   const AppBarButton({Key? key}) : super(key: key);
@@ -15,23 +16,28 @@ class _AppBarButton extends State<AppBarButton> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 45,
-          child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: appBarButton.length,
-              itemBuilder: (context, index) {
-                return buildAppBarButton(index);
-              }),
-        ),
-        const SizedBox(
-          height: 480,
-          width: 400,
-          child: TodoCardScreen(),
-        )
-      ],
+    return ScreenUtilInit(
+      designSize: const Size(1080, 2280),
+      builder: (context, child) => Column(
+        children: [
+          SizedBox(
+            height: 45,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: appBarButton.length,
+                itemBuilder: (context, index) {
+                  return buildAppBarButton(index);
+                }),
+          ),
+          SizedBox(
+            height: 1430.h,
+            width: 1000.w,
+            child: const TodoCardScreen(
+              value: 2,
+            ),
+          )
+        ],
+      ),
     );
   }
 

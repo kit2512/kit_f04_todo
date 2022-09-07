@@ -12,7 +12,7 @@ class TaskManager {
   void addTask(Task task) {
     tasks.add(task);
   }
-  
+
   void removeTask(Task task) {
     tasks.remove(task);
   }
@@ -23,5 +23,13 @@ class TaskManager {
 
   List<Task> getTasks() {
     return tasks;
+  }
+
+  List<Task> getTasksFinish() {
+    List<Task> task = [];
+    for (var element in tasks) {
+      if (element.isFinish) task.add(element);
+    }
+    return task;
   }
 }
