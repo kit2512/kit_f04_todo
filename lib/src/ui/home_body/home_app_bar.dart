@@ -24,7 +24,10 @@ class BuildAppBar extends StatefulWidget implements PreferredSizeWidget {
 class _BuildAppBarState extends State<BuildAppBar> {
   _BuildAppBarState(
       // ignore: unused_element
-      {Key? key, required this.title, this.prefixIcon, this.suffixIcon});
+      {Key? key,
+      required this.title,
+      this.prefixIcon,
+      this.suffixIcon});
   String title;
   Icon? prefixIcon;
   Icon? suffixIcon;
@@ -49,15 +52,10 @@ class _BuildAppBarState extends State<BuildAppBar> {
                 },
               ),
             )
-          : GestureDetector(onTap: () {
-                  setState(() {
-                    Navigator.pop(context,
-                        MaterialPageRoute(builder: (context) {
-                      // do something
-                      return const ProfileScreen();
-                    }));
-                  });
-                },),
+          : IconButton(
+              icon: Icon(Icons.arrow_back, color: Colors.black),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
       centerTitle: true,
       title: Text(
         title,
