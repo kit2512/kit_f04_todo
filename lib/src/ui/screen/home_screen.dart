@@ -47,6 +47,7 @@ class _HomeScreen extends State<HomeScreen> {
           suffixIcon: const Icon(
             Icons.notifications_none,
             color: blackColor,
+<<<<<<< Updated upstream
           )
           
           ),
@@ -54,6 +55,13 @@ class _HomeScreen extends State<HomeScreen> {
         //BuildAppBar(),
         Padding(
           padding: EdgeInsets.all(30.h),
+=======
+          )),
+      body: Column(children: [
+        //BuildAppBar(),
+        Padding(
+          padding: EdgeInsets.all(30),
+>>>>>>> Stashed changes
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

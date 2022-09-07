@@ -34,7 +34,11 @@ Icon? suffixIcon;
     return AppBar(
       elevation: 0,
       leading: prefixIcon != null? Padding(
+<<<<<<< Updated upstream
         padding: EdgeInsets.fromLTRB(20.h, 0, 0, 0),
+=======
+        padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+>>>>>>> Stashed changes
         child: GestureDetector(
           child: CircleAvatar(
             backgroundColor: blackColor,
@@ -59,7 +63,11 @@ Icon? suffixIcon;
       backgroundColor: whiteColor,
       actions: suffixIcon != null?[
         Padding(
+<<<<<<< Updated upstream
           padding: EdgeInsets.fromLTRB(0, 0, 20.h, 0),
+=======
+          padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
+>>>>>>> Stashed changes
           child: IconButton(
               onPressed: () {},
               icon: suffixIcon?? suffixIcon!
