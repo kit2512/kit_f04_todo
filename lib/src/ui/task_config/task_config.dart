@@ -1,4 +1,5 @@
 import 'package:demo_state_app/src/ui/task_config/task_color.dart';
+import 'package:demo_state_app/src/ui/task_config/task_level.dart';
 import 'package:demo_state_app/src/ui/task_config/task_name.dart';
 import 'package:demo_state_app/src/ui/task_config/task_place.dart';
 import 'package:demo_state_app/src/ui/task_config/task_time.dart';
@@ -17,6 +18,7 @@ class TaskConfig extends StatelessWidget {
           TaskColor(),
           TaskTime(),
           TaskPlace(),
+          TaskLevel(),
         ],
       ),
     );
