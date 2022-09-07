@@ -52,6 +52,7 @@ class _BuildAppBarState extends State<BuildAppBar> {
                 },
               ),
             )
+<<<<<<< HEAD
           : GestureDetector(
               onTap: () {
                 setState(() {
@@ -61,6 +62,11 @@ class _BuildAppBarState extends State<BuildAppBar> {
                   }));
                 });
               },
+=======
+          : IconButton(
+              icon: Icon(Icons.arrow_back, color: Colors.black),
+              onPressed: () => Navigator.of(context).pop(),
+>>>>>>> master
             ),
       centerTitle: true,
       title: Text(
