@@ -6,6 +6,7 @@ class AppBarButton extends StatefulWidget {
   const AppBarButton({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _AppBarButton createState() => _AppBarButton();
 }
 
@@ -26,6 +27,11 @@ class _AppBarButton extends State<AppBarButton> {
                 return buildAppBarButton(index);
               }),
         ),
+        const SizedBox(
+          height: 480,
+          width: 400,
+          child: TodoCardScreen(),
+        )
       ],
     );
   }
@@ -37,8 +43,8 @@ class _AppBarButton extends State<AppBarButton> {
           color: selectedIndex == index ? blackColor : whiteColor,
           borderRadius: BorderRadius.circular(20),
         ),
-        padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
-        margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
+        padding: const EdgeInsets.fromLTRB(0, 5, 0, 5),
+        margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
         child: TextButton(
           onPressed: () {
             setState(() {
