@@ -36,7 +36,7 @@ class _HomeScreen extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton:
-          FloatingButton(title: 'add task', icon: Icon(Icons.add_box)),
+          FloatingButton(title: 'add task', icon: const Icon(Icons.add_box)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       appBar: BuildAppBar(
           title: 'Task Manager',
@@ -50,7 +50,7 @@ class _HomeScreen extends State<HomeScreen> {
           )),
       body: Column(children: [
         Padding(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -84,7 +84,7 @@ class _HomeScreen extends State<HomeScreen> {
             ],
           ),
         ),
-        AppBarButton(),
+        const AppBarButton(),
       ]),
     );
   }
