@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: TaskConfig(),
+      debugShowMaterialGrid: false,
+      home: Scaffold(body: TaskConfig()),
     );
   }
 }

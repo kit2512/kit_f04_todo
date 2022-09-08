@@ -19,13 +19,19 @@ class TaskConfig extends StatelessWidget {
         child: Container(
           margin: const EdgeInsets.only(left: 10, right: 10),
           child: Column(
-            children: const [
-              TaskName(),
-              TaskColor(),
-              TaskTime(),
-              TaskPlace(),
-              TaskLevel(),
-              TasKButtonSave(),
+            children: [
+              const TaskName(),
+              TaskColor(
+                colorLists: const [],
+                onPressed: () {},
+              ),
+              const TaskTime(),
+              TaskPlace(
+                place: "",
+                onPressed: () {},
+              ),
+              const TaskLevel(),
+              const TasKButtonSave(),
             ],
           ),
         ),
