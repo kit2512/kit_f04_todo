@@ -32,8 +32,8 @@ class _AppBarButton extends State<AppBarButton> {
           SizedBox(
             height: 1430.h,
             width: 1000.w,
-            child: const TodoCardScreen(
-              value: 2,
+            child:  TodoCardScreen(
+              value: selectedIndex,
             ),
           )
         ],

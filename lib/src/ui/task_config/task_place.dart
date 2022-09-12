@@ -4,7 +4,9 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class TaskPlace extends StatelessWidget {
-  const TaskPlace({super.key});
+  final String place;
+  final Function() onPressed;
+  const TaskPlace({required this.place, required this.onPressed,super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +31,9 @@ class TaskPlace extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                   const  Text(""),
+                     Text(place),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () => onPressed,
                       icon: Icon(
                         Icons.place_outlined,
                         color: HexColor("#000000"),
