@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:demo_state_app/src/ui/screen/profile_screen.dart';
-import 'package:demo_state_app/src/ui/screen/home_screen.dart';
 
 // ignore: must_be_immutable
 class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -18,7 +16,7 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
               padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
               child: GestureDetector(
                 child: CircleAvatar(
-                    backgroundColor: blackColor, child: prefixIcon),
+                    backgroundColor: Colors.black, child: prefixIcon),
                 onTap: () {
                   // setState(() {
                   //   Navigator.push(context,
@@ -37,9 +35,9 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       title: Text(
         title,
-        style: const TextStyle(color: blackColor),
+        style: const TextStyle(color: Colors.black),
       ),
-      backgroundColor: whiteColor,
+      backgroundColor: Colors.white,
       actions: suffixIcon != null
           ? [
               Padding(

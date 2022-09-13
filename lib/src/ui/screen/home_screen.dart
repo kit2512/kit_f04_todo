@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:demo_state_app/src/ui/home_body/home.dart';
 
-const blackColor = Color(0xff191919);
-const whiteColor = Colors.white; // Color(0xffB6B6B6);
-
 class MyApp2 extends StatelessWidget {
   const MyApp2({Key? key}) : super(key: key);
 
@@ -46,7 +43,7 @@ class _HomeScreen extends State<HomeScreen> {
           ),
           suffixIcon: const Icon(
             Icons.notifications_none,
-            color: blackColor,
+            color: Colors.black,
           )),
       body: Column(children: [
         Padding(
@@ -75,10 +72,10 @@ class _HomeScreen extends State<HomeScreen> {
                 onTap: () {},
                 child: Container(
                   decoration: const BoxDecoration(
-                      shape: BoxShape.circle, color: blackColor),
+                      shape: BoxShape.circle, color: Colors.black),
                   width: 50,
                   height: 50,
-                  child: const Icon(Icons.search, color: whiteColor),
+                  child: const Icon(Icons.search, color: Colors.white),
                 ),
               )
             ],
