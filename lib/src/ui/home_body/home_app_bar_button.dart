@@ -3,15 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:demo_state_app/src/ui/screen/home_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AppBarButton extends StatefulWidget {
-  const AppBarButton({Key? key}) : super(key: key);
 
-  @override
-  _AppBarButton createState() => _AppBarButton();
-}
 
-class _AppBarButton extends State<AppBarButton> {
-  List<String> appBarButton = ['Today', 'Upcoming', 'Finished'];
+
+// ignore: must_be_immutable
+class AppBarButton extends StatelessWidget {
+   AppBarButton({Key? key}) : super(key: key);
+
+   List<String> appBarButton = ['Today', 'Upcoming', 'Finished'];
   int selectedIndex = 0;
 
   @override
@@ -52,9 +51,9 @@ class _AppBarButton extends State<AppBarButton> {
         margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
         child: TextButton(
           onPressed: () {
-            setState(() {
-              selectedIndex = index;
-            });
+            // setState(() {
+            //   selectedIndex = index;
+            // });
           },
           child: Text(
             appBarButton[index],
@@ -64,3 +63,4 @@ class _AppBarButton extends State<AppBarButton> {
         ));
   }
 }
+
