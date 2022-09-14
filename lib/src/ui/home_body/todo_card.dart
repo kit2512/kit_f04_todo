@@ -1,6 +1,10 @@
 import 'package:demo_state_app/src/data/task.dart';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
+
+import '../../data/task_manager.dart';
 
 class TodoCard extends StatelessWidget {
   const TodoCard({Key? key, required this.task, this.isFinished = false})
@@ -79,7 +83,10 @@ class TodoCard extends StatelessWidget {
         ),
       );
     } else {
-      return SizedBox(
+      return
+          // Consumer<TaskManager>(
+          //     builder: (context, tasks, child) =>
+          SizedBox(
         height: 180,
         child: Card(
           color: task.color,
@@ -152,8 +159,10 @@ class TodoCard extends StatelessWidget {
                     Text(task.time.format(context)),
                     const Spacer(),
                     Checkbox(
+                      checkColor: Colors.white,
+                      activeColor: Colors.black,
                       value: task.isFinish,
-                      onChanged: (value) => setFinished(task),
+                      onChanged: (value) => setFinished(task, context, value!),
                     )
                   ],
                 )
@@ -165,7 +174,8 @@ class TodoCard extends StatelessWidget {
     }
   }
 
-  bool setFinished(Task task) {
-    return task.isFinish = !task.isFinish;
+  void setFinished(Task task, BuildContext context, bool value) {
+    task.isFinish = value;
+    context.read<TaskManager>().updateTask(task);
   }
 }
