@@ -1,15 +1,16 @@
+import 'dart:js';
+
+import 'package:demo_state_app/src/data/task_manager.dart';
 import 'package:demo_state_app/src/ui/home_body/todo_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-
-
+import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class AppBarButton extends StatelessWidget {
-   AppBarButton({Key? key}) : super(key: key);
+  AppBarButton({Key? key}) : super(key: key);
 
-   List<String> appBarButton = ['Today', 'Upcoming', 'Finished'];
+  List<String> appBarButton = ['Today', 'Upcoming', 'Finished'];
   int selectedIndex = 0;
 
   @override
@@ -24,14 +25,14 @@ class AppBarButton extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: appBarButton.length,
                 itemBuilder: (context, index) {
-                  return buildAppBarButton(index);
+                  return buildAppBarButton(index, context);
                 }),
           ),
           SizedBox(
             height: 1430.h,
             width: 1000.w,
-            child:  TodoCardScreen(
-              value: selectedIndex,
+            child: TodoCardScreen(
+              value: context.watch<TaskManager>().index,
             ),
           )
         ],
@@ -39,7 +40,7 @@ class AppBarButton extends StatelessWidget {
     );
   }
 
-  Widget buildAppBarButton(int index) {
+  Widget buildAppBarButton(int index, BuildContext context) {
     return Container(
         width: 80,
         decoration: BoxDecoration(
@@ -50,9 +51,8 @@ class AppBarButton extends StatelessWidget {
         margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
         child: TextButton(
           onPressed: () {
-            // setState(() {
-            //   selectedIndex = index;
-            // });
+            selectedIndex = index;
+            context.read<TaskManager>().updateIndex(selectedIndex);
           },
           child: Text(
             appBarButton[index],
@@ -62,4 +62,3 @@ class AppBarButton extends StatelessWidget {
         ));
   }
 }
-

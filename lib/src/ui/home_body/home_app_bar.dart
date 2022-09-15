@@ -49,6 +49,7 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
           : [],
     );
   }
+
   @override
   // ignore: todo
   // TODO: implement preferredSize

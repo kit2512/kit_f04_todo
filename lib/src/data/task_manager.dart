@@ -9,6 +9,20 @@ class TaskManager extends ChangeNotifier {
     Task(name: "Hello! I am Vu"),
     Task(name: "Hello! I am Trang")
   ];
+  int index = 0;
+
+  List getData(BuildContext context) {
+    if (index == 2) {
+      return getTasksFinish();
+    } else {
+      return tasks;
+    }
+  }
+
+  void updateIndex(int value) {
+    index = value;
+    notifyListeners();
+  }
 
   void addTask(Task task) {
     tasks.add(task);

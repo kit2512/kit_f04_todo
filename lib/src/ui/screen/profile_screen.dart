@@ -9,7 +9,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // appBar: BuildAppBar(title: "Profile"),
-      appBar: AppBar(),
+      appBar: BuildAppBar(title: "Profile"),
       body: Container(
         margin: const EdgeInsets.only(left: 20, right: 20, top: 15),
         child: Column(

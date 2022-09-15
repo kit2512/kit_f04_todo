@@ -8,10 +8,10 @@ class TodoCardScreen extends StatelessWidget {
   final int value;
   @override
   Widget build(BuildContext context) {
-    List data = getData(value, context);
+    List data = context.watch<TaskManager>().getData(context);
 
     return ListView.separated(
-        reverse: true,
+        reverse: false,
         separatorBuilder: (context, index) {
           return const SizedBox(
             height: 10,
@@ -29,14 +29,6 @@ class TodoCardScreen extends StatelessWidget {
       return true;
     } else {
       return false;
-    }
-  }
-
-  List getData(int value, BuildContext context) {
-    if (isFinished(value)) {
-      return context.watch<TaskManager>().getTasksFinish();
-    } else {
-      return context.watch<TaskManager>().tasks;
     }
   }
 }

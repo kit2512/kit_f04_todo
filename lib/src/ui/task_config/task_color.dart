@@ -5,7 +5,8 @@ import 'package:hexcolor/hexcolor.dart';
 class TaskColor extends StatelessWidget {
   final Function() onPressed;
   final List<Color> colorLists;
-  const TaskColor({required this.colorLists,required this.onPressed,super.key});
+  const TaskColor(
+      {required this.colorLists, required this.onPressed, super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -39,7 +40,7 @@ class TaskColor extends StatelessWidget {
                         child: OutlinedButton(
                           style: ElevatedButton.styleFrom(
                             shape: const CircleBorder(),
-                            backgroundColor: colorLists[index],
+                            //backgroundColor: colorLists[index],
                             maximumSize: Size(22, 22),
                             minimumSize: Size(22, 22),
                           ),
