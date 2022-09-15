@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:demo_state_app/src/ui/screen/profile_screen.dart';
 
 // ignore: must_be_immutable
 class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -18,13 +19,9 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
                 child: CircleAvatar(
                     backgroundColor: Colors.black, child: prefixIcon),
                 onTap: () {
-                  // setState(() {
-                  //   Navigator.push(context,
-                  //       MaterialPageRoute(builder: (context) {
-                  //     // do something
-                  //     return const ProfileScreen();
-                  //   }));
-                  // });
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const ProfileScreen();
+                  }));
                 },
               ),
             )
@@ -49,6 +46,7 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
           : [],
     );
   }
+
   @override
   // ignore: todo
   // TODO: implement preferredSize

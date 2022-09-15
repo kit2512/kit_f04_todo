@@ -64,8 +64,8 @@ class TodoCard extends StatelessWidget {
                     IconButton(
                       onPressed: () {},
                       icon: const Icon(
-                        Icons.edit_note,
-                        size: 35,
+                        Icons.mode_edit_outline_outlined,
+                        size: 27,
                       ),
                     )
                   ],
@@ -134,8 +134,8 @@ class TodoCard extends StatelessWidget {
                     IconButton(
                       onPressed: () {},
                       icon: const Icon(
-                        Icons.edit_note,
-                        size: 35,
+                        Icons.mode_edit_outline_outlined,
+                        size: 27,
                       ),
                     )
                   ],
