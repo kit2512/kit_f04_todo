@@ -1,6 +1,7 @@
 import 'package:demo_state_app/src/data/task_manager.dart';
 import 'package:demo_state_app/src/ui/home_body/todo_card.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class TodoCardScreen extends StatelessWidget {
@@ -9,7 +10,7 @@ class TodoCardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List data = context.watch<TaskManager>().getData(context);
-
+    if (data.isEmpty) return buildNoData();
     return ListView.separated(
         reverse: false,
         separatorBuilder: (context, index) {
@@ -30,5 +31,25 @@ class TodoCardScreen extends StatelessWidget {
     } else {
       return false;
     }
+  }
+
+  Widget buildNoData() {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          Text(
+            "No task",
+            style: TextStyle(fontSize: 20),
+          ),
+          Image(
+            color: Colors.amber,
+            height: 200,
+            width: 100,
+            image: AssetImage("asset/task/document.png"),
+          )
+        ],
+      ),
+    );
   }
 }
