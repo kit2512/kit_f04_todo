@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:intl/intl.dart';
 
 class TaskTime extends StatelessWidget {
   const TaskTime({super.key});
 
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
+    String formattedDate = DateFormat('EEE d MMM, kk:mm:ss').format(now);
+
     return Container(
       margin: const EdgeInsets.only(top: 20),
       child: Column(
@@ -28,7 +32,15 @@ class TaskTime extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                  const  Text(""),
+                    Text(
+                      formattedDate,
+                      style: TextStyle(
+                        color: HexColor("#191919"),
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                      ),
+                    ),
                     IconButton(
                       onPressed: () {},
                       icon: Image(
@@ -43,7 +55,7 @@ class TaskTime extends StatelessWidget {
                   ],
                 ),
               ),
-            const  Divider(
+              const Divider(
                 color: Color.fromARGB(255, 208, 206, 206),
                 height: 20,
                 thickness: 1.8,
