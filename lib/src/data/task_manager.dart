@@ -10,7 +10,7 @@ class TaskManager extends ChangeNotifier {
     Task(name: "Hello! I am Trang")
   ];
 
- // List<Task> tasks = [];
+  //List<Task> tasks = [];
   int index = 0;
 
   List getData(BuildContext context) {
