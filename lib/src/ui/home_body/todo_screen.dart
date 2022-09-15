@@ -37,16 +37,16 @@ class TodoCardScreen extends StatelessWidget {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: const [
           Text(
-            "    No task",
+            "No task     ",
             style: TextStyle(fontSize: 20),
           ),
           Image(
             //color: Colors.amber,
-            height: 200,
-            width: 150,
+            height: 300,
+            width: 230,
             image: AssetImage("asset/task/document.png"),
           )
         ],
