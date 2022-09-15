@@ -43,10 +43,10 @@ class TodoCardScreen extends StatelessWidget {
             style: TextStyle(fontSize: 20),
           ),
           Image(
-            color: Colors.amber,
-            height: 200,
-            width: 100,
-            image: AssetImage("asset/task/document.png"),
+            //color: Colors.amber,
+            height: 300,
+            width: 150,
+            image: AssetImage("asset/task/notask.png"),
           )
         ],
       ),
