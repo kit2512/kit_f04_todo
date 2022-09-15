@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-class TaskName extends StatelessWidget {
-  const TaskName({super.key});
+class TaskName extends StatefulWidget {
+   String name;
+   TaskName({required this.name,super.key});
 
+  @override
+  State<TaskName> createState() => _TaskNameState();
+}
+
+class _TaskNameState extends State<TaskName> {
+  final nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,6 +28,12 @@ class TaskName extends StatelessWidget {
             ),
           ),
           TextFormField(
+            controller: nameController,
+            onChanged: (value) {
+              setState(() {
+                widget.name = value;
+              });
+            },
             style: TextStyle(
               color: HexColor("#191919"),
               fontStyle: FontStyle.normal,

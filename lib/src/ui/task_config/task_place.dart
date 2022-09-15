@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import '';
 class TaskPlace extends StatelessWidget {
   final String place;
   final Function() onPressed;
