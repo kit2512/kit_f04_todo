@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'task.dart';
 
 class TaskManager extends ChangeNotifier {
-  List<Task> tasks = [
-    Task(name: "Hello! I am Linh", isFinish: true),
-    Task(name: "Hello! I am Mai"),
-    Task(name: "Hello! I am Vu"),
-    Task(name: "Hello! I am Trang")
-  ];
+  // List<Task> tasks = [
+  //   Task(name: "Hello! I am Linh", isFinish: true),
+  //   Task(name: "Hello! I am Mai"),
+  //   Task(name: "Hello! I am Vu"),
+  //   Task(name: "Hello! I am Trang")
+  // ];
+
+  List<Task> tasks = [];
   int index = 0;
 
   List getData(BuildContext context) {
