@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:demo_state_app/src/data/task_manager.dart';
 import 'package:demo_state_app/src/ui/home_body/todo_screen.dart';
 import 'package:flutter/material.dart';

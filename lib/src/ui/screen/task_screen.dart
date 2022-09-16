@@ -6,7 +6,7 @@ import 'package:demo_state_app/src/ui/task_config/task_color.dart';
 import 'package:demo_state_app/src/ui/task_config/task_level.dart';
 import 'package:demo_state_app/src/ui/task_config/task_name.dart';
 import 'package:demo_state_app/src/ui/task_config/task_place.dart';
-import 'package:demo_state_app/src/ui/task_config/task_time.dart';
+import 'package:demo_state_app/src/ui/task_config/task_date.dart';
 import 'package:flutter/material.dart';
 
 class TaskConfig extends StatelessWidget {
@@ -28,7 +28,7 @@ class TaskConfig extends StatelessWidget {
                 colorLists: colorList.colorLists,
                 onPressed: () {},
               ),
-              const TaskTime(),
+              // const TaskDate(onTimeChanged: ),
               TaskPlace(
                 place: "",
                 onPressed: () {},
