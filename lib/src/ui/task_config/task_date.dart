@@ -50,7 +50,9 @@ class _TaskDateState extends State<TaskDate> {
                     Text(
                       _dateTime == null
                           ? ""
-                          : DateFormat('dd MMMM yyyy').format(_dateTime!),
+                          : DateFormat('dd MMMM yyyy').format(_dateTime!) +
+                              "," +
+                              _timeOfDay!.format(context),
                       style: TextStyle(
                         color: HexColor("#191919"),
                         fontStyle: FontStyle.normal,
@@ -66,8 +68,13 @@ class _TaskDateState extends State<TaskDate> {
                           firstDate: DateTime.now(),
                           lastDate: DateTime(2100),
                         );
+                        final pickedTime = await showTimePicker(
+                          context: context,
+                          initialTime: TimeOfDay.now(),
+                        );
                         setState(() {
                           _dateTime = pickedDate;
+                          _timeOfDay = pickedTime;
                         });
                         // widget.onTimeChanged(_dateTime!);
                       },
