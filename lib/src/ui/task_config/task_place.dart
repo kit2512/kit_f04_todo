@@ -3,6 +3,7 @@ import 'package:hexcolor/hexcolor.dart';
 
 class TaskPlace extends StatelessWidget {
   final String place;
+
   const TaskPlace({required this.place, super.key});
 
   @override
