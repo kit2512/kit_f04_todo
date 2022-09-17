@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:demo_state_app/src/data/task.dart';
 
 import 'package:flutter/material.dart';
@@ -5,6 +7,8 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 import '../../data/task_manager.dart';
+import '../screen/profile_screen.dart';
+import '../screen/task_screen.dart';
 
 class TodoCard extends StatelessWidget {
   const TodoCard({Key? key, required this.task, this.isFinished = false})
@@ -62,7 +66,14 @@ class TodoCard extends StatelessWidget {
                     ),
                     const Spacer(),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        log('da an edit task');
+                        log(task.name);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return TaskConfig(task: task);
+                  }));
+
+                      },
                       icon: const Icon(
                         Icons.mode_edit_outline_outlined,
                         size: 27,
@@ -132,7 +143,13 @@ class TodoCard extends StatelessWidget {
                     ),
                     const Spacer(),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        log('da an edit task');
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return TaskConfig(task: task);
+                  }));
+
+                      },
                       icon: const Icon(
                         Icons.mode_edit_outline_outlined,
                         size: 27,
