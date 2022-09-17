@@ -10,7 +10,10 @@ class TasKButtonSave extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top: 168),
       width: 500,
-      child: FloatingButton(title: "Save Task"),
+      child: FloatingActionButton(
+        child: Text("Save"),
+        onPressed: () {},
+      ),
     );
   }
 }

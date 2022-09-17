@@ -4,14 +4,14 @@ import 'package:intl/intl.dart';
 
 class TaskDate extends StatefulWidget {
   final DateTime? date;
-  final Function(DateTime) onDateChanged;
+  // final Function(DateTime) onDateChanged;
   final TimeOfDay? time;
-  final Function(TimeOfDay) onTimeChanged;
+  // final Function(TimeOfDay) onTimeChanged;
   const TaskDate(
       {required this.date,
-      required this.onDateChanged,
+      // required this.onDateChanged,
       required this.time,
-      required this.onTimeChanged,
+      // required this.onTimeChanged,
       Key? key})
       : super(key: key);
 
@@ -74,8 +74,8 @@ class _TaskDateState extends State<TaskDate> {
                           _dateTime = pickedDate;
                           _timeOfDay = pickedTime;
                         });
-                        widget.onDateChanged(_dateTime!);
-                        widget.onTimeChanged(_timeOfDay!);
+                        // widget.onDateChanged(_dateTime!);
+                        // widget.onTimeChanged(_timeOfDay!);
                       },
                       icon: Image(
                         image: const AssetImage(

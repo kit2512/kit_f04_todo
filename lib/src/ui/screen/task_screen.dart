@@ -10,11 +10,10 @@ import 'package:demo_state_app/src/ui/task_config/task_date.dart';
 import 'package:flutter/material.dart';
 
 class TaskConfig extends StatelessWidget {
-  final Task task;
-  const TaskConfig({required this.task,super.key});
+  Task? task;
+  TaskConfig({this.task, super.key});
   @override
   Widget build(BuildContext context) {
-    ColorList colorList = ColorList();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: BuildAppBar(title: "Edit task"),
@@ -23,16 +22,9 @@ class TaskConfig extends StatelessWidget {
           margin: const EdgeInsets.only(left: 10, right: 10),
           child: Column(
             children: [
-              TaskName(name: task.name),
-              // TaskColor(
-              //   colorLists: colorList.colorLists,
-              //   onPressed: () {},
-              // ),
-              // const TaskDate(onTimeChanged: ),
-              // TaskPlace(
-              //   place: "",
-              //   onPressed: () {},
-              // ),
+              TaskName(name: task!.name),
+              TaskColor(color: task!.color),
+              TaskDate(date: task!.date, time: task!.time),
               const TaskLevel(),
               const TasKButtonSave(),
             ],
