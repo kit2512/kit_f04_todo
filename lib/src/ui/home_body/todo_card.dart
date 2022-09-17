@@ -13,10 +13,12 @@ import '../screen/task_screen.dart';
 class TodoCard extends StatelessWidget {
   const TodoCard(
       {Key? key,
+      required this.index,
       required this.task,
       required this.onDismissed,
       this.isFinished = false})
       : super(key: key);
+  final int index;
   final bool isFinished;
   final Task task;
   final Function(DismissDirection) onDismissed;
@@ -85,7 +87,11 @@ class TodoCard extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
-                          return TaskConfig(task: task);
+                          return TaskConfig(
+                            titleFloatingActionButton: 'Save Task',
+                            task: task,
+                            titleAppBar: 'Edit Task',
+                          );
                         }));
                       },
                       icon: const Icon(
@@ -132,7 +138,7 @@ class TodoCard extends StatelessWidget {
                 checkColor: Colors.white,
                 activeColor: Colors.black,
                 value: task.isFinish,
-                onChanged: (value) => setFinished(task, context, value!),
+                onChanged: (value) => setFinished(task, context, value!, index),
               )
             ],
           )
@@ -141,8 +147,8 @@ class TodoCard extends StatelessWidget {
     }
   }
 
-  void setFinished(Task task, BuildContext context, bool value) {
+  void setFinished(Task task, BuildContext context, bool value, int index) {
     task.isFinish = value;
-    context.read<TaskManager>().updateTask(task);
+    context.read<TaskManager>().updateTask(task, index);
   }
 }

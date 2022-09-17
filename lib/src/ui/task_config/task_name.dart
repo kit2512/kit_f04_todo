@@ -1,17 +1,21 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:provider/provider.dart';
 
-class TaskName extends StatefulWidget {
-   String name;
-   TaskName({required this.name,super.key});
-  @override
-  State<TaskName> createState() => _TaskNameState();
-}
+import '../../data/task_config_controller.dart';
 
-class _TaskNameState extends State<TaskName> {
-  final nameController = TextEditingController();
+class TaskName extends StatelessWidget {
+  final String name;
+
+  const TaskName({required this.name, super.key});
+
   @override
   Widget build(BuildContext context) {
+    //String data = name;
+    final nameController = TextEditingController();
+    nameController.text = name;
     return Container(
       margin: const EdgeInsets.only(top: 20),
       child: Column(
@@ -26,12 +30,11 @@ class _TaskNameState extends State<TaskName> {
               fontSize: 15,
             ),
           ),
-          TextFormField(
+          TextField(
             controller: nameController,
             onChanged: (value) {
-              setState(() {
-                widget.name = value;
-              });
+              context.read<TaskConfigManager>().task.name = value;
+              log(context.read<TaskConfigManager>().task.name);
             },
             style: TextStyle(
               color: HexColor("#191919"),

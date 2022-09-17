@@ -1,14 +1,17 @@
+import 'dart:developer';
+
 import 'package:demo_state_app/src/data/list_color.dart';
+import 'package:demo_state_app/src/data/task_config_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:provider/provider.dart';
 
 class TaskColor extends StatelessWidget {
-  final Function(Color) onColorsChanged;
-  final List<Color> colorLists;
-  const TaskColor(
-      {required this.colorLists, required this.onColorsChanged, super.key});
+  const TaskColor({super.key});
   @override
   Widget build(BuildContext context) {
+    ColorList colorList = ColorList();
+    List<Color> colorLists = colorList.colorLists;
     return Container(
       margin: const EdgeInsets.only(top: 25),
       child: Column(
@@ -40,13 +43,20 @@ class TaskColor extends StatelessWidget {
                         height: 20,
                         child: OutlinedButton(
                           style: ElevatedButton.styleFrom(
+                            shadowColor: colorLists[index],
                             shape: const CircleBorder(),
-                            backgroundColor: colorLists[index],
+//                          backgroundColor: colorLists[index],
                             maximumSize: const Size(22, 22),
                             minimumSize: const Size(22, 22),
                           ),
-                          onPressed: (){
-                            onColorsChanged(colorLists[index]);
+                          onPressed: () {
+                            context.read<TaskConfigManager>().task.color =
+                                colorLists[index];
+                            log(context
+                                .read<TaskConfigManager>()
+                                .task
+                                .color
+                                .toString());
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -66,7 +76,7 @@ class TaskColor extends StatelessWidget {
                   height: 20,
                   child: IconButton(
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.add_circle_outlined,
                       color: Colors.grey,
                       size: 25,

@@ -1,27 +1,35 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
-class TaskDate extends StatefulWidget {
-  final DateTime? date;
-  final Function(DateTime) onDateChanged;
-  final TimeOfDay? time;
-  final Function(TimeOfDay) onTimeChanged;
-  const TaskDate(
-      {required this.date,
-      required this.onDateChanged,
-      required this.time,
-      required this.onTimeChanged,
-      Key? key})
+import '../../data/task_config_controller.dart';
+
+class TaskDate extends StatelessWidget {
+  final TimeOfDay timeOfDay;
+  final DateTime dateTime;
+
+  const TaskDate({Key? key, required this.dateTime, required this.timeOfDay})
       : super(key: key);
 
-  @override
-  State<TaskDate> createState() => _TaskDateState();
-}
+  void setTime(
+      BuildContext context, DateTime? pickedDate, TimeOfDay? pickedTime) async {
+    pickedDate = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime.now(),
+      lastDate: DateTime(2100),
+    );
+    pickedTime = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+    );
+    // ignore: use_build_context_synchronously
+    context.read<TaskConfigManager>().setDateTime(pickedDate, pickedTime);
+  }
 
-class _TaskDateState extends State<TaskDate> {
-  TimeOfDay? _timeOfDay;
-  DateTime? _dateTime;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,11 +54,7 @@ class _TaskDateState extends State<TaskDate> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      _dateTime == null
-                          ? ""
-                          : DateFormat('dd MMMM yyyy').format(_dateTime!) +
-                              "," +
-                              _timeOfDay!.format(context),
+                      "${DateFormat('dd MMMM yyyy').format(dateTime)},${timeOfDay.format(context)}",
                       style: TextStyle(
                         color: HexColor("#191919"),
                         fontStyle: FontStyle.normal,
@@ -59,23 +63,16 @@ class _TaskDateState extends State<TaskDate> {
                       ),
                     ),
                     IconButton(
-                      onPressed: () async {
-                        final pickedDate = await showDatePicker(
-                          context: context,
-                          initialDate: DateTime.now(),
-                          firstDate: DateTime.now(),
-                          lastDate: DateTime(2100),
-                        );
-                        final pickedTime = await showTimePicker(
-                          context: context,
-                          initialTime: TimeOfDay.now(),
-                        );
-                        setState(() {
-                          _dateTime = pickedDate;
-                          _timeOfDay = pickedTime;
-                        });
-                        widget.onDateChanged(_dateTime!);
-                        widget.onTimeChanged(_timeOfDay!);
+                      onPressed: () {
+                        DateTime? pickedDate;
+                        TimeOfDay? pickedTime;
+                        setTime(context, pickedDate, pickedTime);
+
+                        log(context
+                            .read<TaskConfigManager>()
+                            .task
+                            .time
+                            .toString());
                       },
                       icon: Image(
                         image: const AssetImage(
@@ -101,3 +98,109 @@ class _TaskDateState extends State<TaskDate> {
     );
   }
 }
+
+
+// import 'package:flutter/material.dart';
+// import 'package:hexcolor/hexcolor.dart';
+// import 'package:intl/intl.dart';
+// import 'package:provider/provider.dart';
+
+// import '../../data/task_config_controller.dart';
+
+// class TaskDate extends StatelessWidget {
+//   final DateTime? dateTime;
+
+//   final TimeOfDay? timeOfDay;
+
+//   const TaskDate({
+//     Key? key,
+//     required this.dateTime,
+//     required this.timeOfDay,
+//   }) : super(key: key);
+
+//   void setTime(
+//       BuildContext context, DateTime? pickedDate, TimeOfDay? pickedTime) async {
+//     pickedDate = await showDatePicker(
+//       context: context,
+//       initialDate: DateTime.now(),
+//       firstDate: DateTime.now(),
+//       lastDate: DateTime(2100),
+//     );
+//     pickedTime = await showTimePicker(
+//       context: context,
+//       initialTime: TimeOfDay.now(),
+//     );
+//   }
+// @override
+//   Widget build(BuildContext context) {
+//     TimeOfDay? timeOfDay_1 = timeOfDay;
+//     DateTime? dateTime_2 = dateTime;
+//     return Container(
+//       margin: const EdgeInsets.only(top: 20),
+//       child: Column(
+//         crossAxisAlignment: CrossAxisAlignment.start,
+//         children: [
+//           Text(
+//             "Due Time",
+//             style: TextStyle(
+//               color: HexColor("#B6B6B6"),
+//               fontStyle: FontStyle.normal,
+//               fontWeight: FontWeight.w500,
+//               fontSize: 15,
+//             ),
+//           ),
+//           Column(
+//             children: [
+//               SizedBox(
+//                 height: 35,
+//                 child: Row(
+//                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                   children: [
+//                     Text(
+//                       dateTime == null
+//                           ? ""
+//                           : "${DateFormat('dd MMMM yyyy').format(dateTime)},${timeOfDay!.format(context)}",
+//                       style: TextStyle(
+//                         color: HexColor("#191919"),
+//                         fontStyle: FontStyle.normal,
+//                         fontWeight: FontWeight.w500,
+//                         fontSize: 16,
+//                       ),
+//                     ),
+//                     IconButton(
+//                       onPressed: () {
+//                         // setState(() {
+//                         DateTime? pickedDate;
+//                         TimeOfDay? pickedTime;
+//                         dateTime = pickedDate;
+//                         timeOfDay = pickedTime;
+//                         context.read<TaskConfigManager>().task.date =
+//                             pickedDate;
+//                         context.read<TaskConfigManager>().task.time =
+//                             pickedTime!;
+//                         // });
+//                       },
+//                       icon: Image(
+//                         image: const AssetImage(
+//                           'asset/task/calendar.png',
+//                         ),
+//                         height: 19.31,
+//                         width: 18,
+//                         color: HexColor("#191919"),
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//               const Divider(
+//                 color: Color.fromARGB(255, 208, 206, 206),
+//                 height: 20,
+//                 thickness: 1.8,
+//               ),
+//             ],
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
