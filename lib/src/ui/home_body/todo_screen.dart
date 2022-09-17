@@ -25,7 +25,6 @@ class TodoCardScreen extends StatelessWidget {
               },
               task: data[index],
               isFinished: isFinished(value),
-              index: index,
             ));
   }
 

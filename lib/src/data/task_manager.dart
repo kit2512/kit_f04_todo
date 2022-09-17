@@ -45,6 +45,11 @@ class TaskManager extends ChangeNotifier {
     notifyListeners();
   }
 
+  void updateTask2(Task task) {
+    tasks[tasks.indexOf(task)] = task;
+    notifyListeners();
+  }
+
   Task getTask(Task task) {
     return tasks[tasks.indexOf(task)];
   }

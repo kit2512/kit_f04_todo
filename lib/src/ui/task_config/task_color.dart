@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:demo_state_app/src/data/list_color.dart';
 import 'package:demo_state_app/src/data/task_config_controller.dart';
 import 'package:flutter/material.dart';
@@ -86,8 +84,6 @@ class TaskColor extends StatelessWidget {
           ),
         ],
       ),
-      // ],
-      // ),
     );
   }
 }
