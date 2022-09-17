@@ -30,6 +30,17 @@ class TaskConfig extends StatelessWidget {
       floatingActionButton: FloatingButton(
         isFull: true,
         onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            content: Text('saved'),
+            elevation: 15,
+            behavior: SnackBarBehavior.floating,
+            duration: Duration(seconds: 2),
+            // action: SnackBarAction(
+            //   label: 'UNDO',
+            //   onPressed: () {},
+            // ),
+          ));
+
           saveData(context);
           Navigator.pop(context);
         },
