@@ -35,7 +35,7 @@ class TodoCard extends StatelessWidget {
       onDismissed: onDismissed,
       key: ValueKey<Task>(task),
       child: SizedBox(
-        height: isFinished ? 130 : 180,
+        height: isFinished ? 130 : 190,
         child: Card(
           color: task.color,
           shape: RoundedRectangleBorder(
