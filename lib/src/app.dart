@@ -5,6 +5,7 @@ import 'package:demo_state_app/src/ui/task_config/task_level.dart';
 import 'package:demo_state_app/src/ui/task_config/task_name.dart';
 import 'package:demo_state_app/src/ui/task_config/task_place.dart';
 import 'package:flutter/material.dart';
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override

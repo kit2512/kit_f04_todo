@@ -42,7 +42,7 @@ class TaskConfig extends StatelessWidget {
           margin: const EdgeInsets.only(left: 10, right: 10),
           child: Column(
             children: [
-              TaskName(name: task.name),
+              TaskName(name: task.name!),
               const TaskColor(),
               TaskDate(
                 dateTime: task.date!,
