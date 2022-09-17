@@ -24,15 +24,15 @@ class TaskConfig extends StatelessWidget {
           child: Column(
             children: [
               TaskName(name: task.name),
-              TaskColor(
-                colorLists: colorList.colorLists,
-                onPressed: () {},
-              ),
+              // TaskColor(
+              //   colorLists: colorList.colorLists,
+              //   onPressed: () {},
+              // ),
               // const TaskDate(onTimeChanged: ),
-              TaskPlace(
-                place: "",
-                onPressed: () {},
-              ),
+              // TaskPlace(
+              //   place: "",
+              //   onPressed: () {},
+              // ),
               const TaskLevel(),
               const TasKButtonSave(),
             ],

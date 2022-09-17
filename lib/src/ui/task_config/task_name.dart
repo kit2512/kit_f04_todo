@@ -4,7 +4,6 @@ import 'package:hexcolor/hexcolor.dart';
 class TaskName extends StatefulWidget {
    String name;
    TaskName({required this.name,super.key});
-
   @override
   State<TaskName> createState() => _TaskNameState();
 }

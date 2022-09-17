@@ -20,4 +20,20 @@ class Task {
       this.isFinish = false})
       : date = date ?? DateTime.now(),
         time = time ?? TimeOfDay.now();
+  Task listTask({
+  String? name,
+  Color? color,
+  DateTime? date,
+  TimeOfDay? time,
+  String? place,
+  Level? level,}){
+    return Task(
+      name: name??this.name,
+      color: color??this.color,
+      date: date??this.date,
+      time: time??this.time,
+      place: place??this.place,
+      level: level??this.level,
+    );
+  }
 }

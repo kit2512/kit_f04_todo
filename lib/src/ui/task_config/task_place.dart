@@ -3,8 +3,8 @@ import 'package:hexcolor/hexcolor.dart';
 
 class TaskPlace extends StatelessWidget {
   final String place;
-  final Function() onPressed;
-  const TaskPlace({required this.place, required this.onPressed, super.key});
+  final Function(String) onPlaceChanged;
+  const TaskPlace({required this.place, required this.onPlaceChanged, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,9 @@ class TaskPlace extends StatelessWidget {
                   children: [
                     Text(place),
                     IconButton(
-                      onPressed: () => onPressed,
+                      onPressed: () {
+                        onPlaceChanged(place);
+                      },
                       icon: Icon(
                         Icons.place_outlined,
                         color: HexColor("#000000"),

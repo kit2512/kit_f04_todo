@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class TaskColor extends StatelessWidget {
-  final Function() onPressed;
+  final Function(Color) onColorsChanged;
   final List<Color> colorLists;
   const TaskColor(
-      {required this.colorLists, required this.onPressed, super.key});
+      {required this.colorLists, required this.onColorsChanged, super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -45,7 +45,9 @@ class TaskColor extends StatelessWidget {
                             maximumSize: const Size(22, 22),
                             minimumSize: const Size(22, 22),
                           ),
-                          onPressed: () => onPressed,
+                          onPressed: (){
+                            onColorsChanged(colorLists[index]);
+                          },
                           child: Container(
                             decoration: BoxDecoration(
                               color: colorLists[index],
