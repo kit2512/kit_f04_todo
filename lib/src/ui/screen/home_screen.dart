@@ -80,7 +80,7 @@ class _HomeScreen extends State<HomeScreen> {
                   ),
                   const Text(
                     "Here's Update Today",
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 30),
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 28),
                   ),
                 ],
               ),
