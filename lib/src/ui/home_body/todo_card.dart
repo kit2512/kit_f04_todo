@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:demo_state_app/src/data/task.dart';
 
 import 'package:flutter/material.dart';
@@ -7,22 +5,17 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 import '../../data/task_manager.dart';
-import '../screen/profile_screen.dart';
-import '../screen/task_screen.dart';
-
-import '../screen/task_screen.dart';
 
 import '../screen/task_screen.dart';
 
 class TodoCard extends StatelessWidget {
   const TodoCard(
       {Key? key,
-      required this.index,
       required this.task,
       required this.onDismissed,
       this.isFinished = false})
       : super(key: key);
-  final int index;
+
   final bool isFinished;
   final Task task;
   final Function(DismissDirection) onDismissed;
@@ -142,7 +135,7 @@ class TodoCard extends StatelessWidget {
                 checkColor: Colors.white,
                 activeColor: Colors.black,
                 value: task.isFinish,
-                onChanged: (value) => setFinished(task, context, value!, index),
+                onChanged: (value) => setFinished(task, context, value!),
               )
             ],
           )
@@ -151,8 +144,8 @@ class TodoCard extends StatelessWidget {
     }
   }
 
-  void setFinished(Task task, BuildContext context, bool value, int index) {
+  void setFinished(Task task, BuildContext context, bool value) {
     task.isFinish = value;
-    context.read<TaskManager>().updateTask(task, index);
+    context.read<TaskManager>().updateTask2(task);
   }
 }

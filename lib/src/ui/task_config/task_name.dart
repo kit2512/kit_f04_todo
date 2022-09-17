@@ -16,6 +16,7 @@ class TaskName extends StatelessWidget {
     //String data = name;
     final nameController = TextEditingController();
     nameController.text = name;
+    context.read<TaskConfigManager>().task.name = name;
     return Container(
       margin: const EdgeInsets.only(top: 20),
       child: Column(
@@ -34,7 +35,6 @@ class TaskName extends StatelessWidget {
             controller: nameController,
             onChanged: (value) {
               context.read<TaskConfigManager>().task.name = value;
-              log(context.read<TaskConfigManager>().task.name);
             },
             style: TextStyle(
               color: HexColor("#191919"),

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:demo_state_app/src/data/list_color.dart';
 import 'package:demo_state_app/src/data/task_config_controller.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +33,7 @@ class TaskColor extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - 70,
                   child: ListView.builder(
                     shrinkWrap: true,
-                    itemCount: colorLists.colorLists.length,
+                    itemCount: colorLists.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (BuildContext context, int index) {
                       return SizedBox(
@@ -44,22 +42,16 @@ class TaskColor extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             shadowColor: colorLists[index],
                             shape: const CircleBorder(),
-//                          backgroundColor: colorLists[index],
                             maximumSize: const Size(22, 22),
                             minimumSize: const Size(22, 22),
                           ),
                           onPressed: () {
                             context.read<TaskConfigManager>().task.color =
                                 colorLists[index];
-                            log(context
-                                .read<TaskConfigManager>()
-                                .task
-                                .color
-                                .toString());
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                              color: colorLists.colorLists[index],
+                              color: colorLists[index],
                               shape: BoxShape.circle,
                             ),
                             width: 23,
