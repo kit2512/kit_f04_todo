@@ -26,15 +26,13 @@ class TaskConfig extends StatelessWidget {
           child: Column(
             
             children: [
-<<<<<<< HEAD
-              TaskName(name: task!.name),
+              TaskName(name: task!.name!),
               TaskColor(color: task!.color),
               TaskDate(date: task!.date, time: task!.time),
-=======
               // IconButton(onPressed: (){
               //   log(task.name);
               // }, icon: Icon(Icons.find_in_page)),
-              TaskName(name: task.name),
+              TaskName(name: task!.name!),
               // TaskColor(
               //   colorLists: colorList.colorLists,
               //   onPressed: () {},
@@ -44,9 +42,8 @@ class TaskConfig extends StatelessWidget {
               //   place: "",
               //   onPressed: () {},
               // ),
->>>>>>> 70e83cf28874d5165586dfb4cf1304711d3e8da6
               const TaskLevel(),
-              const TasKButtonSave(),
+              // const TasKButtonSave(),
             ],
           ),
         ),

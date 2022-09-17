@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 enum Level { important, basic, urgent }
 
 class Task {
-  String name;
+  String? name;
   Color color;
   DateTime? date;
   TimeOfDay time;
@@ -11,7 +11,7 @@ class Task {
   String? place;
   Level level;
   Task(
-      {required this.name,
+      {this.name,
       this.color = Colors.white60,
       DateTime? date,
       TimeOfDay? time,
@@ -20,6 +20,7 @@ class Task {
       this.isFinish = false})
       : date = date ?? DateTime.now(),
         time = time ?? TimeOfDay.now();
+
   Task listTask({
   String? name,
   Color? color,

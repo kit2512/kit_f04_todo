@@ -77,7 +77,7 @@ class TodoCard extends StatelessWidget {
                     IconButton(
                       onPressed: () {
                         log('da an edit task');
-                        log(task.name);
+                        log(task.name!);
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
                           return TaskConfig(task: task);
@@ -91,7 +91,7 @@ class TodoCard extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  task.name,
+                  task.name!,
                   style: const TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.w500,
