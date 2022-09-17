@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:demo_state_app/src/data/task.dart';
 
 import 'package:flutter/material.dart';
@@ -5,6 +7,8 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 import '../../data/task_manager.dart';
+
+import '../screen/task_screen.dart';
 
 class TodoCard extends StatelessWidget {
   const TodoCard(
@@ -21,9 +25,16 @@ class TodoCard extends StatelessWidget {
     DateFormat dateFormat = DateFormat.yMMMMd('en_US');
 
     return Dismissible(
+      background: const Align(
+        child: Center(
+          child: Icon(
+            Icons.delete_forever_rounded,
+            size: 70,
+          ),
+        ),
+      ),
       onDismissed: onDismissed,
-      // key: ValueKey<Task>(task),
-      key: GlobalKey(),
+      key: ValueKey<Task>(task),
       child: SizedBox(
         height: isFinished ? 130 : 180,
         child: Card(
@@ -71,7 +82,12 @@ class TodoCard extends StatelessWidget {
                     ),
                     const Spacer(),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return TaskConfig(task: task);
+                        }));
+                      },
                       icon: const Icon(
                         Icons.mode_edit_outline_outlined,
                         size: 27,
