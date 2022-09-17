@@ -1,6 +1,9 @@
+import 'package:demo_state_app/src/data/task.dart';
 import 'package:flutter/material.dart';
 
 import 'package:demo_state_app/src/ui/home_body/home.dart';
+
+import 'task_screen.dart';
 
 class MyApp2 extends StatelessWidget {
   const MyApp2({Key? key}) : super(key: key);
@@ -32,8 +35,21 @@ class _HomeScreen extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton:
-          FloatingButton(title: 'add task', icon: const Icon(Icons.add_box)),
+      floatingActionButton: FloatingButton(
+          onPressed: () {
+            // setState(() {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return TaskConfig(
+                titleFloatingActionButton: 'Save Task',
+                titleAppBar: 'Add Task',
+                task: Task(name: ""),
+              );
+            }));
+            //}
+            //);
+          },
+          title: 'Add Task',
+          icon: const Icon(Icons.add_box)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       appBar: BuildAppBar(
           title: 'Task Manager',
@@ -81,7 +97,7 @@ class _HomeScreen extends State<HomeScreen> {
             ],
           ),
         ),
-         AppBarButton(),
+        AppBarButton(),
       ]),
     );
   }

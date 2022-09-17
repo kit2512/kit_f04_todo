@@ -10,13 +10,19 @@ import '../../data/task_manager.dart';
 import '../screen/profile_screen.dart';
 import '../screen/task_screen.dart';
 
+import '../screen/task_screen.dart';
+
+import '../screen/task_screen.dart';
+
 class TodoCard extends StatelessWidget {
   const TodoCard(
       {Key? key,
+      required this.index,
       required this.task,
       required this.onDismissed,
       this.isFinished = false})
       : super(key: key);
+  final int index;
   final bool isFinished;
   final Task task;
   final Function(DismissDirection) onDismissed;
@@ -25,9 +31,16 @@ class TodoCard extends StatelessWidget {
     DateFormat dateFormat = DateFormat.yMMMMd('en_US');
 
     return Dismissible(
+      background: const Align(
+        child: Center(
+          child: Icon(
+            Icons.delete_forever_rounded,
+            size: 70,
+          ),
+        ),
+      ),
       onDismissed: onDismissed,
-      // key: ValueKey<Task>(task),
-      key: GlobalKey(),
+      key: ValueKey<Task>(task),
       child: SizedBox(
         height: isFinished ? 130 : 180,
         child: Card(
@@ -76,11 +89,13 @@ class TodoCard extends StatelessWidget {
                     const Spacer(),
                     IconButton(
                       onPressed: () {
-                        log('da an edit task');
-                        log(task.name);
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
-                          return TaskConfig(task: task);
+                          return TaskConfig(
+                            titleFloatingActionButton: 'Save Task',
+                            task: task,
+                            titleAppBar: 'Edit Task',
+                          );
                         }));
                       },
                       icon: const Icon(
@@ -127,7 +142,7 @@ class TodoCard extends StatelessWidget {
                 checkColor: Colors.white,
                 activeColor: Colors.black,
                 value: task.isFinish,
-                onChanged: (value) => setFinished(task, context, value!),
+                onChanged: (value) => setFinished(task, context, value!, index),
               )
             ],
           )
@@ -136,8 +151,8 @@ class TodoCard extends StatelessWidget {
     }
   }
 
-  void setFinished(Task task, BuildContext context, bool value) {
+  void setFinished(Task task, BuildContext context, bool value, int index) {
     task.isFinish = value;
-    context.read<TaskManager>().updateTask(task);
+    context.read<TaskManager>().updateTask(task, index);
   }
 }
