@@ -35,32 +35,25 @@ class TaskColor extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - 70,
                   child: ListView.builder(
                     shrinkWrap: true,
-                    itemCount: colorLists.colorLists.length,
+                    itemCount: colorLists.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (BuildContext context, int index) {
-                      // if (index <= colorLists.length) {
                       return SizedBox(
                         height: 20,
                         child: OutlinedButton(
                           style: ElevatedButton.styleFrom(
                             shadowColor: colorLists[index],
                             shape: const CircleBorder(),
-//                          backgroundColor: colorLists[index],
                             maximumSize: const Size(22, 22),
                             minimumSize: const Size(22, 22),
                           ),
                           onPressed: () {
                             context.read<TaskConfigManager>().task.color =
                                 colorLists[index];
-                            log(context
-                                .read<TaskConfigManager>()
-                                .task
-                                .color
-                                .toString());
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                              color: colorLists.colorLists[index],
+                              color: colorLists[index],
                               shape: BoxShape.circle,
                             ),
                             width: 23,

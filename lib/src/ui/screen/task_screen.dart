@@ -31,6 +31,7 @@ class TaskConfig extends StatelessWidget {
         isFull: true,
         onPressed: () {
           saveData(context);
+          Navigator.pop(context);
         },
         title: titleFloatingActionButton,
       ),
@@ -65,7 +66,7 @@ class TaskConfig extends StatelessWidget {
       context.read<TaskManager>().addTask(task2);
     } else {
       int index = context.read<TaskManager>().getIndex(task);
-      log(index.toString());
+
       context.read<TaskManager>().updateTask(task2, index);
     }
     context.read<TaskConfigManager>().setDefault();
