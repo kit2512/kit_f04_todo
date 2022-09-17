@@ -1,5 +1,8 @@
-import 'package:flutter/material.dart';
+import 'dart:developer';
 
+import 'package:demo_state_app/src/data/task.dart';
+import 'package:flutter/material.dart';
+import 'package:demo_state_app/src/ui/screen/task_screen.dart';
 // ignore: must_be_immutable
 class FloatingButton extends StatelessWidget {
    FloatingButton({
@@ -12,7 +15,16 @@ class FloatingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton.extended(
-      onPressed: () {},
+      onPressed: () {
+        if (title.toLowerCase() == 'add task' ) {
+          //log('da an add task');
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return  TaskConfig(task: Task(name: ''),);
+                  }));
+        }
+
+
+      },
       label:  Text(
         title,
       ),
