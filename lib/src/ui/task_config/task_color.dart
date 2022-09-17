@@ -35,7 +35,7 @@ class TaskColor extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - 70,
                   child: ListView.builder(
                     shrinkWrap: true,
-                    itemCount: colorLists.colorLists.length,
+                    itemCount: colorLists.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (BuildContext context, int index) {
                       // if (index <= colorLists.length) {
@@ -60,7 +60,7 @@ class TaskColor extends StatelessWidget {
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                              color: colorLists.colorLists[index],
+                              color: colorLists[index],
                               shape: BoxShape.circle,
                             ),
                             width: 23,
