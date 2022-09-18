@@ -25,6 +25,9 @@ class TaskConfig extends StatelessWidget {
       super.key});
   @override
   Widget build(BuildContext context) {
+    Task task2;
+    context.read<TaskConfigManager>().task = task;
+    task2 = context.read<TaskConfigManager>().task;
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingButton(
@@ -53,14 +56,14 @@ class TaskConfig extends StatelessWidget {
           margin: const EdgeInsets.only(left: 10, right: 10),
           child: Column(
             children: [
-              TaskName(name: task.name),
+              TaskName(name: task2.name),
               const TaskColor(),
               TaskDate(
-                dateTime: task.date!,
-                timeOfDay: task.time,
+                dateTime: task2.date!,
+                timeOfDay: task2.time,
               ),
               TaskPlace(
-                place: task.place,
+                place: task2.place,
               ),
               const TaskLevel(),
             ],
@@ -71,8 +74,8 @@ class TaskConfig extends StatelessWidget {
   }
 
   void saveData(BuildContext context) {
-    Task task2 = context.read<TaskConfigManager>().getTask();
-
+    Task task2 = context.read<TaskConfigManager>().task;
+    log(task2.name + " con lom koh");
     if (titleAppBar == "Add Task") {
       context.read<TaskManager>().addTask(task2);
     } else {
