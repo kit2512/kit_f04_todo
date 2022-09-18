@@ -1,4 +1,3 @@
-import 'package:demo_state_app/src/app.dart';
 import 'package:flutter/material.dart';
 import 'package:demo_state_app/src/ui/screen/home_screen.dart';
 import 'package:splashscreen/splashscreen.dart';
@@ -9,6 +8,7 @@ class SplashScreenPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: SplashScreen(
         seconds: 4,
         navigateAfterSeconds: const HomeScreen(),

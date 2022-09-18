@@ -1,9 +1,6 @@
-import 'package:demo_state_app/src/data/task.dart';
 import 'package:demo_state_app/src/ui/screen/home_screen.dart';
-import 'package:demo_state_app/src/ui/screen/task_screen.dart';
-import 'package:demo_state_app/src/ui/task_config/task_level.dart';
-import 'package:demo_state_app/src/ui/task_config/task_name.dart';
-import 'package:demo_state_app/src/ui/task_config/task_place.dart';
+import 'package:demo_state_app/src/ui/screen/splash_screen.dart';
+
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -11,8 +8,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
-      home: HomeScreen(),
+      home: SplashScreenPage(),
     );
   }
 }

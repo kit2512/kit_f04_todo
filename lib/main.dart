@@ -16,6 +16,6 @@ void main() {
         create: (context) => TaskConfigManager(),
       )
     ],
-    child: const SplashScreenPage(),
+    child: const MyApp(),
   ));
 }
