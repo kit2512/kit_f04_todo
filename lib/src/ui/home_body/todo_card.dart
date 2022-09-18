@@ -97,7 +97,7 @@ class TodoCard extends StatelessWidget {
                 ],
               ),
               Text(
-                task.name,
+                task.name!,
                 style: const TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.w500,
