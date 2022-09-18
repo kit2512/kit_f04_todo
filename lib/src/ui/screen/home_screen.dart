@@ -5,35 +5,12 @@ import 'package:demo_state_app/src/ui/home_body/home.dart';
 
 import 'task_screen.dart';
 
-class MyApp2 extends StatelessWidget {
-  const MyApp2({Key? key}) : super(key: key);
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomeScreen(),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
-
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  State<HomeScreen> createState() => _HomeScreen();
-}
-
-class _HomeScreen extends State<HomeScreen> {
-  @override
-  Widget build(BuildContext context) {
+    Task task = Task(name: "");
     return Scaffold(
       floatingActionButton: FloatingButton(
           onPressed: () {
@@ -41,8 +18,8 @@ class _HomeScreen extends State<HomeScreen> {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
               return TaskConfig(
                 titleFloatingActionButton: 'Save Task',
+                task: task,
                 titleAppBar: 'Add Task',
-                task: Task(name: ""),
               );
             }));
             //}

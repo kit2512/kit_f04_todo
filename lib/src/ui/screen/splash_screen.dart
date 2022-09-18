@@ -11,7 +11,7 @@ class SplashScreenPage extends StatelessWidget {
     return MaterialApp(
       home: SplashScreen(
         seconds: 4,
-        navigateAfterSeconds: const MyApp2(),
+        navigateAfterSeconds: const HomeScreen(),
         backgroundColor: const Color.fromARGB(255, 248, 187, 218),
         title: const Text(
           'welcome to To Do app',
