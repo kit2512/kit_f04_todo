@@ -34,9 +34,13 @@ class TaskName extends StatelessWidget {
           ),
           TextField(
             controller: nameController,
+            onChanged: (value) {
+              context.read<TaskConfigManager>().task.name = value;
+            },
             onSubmitted: (value) {
               context.read<TaskConfigManager>().task.name = value;
             },
+
             style: TextStyle(
               color: HexColor("#191919"),
               fontStyle: FontStyle.normal,
