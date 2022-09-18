@@ -34,80 +34,77 @@ class TodoCard extends StatelessWidget {
       ),
       onDismissed: onDismissed,
       key: ValueKey<Task>(task),
-      child: SizedBox(
-        height: isFinished ? 130 : 190,
-        child: Card(
-          color: task.color,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Padding(
-            padding:
-                const EdgeInsets.only(left: 30, top: 10, right: 15, bottom: 15),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    OutlinedButton(
-                      style: OutlinedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        //backgroundColor: backgroundColor,
+      child: Card(
+        color: task.color,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Padding(
+          padding:
+              const EdgeInsets.only(left: 30, top: 10, right: 15, bottom: 15),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                      onPressed: () {},
-                      child: const Text(
-                        "School",
-                        style: TextStyle(color: Colors.black),
-                      ),
+                      //backgroundColor: backgroundColor,
                     ),
-                    const SizedBox(
-                      width: 15,
+                    onPressed: () {},
+                    child: const Text(
+                      "School",
+                      style: TextStyle(color: Colors.black),
                     ),
-                    OutlinedButton(
-                      style: OutlinedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        //backgroundColor: backgroundColor,
-                      ),
-                      onPressed: () {},
-                      child: const Text(
-                        "Everyday",
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ),
-                    const Spacer(),
-                    IconButton(
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return TaskConfig(
-                            titleFloatingActionButton: 'Save Task',
-                            task: task,
-                            titleAppBar: 'Edit Task',
-                          );
-                        }));
-                      },
-                      icon: const Icon(
-                        Icons.mode_edit_outline_outlined,
-                        size: 27,
-                      ),
-                    )
-                  ],
-                ),
-                Text(
-                  task.name,
-                  style: const TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w500,
                   ),
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      //backgroundColor: backgroundColor,
+                    ),
+                    onPressed: () {},
+                    child: const Text(
+                      "Everyday",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                  const Spacer(),
+                  IconButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return TaskConfig(
+                          titleFloatingActionButton: 'Save Task',
+                          task: task,
+                          titleAppBar: 'Edit Task',
+                        );
+                      }));
+                    },
+                    icon: const Icon(
+                      Icons.mode_edit_outline_outlined,
+                      size: 27,
+                    ),
+                  )
+                ],
+              ),
+              Text(
+                task.name,
+                style: const TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w500,
                 ),
-                buildUnFinished(context, dateFormat)
-              ],
-            ),
+              ),
+              buildUnFinished(context, dateFormat)
+            ],
           ),
         ),
       ),
