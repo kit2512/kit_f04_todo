@@ -1,7 +1,7 @@
 import 'package:demo_state_app/src/app.dart';
 import 'package:flutter/material.dart';
-import 'package:splashscreen/splashscreen.dart';
 import 'package:demo_state_app/src/ui/screen/home_screen.dart';
+import 'package:splashscreen/splashscreen.dart';
 
 class SplashScreenPage extends StatelessWidget {
   const SplashScreenPage({Key? key}) : super(key: key);
@@ -11,7 +11,7 @@ class SplashScreenPage extends StatelessWidget {
     return MaterialApp(
       home: SplashScreen(
         seconds: 4,
-        navigateAfterSeconds:  const MyApp2(),
+        navigateAfterSeconds: const MyApp2(),
         backgroundColor: const Color.fromARGB(255, 248, 187, 218),
         title: const Text(
           'welcome to To Do app',

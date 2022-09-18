@@ -42,8 +42,7 @@ class TodoCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
           ),
           child: Padding(
-            padding:
-                const EdgeInsets.only(left: 30, top: 10, right: 15, bottom: 15),
+            padding: const EdgeInsets.only(left: 30, top: 10, right: 15),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
