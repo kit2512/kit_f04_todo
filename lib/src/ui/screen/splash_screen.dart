@@ -7,36 +7,33 @@ class SplashScreenPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SplashScreen(
-        seconds: 4,
-        navigateAfterSeconds: const HomeScreen(),
-        backgroundColor: const Color.fromARGB(255, 248, 187, 218),
-        title: const Text(
-          'welcome to To Do app',
-          textScaleFactor: 2,
-        ),
-
-        image: Image.network(
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBp2FIyQApYfUL0xNZjDOl9k_LqZtE-Hd8lA&usqp=CAU'),
-
-        loadingText: const Text("Loading"),
-        photoSize: 50.0,
-        loaderColor: const Color.fromARGB(255, 186, 172, 181),
-        // ignore: prefer_const_constructors
-        // gradientBackground: LinearGradient(
-        //   begin: Alignment.topLeft,
-        //   end: Alignment.bottomRight,
-        //   // stops: const [0.5, 5, 7, 9],
-        //   colors: const [
-        //     Colors.blueGrey,
-        //     Colors.greenAccent,
-        //     Colors.lightGreen,
-        //     Colors.teal,
-        //   ],
-        // ),
+    return SplashScreen(
+      seconds: 4,
+      navigateAfterSeconds: const HomeScreen(),
+      backgroundColor: const Color.fromARGB(255, 248, 187, 218),
+      title: const Text(
+        'welcome to To Do app',
+        textScaleFactor: 2,
       ),
+
+      image: Image.network(
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBp2FIyQApYfUL0xNZjDOl9k_LqZtE-Hd8lA&usqp=CAU'),
+
+      loadingText: const Text("Loading"),
+      photoSize: 50.0,
+      loaderColor: const Color.fromARGB(255, 186, 172, 181),
+      // ignore: prefer_const_constructors
+      // gradientBackground: LinearGradient(
+      //   begin: Alignment.topLeft,
+      //   end: Alignment.bottomRight,
+      //   // stops: const [0.5, 5, 7, 9],
+      //   colors: const [
+      //     Colors.blueGrey,
+      //     Colors.greenAccent,
+      //     Colors.lightGreen,
+      //     Colors.teal,
+      //   ],
+      // ),
     );
   }
 }
