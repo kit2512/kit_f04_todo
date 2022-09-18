@@ -75,7 +75,7 @@ class TaskConfig extends StatelessWidget {
 
   void saveData(BuildContext context) {
     Task task2 = context.read<TaskConfigManager>().task;
-    log(task2.name + " con lom koh");
+
     if (titleAppBar == "Add Task") {
       context.read<TaskManager>().addTask(task2);
     } else {
