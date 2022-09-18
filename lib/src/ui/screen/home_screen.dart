@@ -1,13 +1,10 @@
 import 'package:demo_state_app/src/data/task.dart';
 import 'package:flutter/material.dart';
-
 import 'package:demo_state_app/src/ui/home_body/home.dart';
-
 import 'task_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     Task task = Task(name: "");

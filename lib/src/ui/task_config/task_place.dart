@@ -16,6 +16,7 @@ class TaskPlace extends StatelessWidget {
           Text(
             "Place",
             style: TextStyle(
+              fontFamily: "Roboto",
               color: HexColor("#B6B6B6"),
               fontStyle: FontStyle.normal,
               fontWeight: FontWeight.w500,
@@ -29,7 +30,15 @@ class TaskPlace extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(place),
+                    Text(
+                      place,
+                      style: const TextStyle(
+                        fontFamily: "Roboto",
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
                     IconButton(
                       onPressed: () {},
                       icon: Icon(

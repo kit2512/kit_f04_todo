@@ -14,13 +14,16 @@ class SplashScreenPage extends StatelessWidget {
         navigateAfterSeconds: const HomeScreen(),
         backgroundColor: const Color.fromARGB(255, 248, 187, 218),
         title: const Text(
-          'welcome to To Do app',
+          'welcome to To-Do app',
           textScaleFactor: 2,
+          style:  TextStyle(
+            color: Colors.black,
+            fontFamily: "Roboto",
+            fontWeight: FontWeight.w500,
+          ),
         ),
-
         image: Image.network(
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBp2FIyQApYfUL0xNZjDOl9k_LqZtE-Hd8lA&usqp=CAU'),
-
         loadingText: const Text("Loading"),
         photoSize: 50.0,
         loaderColor: const Color.fromARGB(255, 186, 172, 181),

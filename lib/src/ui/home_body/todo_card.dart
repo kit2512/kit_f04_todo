@@ -58,7 +58,11 @@ class TodoCard extends StatelessWidget {
                     onPressed: () {},
                     child: const Text(
                       "School",
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontFamily: "Roboto",
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                   const SizedBox(

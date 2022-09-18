@@ -32,7 +32,11 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       title: Text(
         title,
-        style: const TextStyle(color: Colors.black),
+        style: const TextStyle(
+            color: Colors.black,
+            fontFamily: "Roboto",
+            fontWeight: FontWeight.w500,
+            fontSize: 18),
       ),
       backgroundColor: Colors.white,
       actions: suffixIcon != null

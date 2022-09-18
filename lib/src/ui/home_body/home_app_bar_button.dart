@@ -42,11 +42,13 @@ class AppBarButton extends StatelessWidget {
     return Container(
         width: 80,
         decoration: BoxDecoration(
-          color: selectedIndex == index ? Colors.black : Colors.white,
-          borderRadius: BorderRadius.circular(20),
+          color: selectedIndex == index
+              ? Colors.black
+              : Color.fromARGB(255, 255, 250, 250),
+          borderRadius: BorderRadius.circular(38.5),
         ),
-        padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
-        margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
+        padding: const EdgeInsets.fromLTRB(0, 5, 0, 5),
+        margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
         child: TextButton(
           onPressed: () {
             selectedIndex = index;
@@ -55,7 +57,10 @@ class AppBarButton extends StatelessWidget {
           child: Text(
             appBarButton[index],
             style: TextStyle(
-                color: selectedIndex == index ? Colors.white : Colors.black),
+              color: selectedIndex == index ? Colors.white : Colors.black,
+              fontFamily: "Roboto",
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ));
   }

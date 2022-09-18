@@ -4,10 +4,10 @@ import 'task.dart';
 
 class TaskManager extends ChangeNotifier {
   List<Task> tasks = [
-    Task(name: "Hello! I am Linh", isFinish: true),
-    Task(name: "Hello! I am Mai"),
-    Task(name: "Hello! I am Vu"),
-    Task(name: "Hello! I am Trang")
+    // Task(name: "Hello! I am Linh", isFinish: true),
+    // Task(name: "Hello! I am Mai"),
+    // Task(name: "Hello! I am Vu"),
+    // Task(name: "Hello! I am Trang")
   ];
 
   //List<Task> tasks = [];
@@ -53,6 +53,7 @@ class TaskManager extends ChangeNotifier {
   Task getTask(Task task) {
     return tasks[tasks.indexOf(task)];
   }
+
   // int getIndex(Task task) {
   //   return tasks.indexOf(task);
   // }

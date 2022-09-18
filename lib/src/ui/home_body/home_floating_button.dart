@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:demo_state_app/src/ui/screen/task_screen.dart';
+
 // ignore: must_be_immutable
 class FloatingButton extends StatelessWidget {
   const FloatingButton(
@@ -21,6 +22,11 @@ class FloatingButton extends StatelessWidget {
         onPressed: onPressed,
         label: Text(
           title,
+          style: const TextStyle(
+            color: Colors.white,
+            fontFamily: "Roboto",
+            fontWeight: FontWeight.w500,
+          ),
         ),
         icon: icon ?? icon,
         backgroundColor: Colors.black,
@@ -33,6 +39,11 @@ class FloatingButton extends StatelessWidget {
             onPressed: onPressed,
             label: Text(
               title,
+              style: const TextStyle(
+                color: Colors.white,
+                fontFamily: "Roboto",
+                fontWeight: FontWeight.w500,
+              ),
             ),
             icon: icon ?? icon,
             backgroundColor: Colors.black,

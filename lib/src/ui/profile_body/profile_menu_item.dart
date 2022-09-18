@@ -32,6 +32,7 @@ class ProfileMenuItem extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
+                      fontFamily: 'Roboto',
                       color: Colors.black),
                 )
               ],
