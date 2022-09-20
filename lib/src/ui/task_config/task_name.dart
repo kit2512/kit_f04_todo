@@ -37,7 +37,7 @@ class TaskName extends StatelessWidget {
             onChanged: (value) {
               context.read<TaskConfigManager>().task.name = value;
             },
-            onSaved: (value) {
+            onFieldSubmitted: (value) {
               context.read<TaskConfigManager>().task.name = value;
             },
             autovalidateMode: AutovalidateMode.always,

@@ -34,7 +34,7 @@ class _TaskLevelState extends State<TaskLevel> {
               SizedBox(
                 height: 45,
                 child: ListView.builder(
-                  itemBuilder: (context, index) => buildTaskLevel(index),
+                  itemBuilder: (context, index) => buttonTaskLevel(index),
                   itemCount: taskLevel.length,
                   scrollDirection: Axis.horizontal,
                 ),
@@ -75,5 +75,24 @@ class _TaskLevelState extends State<TaskLevel> {
         ),
       ),
     );
+  }
+
+  Widget buttonTaskLevel(int index) {
+    return IconButton(
+        onPressed: () {
+          setState(() {
+            selectedIndex = index;
+          });
+        },
+        icon: Chip(
+          label: Text(
+            taskLevel[index],
+            style: TextStyle(
+                color: selectedIndex == index ? Colors.white : Colors.black),
+          ),
+          backgroundColor: selectedIndex == index
+              ? Colors.black
+              : Color.fromARGB(255, 255, 250, 250),
+        ));
   }
 }
