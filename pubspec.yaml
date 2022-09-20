@@ -36,7 +36,7 @@ dependencies:
   http: ^0.13.5
   intl: ^0.17.0
   provider: ^6.0.3
-  splashscreen: ^1.3.5
+  easy_splash_screen:
 
 
 dev_dependencies:
@@ -64,6 +64,7 @@ flutter:
     - asset/profile/
     - asset/icon/
     - asset/task/
+    - asset/wallpaper/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see

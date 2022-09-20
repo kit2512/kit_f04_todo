@@ -1,39 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:demo_state_app/src/ui/screen/home_screen.dart';
-import 'package:splashscreen/splashscreen.dart';
+import 'package:easy_splash_screen/easy_splash_screen.dart';
 
 class SplashScreenPage extends StatelessWidget {
   const SplashScreenPage({Key? key}) : super(key: key);
 
+  Future<Widget> futureCall() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return Future.value(const HomeScreen());
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SplashScreen(
-      seconds: 4,
-      navigateAfterSeconds: const HomeScreen(),
-      backgroundColor: const Color.fromARGB(255, 248, 187, 218),
+    return EasySplashScreen(
+      logo: Image.network(
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBp2FIyQApYfUL0xNZjDOl9k_LqZtE-Hd8lA&usqp=CAU'),
+      backgroundColor: const Color.fromARGB(255, 186, 172, 181),
+      backgroundImage: const NetworkImage(
+          'https://mir-s3-cdn-cf.behance.net/project_modules/disp/496ecb14589707.562865d064f9e.png'),
+
+      durationInSeconds: 3,
+      loadingText: const Text("Loading..."),
       title: const Text(
         'welcome to To Do app',
         textScaleFactor: 2,
       ),
-
-      image: Image.network(
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBp2FIyQApYfUL0xNZjDOl9k_LqZtE-Hd8lA&usqp=CAU'),
-
-      loadingText: const Text("Loading"),
-      photoSize: 50.0,
-      loaderColor: const Color.fromARGB(255, 186, 172, 181),
-      // ignore: prefer_const_constructors
-      // gradientBackground: LinearGradient(
-      //   begin: Alignment.topLeft,
-      //   end: Alignment.bottomRight,
-      //   // stops: const [0.5, 5, 7, 9],
-      //   colors: const [
-      //     Colors.blueGrey,
-      //     Colors.greenAccent,
-      //     Colors.lightGreen,
-      //     Colors.teal,
-      //   ],
-      // ),
+// navigator: const HomeScreen(),
+      futureNavigator: futureCall(),
     );
   }
 }
