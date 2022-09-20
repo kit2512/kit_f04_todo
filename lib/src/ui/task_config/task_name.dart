@@ -32,15 +32,21 @@ class TaskName extends StatelessWidget {
               fontSize: 15,
             ),
           ),
-          TextField(
+          TextFormField(
             controller: nameController,
             onChanged: (value) {
               context.read<TaskConfigManager>().task.name = value;
             },
-            onSubmitted: (value) {
+            onSaved: (value) {
               context.read<TaskConfigManager>().task.name = value;
             },
-
+            autovalidateMode: AutovalidateMode.always,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
             style: TextStyle(
               color: HexColor("#191919"),
               fontStyle: FontStyle.normal,

@@ -41,7 +41,7 @@ class TaskColor extends StatelessWidget {
                         height: 20,
                         child: OutlinedButton(
                           style: ElevatedButton.styleFrom(
-                            primary: colorLists[index],
+                            backgroundColor: colorLists[index],
                             shadowColor: colorLists[index],
                             shape: const CircleBorder(),
                             maximumSize: const Size(22, 22),
@@ -50,7 +50,7 @@ class TaskColor extends StatelessWidget {
                           onPressed: () {
                             context.read<TaskConfigManager>().task.color =
                                 colorLists[index];
-                          },
+                            },
                           child: Container(
                             decoration: BoxDecoration(
                               color: colorLists[index],
