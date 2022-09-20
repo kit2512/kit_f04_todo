@@ -7,10 +7,22 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
-      home: SplashScreenPage(),
+      theme: ThemeData(
+        
+scaffoldBackgroundColor: Colors.white,
+backgroundColor: Colors.white,
+fontFamily: 'Roboto',
+    appBarTheme: const AppBarTheme(
+  backgroundColor: Colors.white,
+  centerTitle: true,
+
+    ),
+
+      ),
+      home: const SplashScreenPage(),
     );
   }
 }
