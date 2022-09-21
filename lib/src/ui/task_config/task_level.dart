@@ -1,4 +1,3 @@
-import 'package:demo_state_app/src/ui/home_body/home.dart';
 import 'package:demo_state_app/src/ui/task_config/button_task.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -38,7 +37,7 @@ class _TaskLevelState extends State<TaskLevel> {
                   itemBuilder: (context, index) => ButtonTask(
                     index: index,
                     selectedIndex: selectedIndex,
-                    taskLevel: taskLevel,
+                    listButton: taskLevel,
                     onPressed: () {
                       setState(() {
                         selectedIndex = index;
@@ -87,45 +86,45 @@ class _TaskLevelState extends State<TaskLevel> {
   //   );
   // }
 
-  Widget buttonTaskLevel(int index, List<String> taskLevel) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.3,
-      child: TextButton(
-          style: ButtonStyle(
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
-              ),
-            ),
-          ),
-          onPressed: () {
-            setState(() {
-              selectedIndex = index;
-            });
-          },
-          child: Container(
-            width: 180,
-            decoration: BoxDecoration(
-              color: selectedIndex == index
-                  ? Colors.black
-                  : Color.fromARGB(255, 255, 250, 250),
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: Chip(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(38.5),
-              ),
-              label: Text(
-                taskLevel[index],
-                style: TextStyle(
-                    color: selectedIndex == index ? Colors.white : Colors.black,
-                    fontSize: 16),
-              ),
-              backgroundColor: selectedIndex == index
-                  ? Colors.black
-                  : Color.fromARGB(255, 255, 250, 250),
-            ),
-          )),
-    );
-  }
+  // Widget buttonTaskLevel(int index, List<String> taskLevel) {
+  //   return SizedBox(
+  //     width: MediaQuery.of(context).size.width * 0.3,
+  //     child: TextButton(
+  //         style: ButtonStyle(
+  //           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+  //             RoundedRectangleBorder(
+  //               borderRadius: BorderRadius.circular(30),
+  //             ),
+  //           ),
+  //         ),
+  //         onPressed: () {
+  //           setState(() {
+  //             selectedIndex = index;
+  //           });
+  //         },
+  //         child: Container(
+  //           width: 180,
+  //           decoration: BoxDecoration(
+  //             color: selectedIndex == index
+  //                 ? Colors.black
+  //                 : Color.fromARGB(255, 255, 250, 250),
+  //             borderRadius: BorderRadius.circular(30),
+  //           ),
+  //           child: Chip(
+  //             shape: RoundedRectangleBorder(
+  //               borderRadius: BorderRadius.circular(38.5),
+  //             ),
+  //             label: Text(
+  //               taskLevel[index],
+  //               style: TextStyle(
+  //                   color: selectedIndex == index ? Colors.white : Colors.black,
+  //                   fontSize: 16),
+  //             ),
+  //             backgroundColor: selectedIndex == index
+  //                 ? Colors.black
+  //                 : Color.fromARGB(255, 255, 250, 250),
+  //           ),
+  //         )),
+  //   );
+  // }
 }

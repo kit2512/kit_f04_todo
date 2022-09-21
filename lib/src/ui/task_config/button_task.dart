@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
  class ButtonTask extends StatelessWidget {
   final int index;
   final int selectedIndex;
-  final List<String> taskLevel;
+  final List<String> listButton;
   final Function() onPressed;
   const ButtonTask({
     required this.index,
     required this.selectedIndex,
-    required this.taskLevel,
+    required this.listButton,
     required this.onPressed,
     super.key});
   @override
@@ -37,7 +37,7 @@ import 'package:flutter/material.dart';
                 borderRadius: BorderRadius.circular(38.5),
               ),
               label: Text(
-                taskLevel[index],
+                listButton[index],
                 style: TextStyle(
                     color: selectedIndex == index ? Colors.white : Colors.black,
                     fontSize: 16),
