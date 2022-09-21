@@ -13,7 +13,7 @@ class TaskConfig extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Task task2;
-    context.read<TaskConfigManager>().task = task;
+    //context.read<TaskConfigManager>().task = task;
     task2 = context.read<TaskConfigManager>().task;
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
