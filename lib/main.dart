@@ -7,15 +7,5 @@ import 'package:provider/provider.dart';
 import 'src/data/task_config_controller.dart';
 
 void main() {
-  runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider(
-        create: (context) => TaskManager(),
-      ),
-      ChangeNotifierProvider(
-        create: (context) => TaskConfigManager(),
-      )
-    ],
-    child: const MyApp(),
-  ));
+  runApp(const MyApp());
 }

@@ -27,11 +27,11 @@ class AppBarButton extends StatelessWidget {
                 }),
           ),
           SizedBox(
-            height: 1570.h,
+            height: 1500.h,
             width: 1000.w,
             child: TodoCardScreen(
-              value: context.watch<TaskManager>().index,
-            ),
+                // value: context.watch<TaskManager>().index,
+                ),
           )
         ],
       ),
@@ -52,7 +52,7 @@ class AppBarButton extends StatelessWidget {
         child: TextButton(
           onPressed: () {
             selectedIndex = index;
-            context.read<TaskManager>().updateIndex(selectedIndex);
+            //context.read<TaskManager>().updateIndex(selectedIndex);
           },
           child: Text(
             appBarButton[index],

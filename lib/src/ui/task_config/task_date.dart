@@ -88,9 +88,9 @@ class _TaskDateState extends State<TaskDate> {
                           initialTime: TimeOfDay.now(),
                         );
                         // ignore: use_build_context_synchronously
-                        context.read<TaskConfigManager>().setDateTime(
-                            pickedDate ?? DateTime.now(),
-                            pickedTime ?? TimeOfDay.now());
+                        // context.read<TaskConfigManager>().setDateTime(
+                        //     pickedDate ?? DateTime.now(),
+                        //     pickedTime ?? TimeOfDay.now());
                         setState(() {
                           _timeOfDay = pickedTime;
                           _dateTime = pickedDate;

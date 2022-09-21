@@ -9,7 +9,8 @@ class TodoCardScreen extends StatelessWidget {
   final int value;
   @override
   Widget build(BuildContext context) {
-    List data = context.watch<TaskManager>().getData(context);
+    // List data = context.watch<TaskManager>().getData(context);
+    List data = [];
     if (data.isEmpty) return buildNoData();
     return ListView.separated(
         reverse: false,
@@ -21,7 +22,7 @@ class TodoCardScreen extends StatelessWidget {
         itemCount: data.length,
         itemBuilder: (context, index) => TodoCard(
               onDismissed: (_) {
-                context.read<TaskManager>().removeTask(data[index]);
+                //context.read<TaskManager>().removeTask(data[index]);
               },
               task: data[index],
               isFinished: isFinished(value),
