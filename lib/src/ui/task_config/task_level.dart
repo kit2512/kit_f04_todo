@@ -1,4 +1,5 @@
 import 'package:demo_state_app/src/ui/home_body/home.dart';
+import 'package:demo_state_app/src/ui/task_config/button_task.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -32,9 +33,18 @@ class _TaskLevelState extends State<TaskLevel> {
           Column(
             children: [
               SizedBox(
-                height: 45,
+                height: MediaQuery.of(context).size.height * 0.06,
                 child: ListView.builder(
-                  itemBuilder: (context, index) => buttonTaskLevel(index),
+                  itemBuilder: (context, index) => ButtonTask(
+                    index: index,
+                    selectedIndex: selectedIndex,
+                    taskLevel: taskLevel,
+                    onPressed: () {
+                      setState(() {
+                        selectedIndex = index;
+                      });
+                    },
+                  ),
                   itemCount: taskLevel.length,
                   scrollDirection: Axis.horizontal,
                 ),
@@ -51,48 +61,71 @@ class _TaskLevelState extends State<TaskLevel> {
     );
   }
 
-  Widget buildTaskLevel(int index) {
-    return Container(
-      width: 80,
-      decoration: BoxDecoration(
-        color: selectedIndex == index
-            ? Colors.black
-            : Color.fromARGB(255, 255, 250, 250),
-        borderRadius: BorderRadius.circular(20),
-      ),
-      padding: const EdgeInsets.fromLTRB(0, 5, 0, 5),
-      margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-      child: TextButton(
-        onPressed: () {
-          setState(() {
-            selectedIndex = index;
-          });
-        },
-        child: Text(
-          taskLevel[index],
-          style: TextStyle(
-              color: selectedIndex == index ? Colors.white : Colors.black),
-        ),
-      ),
-    );
-  }
+  // Widget buildTaskLevel(int index) {
+  //   return Container(
+  //     width: 80,
+  //     decoration: BoxDecoration(
+  //       color: selectedIndex == index
+  //           ? Colors.black
+  //           : Color.fromARGB(255, 255, 250, 250),
+  //       borderRadius: BorderRadius.circular(20),
+  //     ),
+  //     padding: const EdgeInsets.fromLTRB(0, 5, 0, 5),
+  //     margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+  //     child: TextButton(
+  //       onPressed: () {
+  //         setState(() {
+  //           selectedIndex = index;
+  //         });
+  //       },
+  //       child: Text(
+  //         taskLevel[index],
+  //         style: TextStyle(
+  //             color: selectedIndex == index ? Colors.white : Colors.black),
+  //       ),
+  //     ),
+  //   );
+  // }
 
-  Widget buttonTaskLevel(int index) {
-    return IconButton(
-        onPressed: () {
-          setState(() {
-            selectedIndex = index;
-          });
-        },
-        icon: Chip(
-          label: Text(
-            taskLevel[index],
-            style: TextStyle(
-                color: selectedIndex == index ? Colors.white : Colors.black),
+  Widget buttonTaskLevel(int index, List<String> taskLevel) {
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.3,
+      child: TextButton(
+          style: ButtonStyle(
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+            ),
           ),
-          backgroundColor: selectedIndex == index
-              ? Colors.black
-              : Color.fromARGB(255, 255, 250, 250),
-        ));
+          onPressed: () {
+            setState(() {
+              selectedIndex = index;
+            });
+          },
+          child: Container(
+            width: 180,
+            decoration: BoxDecoration(
+              color: selectedIndex == index
+                  ? Colors.black
+                  : Color.fromARGB(255, 255, 250, 250),
+              borderRadius: BorderRadius.circular(30),
+            ),
+            child: Chip(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(38.5),
+              ),
+              label: Text(
+                taskLevel[index],
+                style: TextStyle(
+                    color: selectedIndex == index ? Colors.white : Colors.black,
+                    fontSize: 16),
+              ),
+              backgroundColor: selectedIndex == index
+                  ? Colors.black
+                  : Color.fromARGB(255, 255, 250, 250),
+            ),
+          )),
+    );
   }
 }

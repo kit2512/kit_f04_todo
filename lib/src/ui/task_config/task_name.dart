@@ -15,7 +15,7 @@ class TaskName extends StatelessWidget {
   Widget build(BuildContext context) {
     //String data = name;
     final nameController = TextEditingController();
-    nameController.text = name;
+    // nameController.text = name;
 
     return Container(
       margin: const EdgeInsets.only(top: 20),
@@ -34,9 +34,9 @@ class TaskName extends StatelessWidget {
           ),
           TextFormField(
             controller: nameController,
-            onChanged: (value) {
-              context.read<TaskConfigManager>().task.name = value;
-            },
+            // onChanged: (value) {
+            //   context.read<TaskConfigManager>().task.name = value;
+            // },
             onFieldSubmitted: (value) {
               context.read<TaskConfigManager>().task.name = value;
             },
