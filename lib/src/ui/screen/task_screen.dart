@@ -1,5 +1,5 @@
 import 'screen.dart';
-import'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 class TaskConfig extends StatelessWidget {
   final Task task;
@@ -12,9 +12,9 @@ class TaskConfig extends StatelessWidget {
       super.key});
   @override
   Widget build(BuildContext context) {
-    Task task2;
-    //context.read<TaskConfigManager>().task = task;
-    task2 = context.read<TaskConfigManager>().task;
+    // Task task2;
+    // context.read<TaskConfigManager>().task = task;
+    // task2 = context.read<TaskConfigManager>().task;
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingButton(
@@ -31,7 +31,7 @@ class TaskConfig extends StatelessWidget {
             // ),
           ));
 
-          saveData(context);
+          //saveData(context);
           Navigator.pop(context);
         },
         title: titleFloatingActionButton,
@@ -43,14 +43,14 @@ class TaskConfig extends StatelessWidget {
           margin: const EdgeInsets.only(left: 10, right: 10),
           child: Column(
             children: [
-              TaskName(name: task2.name!),
+              TaskName(name: task.name ?? ""),
               const TaskColor(),
               TaskDate(
-                dateTime: task2.date!,
-                timeOfDay: task2.time,
+                dateTime: task.date!,
+                timeOfDay: task.time,
               ),
               TaskPlace(
-                place: task2.place,
+                place: task.place,
               ),
               const TaskLevel(),
             ],
@@ -60,16 +60,16 @@ class TaskConfig extends StatelessWidget {
     );
   }
 
-  void saveData(BuildContext context) {
-    Task task2 = context.read<TaskConfigManager>().task;
+//   void saveData(BuildContext context) {
+//     Task task2 = context.read<TaskConfigManager>().task;
 
-    if (titleAppBar == "Add Task") {
-      context.read<TaskManager>().addTask(task2);
-    } else {
-      int index = context.read<TaskManager>().getIndex(task);
-      task2.isFinish = task.isFinish;
-      context.read<TaskManager>().updateTask(task2, index);
-    }
-    context.read<TaskConfigManager>().setDefault();
-  }
+//     if (titleAppBar == "Add Task") {
+//       context.read<TaskManager>().addTask(task2);
+//     } else {
+//       int index = context.read<TaskManager>().getIndex(task);
+//       task2.isFinish = task.isFinish;
+//       context.read<TaskManager>().updateTask(task2, index);
+//     }
+//     context.read<TaskConfigManager>().setDefault();
+//   }
 }

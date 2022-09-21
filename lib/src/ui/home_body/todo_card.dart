@@ -136,7 +136,7 @@ class TodoCard extends StatelessWidget {
                 checkColor: Colors.white,
                 activeColor: Colors.black,
                 value: task.isFinish,
-                onChanged: (value) => setFinished(task, context, value!),
+                onChanged: (value) {},
               )
             ],
           )
@@ -145,8 +145,8 @@ class TodoCard extends StatelessWidget {
     }
   }
 
-  void setFinished(Task task, BuildContext context, bool value) {
-    task.isFinish = value;
-    context.read<TaskManager>().updateTask2(task);
-  }
+  // void setFinished(Task task, BuildContext context, bool value) {
+  //   task.isFinish = value;
+  //   context.read<TaskManager>().updateTask2(task);
+  // }
 }
