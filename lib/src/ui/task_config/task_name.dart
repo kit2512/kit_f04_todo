@@ -15,7 +15,7 @@ class TaskName extends StatelessWidget {
   Widget build(BuildContext context) {
     //String data = name;
     final nameController = TextEditingController();
-    // nameController.text = name;
+    nameController.text = name;
 
     return Container(
       margin: const EdgeInsets.only(top: 20),

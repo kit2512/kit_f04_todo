@@ -1,5 +1,5 @@
 import 'screen.dart';
-import'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 class TaskConfig extends StatelessWidget {
   final Task task;
