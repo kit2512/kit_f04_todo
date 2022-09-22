@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       // home: (Scaffold(
       //   body: const TaskLevel(),
       // )),
-      home: const SplashScreenPage(),
+      home: (Scaffold(body: TaskLevel())),
     );
   }
 }

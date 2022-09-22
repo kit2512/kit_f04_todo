@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    int selectedIndex = 0, index = 0;
+    int selectedIndex = 0;
     List<String> appBarButton = ['Today', 'Upcoming', 'Finished'];
     return Scaffold(
       floatingActionButton: FloatingButton(
@@ -72,35 +72,34 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         Column(
-            children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.06,
-                
-                child: ListView.builder(
-                  itemBuilder: (context, index) => ButtonTask(
-                    index: index,
-                    selectedIndex: selectedIndex,
-                    taskLevel: appBarButton,
-                    onPressed: () {
-                      // setState(() {
-                        selectedIndex = index;
-                        
-                      // }
-                      
-                      // );
-                    },
-                  ),
-                  itemCount: appBarButton.length,
-                  scrollDirection: Axis.horizontal,
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.07,
+              child: ListView.builder(
+                itemBuilder: (context, index) => ButtonTask(
+                  index: index,
+                  selectedIndex: selectedIndex,
+                  listButton: appBarButton,
+                  onPressed: () {
+                    // setState(() {
+                    selectedIndex = index;
+
+                    // }
+
+                    // );
+                  },
                 ),
+                itemCount: appBarButton.length,
+                scrollDirection: Axis.horizontal,
               ),
-              const Divider(
-                color: Color.fromARGB(255, 208, 206, 206),
-                height: 20,
-                thickness: 1.8,
-              ),
-            ],
-          ),
+            ),
+            const Divider(
+              color: Color.fromARGB(255, 208, 206, 206),
+              height: 20,
+              thickness: 1.8,
+            ),
+          ],
+        ),
 
         // ButtonTask(taskLevel: appBarButton, index: index, selectedIndex: selectedIndex,onPressed: (){
         //   index = selectedIndex;
