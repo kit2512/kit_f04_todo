@@ -1,26 +1,26 @@
 import 'package:demo_state_app/src/data/task.dart';
+import 'package:demo_state_app/src/ui/screen/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:demo_state_app/src/ui/home_body/home.dart';
 import 'task_screen.dart';
+import 'package:demo_state_app/src/ui/task_config/button_task.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    Task task = Task(name: "");
+    int selectedIndex = 0, index = 0;
+    List<String> appBarButton = ['Today', 'Upcoming', 'Finished'];
     return Scaffold(
       floatingActionButton: FloatingButton(
           onPressed: () {
-            // setState(() {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
               return TaskConfig(
                 titleFloatingActionButton: 'Save Task',
-                task: task,
+                task: Task(name: ""),
                 titleAppBar: 'Add Task',
               );
             }));
-            //}
-            //);
           },
           title: 'Add Task',
           icon: const Icon(Icons.add_box)),
@@ -71,7 +71,41 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-        AppBarButton(),
+        Column(
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.06,
+                
+                child: ListView.builder(
+                  itemBuilder: (context, index) => ButtonTask(
+                    index: index,
+                    selectedIndex: selectedIndex,
+                    taskLevel: appBarButton,
+                    onPressed: () {
+                      // setState(() {
+                        selectedIndex = index;
+                        
+                      // }
+                      
+                      // );
+                    },
+                  ),
+                  itemCount: appBarButton.length,
+                  scrollDirection: Axis.horizontal,
+                ),
+              ),
+              const Divider(
+                color: Color.fromARGB(255, 208, 206, 206),
+                height: 20,
+                thickness: 1.8,
+              ),
+            ],
+          ),
+
+        // ButtonTask(taskLevel: appBarButton, index: index, selectedIndex: selectedIndex,onPressed: (){
+        //   index = selectedIndex;
+
+        // },),
       ]),
     );
   }
