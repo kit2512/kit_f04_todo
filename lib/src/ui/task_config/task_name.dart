@@ -38,7 +38,7 @@ class TaskName extends StatelessWidget {
             //   context.read<TaskConfigManager>().task.name = value;
             // },
             onFieldSubmitted: (value) {
-              context.read<TaskConfigManager>().task.name = value;
+              //context.read<TaskConfigManager>().task.name = value;
             },
             autovalidateMode: AutovalidateMode.always,
             validator: (value) {
