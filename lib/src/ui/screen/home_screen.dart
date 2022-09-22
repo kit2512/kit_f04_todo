@@ -2,6 +2,7 @@ import 'package:demo_state_app/src/data/task.dart';
 import 'package:demo_state_app/src/ui/screen/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:demo_state_app/src/ui/home_body/home.dart';
+import '../home_body/todo_screen.dart';
 import 'task_screen.dart';
 import 'package:demo_state_app/src/ui/task_config/button_task.dart';
 
@@ -9,8 +10,6 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    int selectedIndex = 0;
-    List<String> appBarButton = ['Today', 'Upcoming', 'Finished'];
     return Scaffold(
       floatingActionButton: FloatingButton(
           onPressed: () {
@@ -71,41 +70,44 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-        Column(
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.07,
-              child: ListView.builder(
-                itemBuilder: (context, index) => ButtonTask(
-                  index: index,
-                  selectedIndex: selectedIndex,
-                  listButton: appBarButton,
-                  onPressed: () {
-                    // setState(() {
-                    selectedIndex = index;
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.07,
+          child: ListView.builder(
+            itemBuilder: (context, index) => ButtonTask(
+              index: index,
+              selectedIndex: context.watch<AppBarButton>().selectedIndex,
+              listButton: context.watch<AppBarButton>().appBarButton,
+              onPressed: () {
+                // setState(() {
+                // selectedIndex = index;
+                context.read<AppBarButton>().setSelectedIndex(index);
+                // }
 
-                    // }
-
-                    // );
-                  },
-                ),
-                itemCount: appBarButton.length,
-                scrollDirection: Axis.horizontal,
-              ),
+                // );
+              },
             ),
-            const Divider(
-              color: Color.fromARGB(255, 208, 206, 206),
-              height: 20,
-              thickness: 1.8,
-            ),
-          ],
+            itemCount: context.watch<AppBarButton>().appBarButton.length,
+            scrollDirection: Axis.horizontal,
+          ),
         ),
-
-        // ButtonTask(taskLevel: appBarButton, index: index, selectedIndex: selectedIndex,onPressed: (){
-        //   index = selectedIndex;
-
-        // },),
+         SizedBox(
+          height: 530,
+          width: 500,
+            child: TodoCardScreen(
+                // value: context.watch<TaskManager>().index,
+                value: context.watch<AppBarButton>().selectedIndex,
+                ),
+        ),
       ]),
     );
+  }
+}
+
+class AppBarButton extends ChangeNotifier {
+  int selectedIndex = 0;
+  List<String> appBarButton = ['Today', 'Upcoming', 'Finished'];
+  void setSelectedIndex(int index) {
+    selectedIndex = index;
+    notifyListeners();
   }
 }

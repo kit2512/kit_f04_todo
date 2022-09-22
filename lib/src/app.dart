@@ -1,4 +1,5 @@
 import 'package:demo_state_app/src/data/task.dart';
+import 'package:demo_state_app/src/ui/home_body/todo_screen.dart';
 import 'package:demo_state_app/src/ui/screen/home_screen.dart';
 import 'package:demo_state_app/src/ui/screen/screen.dart';
 import 'package:demo_state_app/src/ui/screen/splash_screen.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       // home: (Scaffold(
       //   body: const TaskLevel(),
       // )),
-      home: (Scaffold(body: TaskLevel())),
+      home: (Scaffold(body: const SplashScreenPage())),
     );
   }
 }

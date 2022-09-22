@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TaskConfigManager extends ChangeNotifier {
-  Task task = Task(name: "");
+  Task task = Task();
   Task getTask() {
     return task;
   }
@@ -13,6 +13,10 @@ class TaskConfigManager extends ChangeNotifier {
   }
   void setTask(Task task) {
     this.task = task;
+    notifyListeners();
+  }
+  void setTaskName(String taskNmame) {
+    task.name = taskNmame;
     notifyListeners();
   }
   void setDateTime(DateTime? dateTime, TimeOfDay? timeOfDay) {

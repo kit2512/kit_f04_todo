@@ -9,24 +9,30 @@ class TodoCardScreen extends StatelessWidget {
   final int value;
   @override
   Widget build(BuildContext context) {
-    // List data = context.watch<TaskManager>().getData(context);
-    List data = [];
-    if (data.isEmpty) return buildNoData();
+    // List data = context.watch<TaskManager>().getTasks();
+    // List data = [];
+
+   
+    
+    if (context.watch<TaskManager>().getData(value).isEmpty) return buildNoData();
     return ListView.separated(
         reverse: false,
         separatorBuilder: (context, index) {
           return const SizedBox(
-            height: 10,
+            height: 20,
           );
         },
-        itemCount: data.length,
-        itemBuilder: (context, index) => TodoCard(
+        itemCount: context.watch<TaskManager>().getData(value).length,
+        
+        itemBuilder: (context, index) => 
+        TodoCard(
               onDismissed: (_) {
-                //context.read<TaskManager>().removeTask(data[index]);
+                // context.read<TaskManager>().removeTask(context.watch<TaskManager>().tasks[index]);
               },
-              task: data[index],
+              task: context.watch<TaskManager>().getData(value)[index],
               isFinished: isFinished(value),
-            ));
+            )
+            );
   }
 
   bool isFinished(int value) {

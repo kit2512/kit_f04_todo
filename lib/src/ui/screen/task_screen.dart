@@ -31,7 +31,7 @@ class TaskConfig extends StatelessWidget {
             // ),
           ));
 
-          //saveData(context);
+          saveData(context);
           Navigator.pop(context);
         },
         title: titleFloatingActionButton,
@@ -60,16 +60,19 @@ class TaskConfig extends StatelessWidget {
     );
   }
 
-//   void saveData(BuildContext context) {
-//     Task task2 = context.read<TaskConfigManager>().task;
+  void saveData(BuildContext context) {
+    Task task2 = context.read<TaskConfigManager>().task;
+    log(task2.name!);
+    log(task.name!);
 
-//     if (titleAppBar == "Add Task") {
-//       context.read<TaskManager>().addTask(task2);
-//     } else {
-//       int index = context.read<TaskManager>().getIndex(task);
-//       task2.isFinish = task.isFinish;
-//       context.read<TaskManager>().updateTask(task2, index);
-//     }
-//     context.read<TaskConfigManager>().setDefault();
-//   }
+    if (titleAppBar == "Add Task") {
+      context.read<TaskManager>().addTask(task2);
+    } else {
+      int index = context.read<TaskManager>().getIndex(task);
+      log(index.toString());
+      task2.isFinish = task.isFinish;
+      context.read<TaskManager>().updateTask(task2, index);
+    }
+    context.read<TaskConfigManager>().setDefault();
+  }
 }

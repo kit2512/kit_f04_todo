@@ -1,3 +1,4 @@
+import 'package:demo_state_app/src/ui/screen/screen.dart';
 import 'package:flutter/material.dart';
 
 import 'task.dart';
@@ -10,10 +11,10 @@ class TaskManager extends ChangeNotifier {
     Task(name: "Hello! I am Trang")
   ];
 
-  //List<Task> tasks = [];
+  // List<Task> tasks = [];
   int index = 0;
 
-  List getData(BuildContext context) {
+  List<Task> getData(int index) {
     if (index == 2) {
       return getTasksFinish();
     } else {
@@ -22,13 +23,14 @@ class TaskManager extends ChangeNotifier {
   }
 
   int getIndex(Task task) {
+    log(tasks.indexOf(task).toString());
     return tasks.indexOf(task);
   }
 
-  void updateIndex(int value) {
-    index = value;
-    notifyListeners();
-  }
+  // void updateIndex(int value) {
+  //   index = value;
+  //   notifyListeners();
+  // }
 
   void addTask(Task task) {
     tasks.add(task);
@@ -45,21 +47,21 @@ class TaskManager extends ChangeNotifier {
     notifyListeners();
   }
 
-  void updateTask2(Task task) {
+  void setFinishedTask(Task task) {
     tasks[tasks.indexOf(task)] = task;
     notifyListeners();
   }
 
-  Task getTask(Task task) {
-    return tasks[tasks.indexOf(task)];
-  }
+  // Task getTask(Task task) {
+  //   return tasks[tasks.indexOf(task)];
+  // }
 
   // int getIndex(Task task) {
   //   return tasks.indexOf(task);
   // }
-  List<Task> getTasks() {
-    return tasks;
-  }
+  // List<Task> getTasks() {
+  //   return tasks;
+  // }
 
   List<Task> getTasksFinish() {
     List<Task> task = [];
