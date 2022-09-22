@@ -60,8 +60,6 @@ class TodoCard extends StatelessWidget {
                       "School",
                       style: TextStyle(
                         color: Colors.black,
-                        fontFamily: "Roboto",
-                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),

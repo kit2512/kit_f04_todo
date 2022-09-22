@@ -16,10 +16,8 @@ class TaskPlace extends StatelessWidget {
           Text(
             "Place",
             style: TextStyle(
-              fontFamily: "Roboto",
               color: HexColor("#B6B6B6"),
               fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w500,
               fontSize: 15,
             ),
           ),
@@ -33,9 +31,7 @@ class TaskPlace extends StatelessWidget {
                     Text(
                       place,
                       style: const TextStyle(
-                        fontFamily: "Roboto",
                         color: Colors.black,
-                        fontWeight: FontWeight.bold,
                         fontSize: 16,
                       ),
                     ),

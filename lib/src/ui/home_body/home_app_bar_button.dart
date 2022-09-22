@@ -58,8 +58,6 @@ class AppBarButton extends StatelessWidget {
             appBarButton[index],
             style: TextStyle(
               color: selectedIndex == index ? Colors.white : Colors.black,
-              fontFamily: "Roboto",
-              fontWeight: FontWeight.w500,
             ),
           ),
         ));

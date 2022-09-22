@@ -49,8 +49,6 @@ class ProfileCard extends StatelessWidget {
                     style: TextStyle(
                       color: Color.fromARGB(255, 157, 155, 148),
                       fontSize: 13,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: "Roboto",
                     ),
                   )
                 ],

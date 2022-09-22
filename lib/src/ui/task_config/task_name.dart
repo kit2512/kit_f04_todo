@@ -25,10 +25,8 @@ class TaskName extends StatelessWidget {
           Text(
             "Task Name",
             style: TextStyle(
-              fontFamily: "Roboto",
               color: HexColor("#B6B6B6"),
               fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w500,
               fontSize: 15,
             ),
           ),

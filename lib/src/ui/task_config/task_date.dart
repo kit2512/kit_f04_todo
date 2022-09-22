@@ -1,11 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
 
-import '../../data/task_config_controller.dart';
 
 class TaskDate extends StatefulWidget {
   final TimeOfDay timeOfDay;
@@ -49,10 +45,8 @@ class _TaskDateState extends State<TaskDate> {
           Text(
             "Due Time",
             style: TextStyle(
-              fontFamily: "Roboto",
               color: HexColor("#B6B6B6"),
               fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w500,
               fontSize: 15,
             ),
           ),
@@ -68,10 +62,8 @@ class _TaskDateState extends State<TaskDate> {
                           ? "${DateFormat('dd MMMM yyyy').format(widget.dateTime)},${widget.timeOfDay.format(context)}"
                           : "${DateFormat('dd MMMM yyyy').format(_dateTime!)},${_timeOfDay!.format(context)}",
                       style: TextStyle(
-                        fontFamily: "Roboto",
                         color: HexColor("#191919"),
                         fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.bold,
                         fontSize: 16,
                       ),
                     ),

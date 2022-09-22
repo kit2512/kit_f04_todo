@@ -31,8 +31,6 @@ class ProfileMenuItem extends StatelessWidget {
                   "My Daily",
                   style: TextStyle(
                       fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Roboto',
                       color: Colors.black),
                 )
               ],

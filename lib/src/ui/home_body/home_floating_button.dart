@@ -24,8 +24,6 @@ class FloatingButton extends StatelessWidget {
           title,
           style: const TextStyle(
             color: Colors.white,
-            fontFamily: "Roboto",
-            fontWeight: FontWeight.w500,
           ),
         ),
         icon: icon ?? icon,
@@ -41,8 +39,6 @@ class FloatingButton extends StatelessWidget {
               title,
               style: const TextStyle(
                 color: Colors.white,
-                fontFamily: "Roboto",
-                fontWeight: FontWeight.w500,
               ),
             ),
             icon: icon ?? icon,
