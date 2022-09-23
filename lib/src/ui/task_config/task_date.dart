@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
-
-import '../../data/task_config_controller.dart';
-
 import '../screen/screen.dart';
 
 class TaskDate extends StatefulWidget {
@@ -42,7 +39,7 @@ class _TaskDateState extends State<TaskDate> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 20),
+      margin: EdgeInsets.only(top: 20.r),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -51,13 +48,13 @@ class _TaskDateState extends State<TaskDate> {
             style: TextStyle(
               color: HexColor("#B6B6B6"),
               fontStyle: FontStyle.normal,
-              fontSize: 15,
+              fontSize: 15.sp,
             ),
           ),
           Column(
             children: [
               SizedBox(
-                height: 35,
+                height: 35.h,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -68,7 +65,7 @@ class _TaskDateState extends State<TaskDate> {
                       style: TextStyle(
                         color: HexColor("#191919"),
                         fontStyle: FontStyle.normal,
-                        fontSize: 16,
+                        fontSize: 16.sp,
                       ),
                     ),
                     IconButton(
@@ -96,17 +93,17 @@ class _TaskDateState extends State<TaskDate> {
                         image: const AssetImage(
                           'asset/task/calendar.png',
                         ),
-                        height: 19.31,
-                        width: 18,
+                        height: 19.31.h,
+                        width: 18.w,
                         color: HexColor("#191919"),
                       ),
                     ),
                   ],
                 ),
               ),
-              const Divider(
+              Divider(
                 color: Color.fromARGB(255, 208, 206, 206),
-                height: 20,
+                height: 20.h,
                 thickness: 1.8,
               ),
             ],

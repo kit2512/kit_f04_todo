@@ -1,5 +1,6 @@
 import 'package:demo_state_app/src/ui/task_config/button_task.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class TaskLevel extends StatefulWidget {
@@ -15,7 +16,7 @@ class _TaskLevelState extends State<TaskLevel> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 20),
+      margin: EdgeInsets.only(top: 20.r),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -24,13 +25,14 @@ class _TaskLevelState extends State<TaskLevel> {
             style: TextStyle(
               color: HexColor("#B6B6B6"),
               fontStyle: FontStyle.normal,
-              fontSize: 15,
+              fontSize: 15.sp,
             ),
           ),
           Column(
             children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.07,
+              Container(
+                margin: EdgeInsets.only(right: 20.r),
+                height: MediaQuery.of(context).size.height.h * 0.073.h,
                 child: ListView.builder(
                   itemBuilder: (context, index) => ButtonTask(
                     index: index,
@@ -46,9 +48,9 @@ class _TaskLevelState extends State<TaskLevel> {
                   scrollDirection: Axis.horizontal,
                 ),
               ),
-              const Divider(
+              Divider(
                 color: Color.fromARGB(255, 208, 206, 206),
-                height: 20,
+                height: 20.h,
                 thickness: 1.8,
               ),
             ],

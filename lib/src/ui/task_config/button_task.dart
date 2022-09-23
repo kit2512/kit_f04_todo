@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ButtonTask extends StatelessWidget {
   final int index;
@@ -14,21 +15,21 @@ class ButtonTask extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.32,
+      width: MediaQuery.of(context).size.width * 0.32.w,
       child: TextButton(
         style: ButtonStyle(
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(38.5),
+              borderRadius: BorderRadius.circular(38.5.r),
             ),
           ),
         ),
         onPressed: onPressed,
         child: Container(
-          width: 180,
+          width: 180.w,
           decoration: BoxDecoration(
             color: selectedIndex == index ? Colors.black : Colors.transparent,
-            borderRadius: BorderRadius.circular(38.5),
+            borderRadius: BorderRadius.circular(38.5.r),
           ),
           child: Chip(
             shape: StadiumBorder(
@@ -41,7 +42,7 @@ class ButtonTask extends StatelessWidget {
               listButton[index],
               style: TextStyle(
                   color: selectedIndex == index ? Colors.white : Colors.black,
-                  fontSize: 16),
+                  fontSize: 16.sp),
             ),
             backgroundColor:
                 selectedIndex == index ? Colors.black : Colors.transparent,

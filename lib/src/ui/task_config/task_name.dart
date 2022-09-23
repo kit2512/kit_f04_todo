@@ -1,9 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/provider.dart';
-
 import '../../data/task_config_controller.dart';
 
 class TaskName extends StatelessWidget {
@@ -20,7 +18,7 @@ class TaskName extends StatelessWidget {
     nameController.text = name;
 
     return Container(
-      margin: const EdgeInsets.only(top: 20),
+      margin:  EdgeInsets.only(top: 20.r),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -29,7 +27,7 @@ class TaskName extends StatelessWidget {
             style: TextStyle(
               color: HexColor("#B6B6B6"),
               fontStyle: FontStyle.normal,
-              fontSize: 15,
+              fontSize: 15.sp,
             ),
           ),
           TextFormField(
@@ -50,7 +48,7 @@ class TaskName extends StatelessWidget {
               color: HexColor("#191919"),
               fontStyle: FontStyle.normal,
               fontWeight: FontWeight.w700,
-              fontSize: 23,
+              fontSize: 23.sp,
             ),
             decoration: const InputDecoration(
               hintText: "Enter Task Name",
