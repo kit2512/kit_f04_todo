@@ -46,8 +46,8 @@ class TaskColor extends StatelessWidget {
                             minimumSize: const Size(22, 22),
                           ),
                           onPressed: () {
-                            // context.read<TaskConfigManager>().task.color =
-                            //     colorLists[index];
+                            context.read<TaskConfigManager>().task.color =
+                                colorLists[index];
                           },
                           child: Container(
                             decoration: BoxDecoration(

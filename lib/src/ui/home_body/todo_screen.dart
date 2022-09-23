@@ -1,5 +1,6 @@
 import 'package:demo_state_app/src/data/task_manager.dart';
 import 'package:demo_state_app/src/ui/home_body/todo_card.dart';
+import 'package:demo_state_app/src/ui/screen/screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -9,22 +10,25 @@ class TodoCardScreen extends StatelessWidget {
   final int value;
   @override
   Widget build(BuildContext context) {
-    // List data = context.watch<TaskManager>().getData(context);
-    List data = [];
-    if (data.isEmpty) return buildNoData();
+    // List data = context.watch<TaskManager>().getTasks();
+    // List data = [];
+
+    if (context.watch<TaskManager>().getData(value).isEmpty)
+      return buildNoData();
     return ListView.separated(
         reverse: false,
         separatorBuilder: (context, index) {
           return const SizedBox(
-            height: 10,
+            height: 20,
           );
         },
-        itemCount: data.length,
+        itemCount: context.watch<TaskManager>().getData(value).length,
         itemBuilder: (context, index) => TodoCard(
               onDismissed: (_) {
-                //context.read<TaskManager>().removeTask(data[index]);
+                context.read<TaskManager>().removeTask(
+                    context.read<TaskManager>().getData(value)[index]);
               },
-              task: data[index],
+              task: context.watch<TaskManager>().getData(value)[index],
               isFinished: isFinished(value),
             ));
   }
