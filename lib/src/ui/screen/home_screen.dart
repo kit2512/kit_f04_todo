@@ -34,10 +34,12 @@ class HomeScreen extends StatelessWidget {
             Icons.notifications_none,
             color: Colors.black,
           )),
-      body: Column(children: [
-        Padding(
-          padding: const EdgeInsets.all(20),
-          child: Row(
+      body: Padding(
+        padding: const EdgeInsets.all(15),
+        child: Column(children: [
+          // Padding(
+          //padding: const EdgeInsets.all(20),
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
@@ -69,36 +71,37 @@ class HomeScreen extends StatelessWidget {
               )
             ],
           ),
-        ),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.07,
-          child: ListView.builder(
-            itemBuilder: (context, index) => ButtonTask(
-              index: index,
-              selectedIndex: context.watch<AppBarButton>().selectedIndex,
-              listButton: context.watch<AppBarButton>().appBarButton,
-              onPressed: () {
-                // setState(() {
-                // selectedIndex = index;
-                context.read<AppBarButton>().setSelectedIndex(index);
-                // }
 
-                // );
-              },
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.07,
+            child: ListView.builder(
+              itemBuilder: (context, index) => ButtonTask(
+                index: index,
+                selectedIndex: context.watch<AppBarButton>().selectedIndex,
+                listButton: context.watch<AppBarButton>().appBarButton,
+                onPressed: () {
+                  // setState(() {
+                  // selectedIndex = index;
+                  context.read<AppBarButton>().setSelectedIndex(index);
+                  // }
+
+                  // );
+                },
+              ),
+              itemCount: context.watch<AppBarButton>().appBarButton.length,
+              scrollDirection: Axis.horizontal,
             ),
-            itemCount: context.watch<AppBarButton>().appBarButton.length,
-            scrollDirection: Axis.horizontal,
           ),
-        ),
-         SizedBox(
-          height: 530,
-          width: 500,
+          SizedBox(
+            height: 500,
+            width: 500,
             child: TodoCardScreen(
-                // value: context.watch<TaskManager>().index,
-                value: context.watch<AppBarButton>().selectedIndex,
-                ),
-        ),
-      ]),
+              // value: context.watch<TaskManager>().index,
+              value: context.watch<AppBarButton>().selectedIndex,
+            ),
+          ),
+        ]),
+      ),
     );
   }
 }
