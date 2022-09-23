@@ -38,6 +38,7 @@ class TaskManager extends ChangeNotifier {
   }
 
   void removeTask(Task task) {
+    // log(task.toString());
     tasks.remove(task);
     notifyListeners();
   }

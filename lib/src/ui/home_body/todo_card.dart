@@ -24,6 +24,7 @@ class TodoCard extends StatelessWidget {
     DateFormat dateFormat = DateFormat.yMMMMd('en_US');
 
     return Dismissible(
+      
       background: const Align(
         child: Center(
           child: Icon(
@@ -33,7 +34,9 @@ class TodoCard extends StatelessWidget {
         ),
       ),
       onDismissed: onDismissed,
-      key: ValueKey<Task>(task),
+      key: UniqueKey(),
+      // key: GlobalKey(),
+      // key: ValueKey<Task>(task),
       child: Card(
         color: task.color,
         shape: RoundedRectangleBorder(
