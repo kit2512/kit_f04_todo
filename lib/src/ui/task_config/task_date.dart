@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
+
+import '../../data/task_config_controller.dart';
 
 import '../screen/screen.dart';
 
@@ -18,23 +21,23 @@ class TaskDate extends StatefulWidget {
 class _TaskDateState extends State<TaskDate> {
   DateTime? _dateTime;
   TimeOfDay? _timeOfDay;
-  // void setTime(
-  //     BuildContext context, DateTime? pickedDate, TimeOfDay? pickedTime) async {
-  //   pickedDate = await showDatePicker(
-  //     context: context,
-  //     initialDate: DateTime.now(),
-  //     firstDate: DateTime.now(),
-  //     lastDate: DateTime(2100),
-  //   );
-  //   _dateTime = pickedDate;
-  //   pickedTime = await showTimePicker(
-  //     context: context,
-  //     initialTime: TimeOfDay.now(),
-  //   );
-  //   _timeOfDay = pickedTime;
-  //   // ignore: use_build_context_synchronously
-  //   context.read<TaskConfigManager>().setDateTime(pickedDate, pickedTime);
-  // }
+  void setTime(
+      BuildContext context, DateTime? pickedDate, TimeOfDay? pickedTime) async {
+    pickedDate = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime.now(),
+      lastDate: DateTime(2100),
+    );
+    _dateTime = pickedDate;
+    pickedTime = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+    );
+    _timeOfDay = pickedTime;
+    // ignore: use_build_context_synchronously
+    context.read<TaskConfigManager>().setDateTime(pickedDate, pickedTime);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,9 +85,8 @@ class _TaskDateState extends State<TaskDate> {
                         );
                         // ignore: use_build_context_synchronously
                         context.read<TaskConfigManager>().setDateTime(
-                              pickedDate ?? DateTime.now(),
-                              pickedTime ?? TimeOfDay.now(),
-                            );
+                            pickedDate ?? DateTime.now(),
+                            pickedTime ?? TimeOfDay.now());
                         setState(() {
                           _timeOfDay = pickedTime;
                           _dateTime = pickedDate;

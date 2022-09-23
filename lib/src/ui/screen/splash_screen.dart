@@ -5,10 +5,10 @@ import 'package:easy_splash_screen/easy_splash_screen.dart';
 class SplashScreenPage extends StatelessWidget {
   const SplashScreenPage({Key? key}) : super(key: key);
 
-  Future<Widget> futureCall() async {
-    await Future.delayed(const Duration(seconds: 3));
-    return Future.value(const HomeScreen());
-  }
+  // Future<Widget> futureCall() async {
+  //   await Future.delayed(const Duration(seconds: 3));
+  //   return Future.value(HomeScreen());
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +19,15 @@ class SplashScreenPage extends StatelessWidget {
       backgroundImage: const NetworkImage(
           'https://mir-s3-cdn-cf.behance.net/project_modules/disp/496ecb14589707.562865d064f9e.png'),
 
-      durationInSeconds: 3,
+      durationInSeconds: 2,
       loadingText: const Text("Loading..."),
       title: const Text(
-        'welcome to To Do app',
+        'welcome to Todo app',
         textScaleFactor: 2,
       ),
-// navigator: const HomeScreen(),
-      futureNavigator: futureCall(),
+navigator:  HomeScreen(),
+
+      // futureNavigator: futureCall(),
     );
   }
 }

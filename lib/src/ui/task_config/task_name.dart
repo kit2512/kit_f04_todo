@@ -14,6 +14,8 @@ class TaskName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //String data = name;
+            context.read<TaskConfigManager>().task.name = name;
+
     final nameController = TextEditingController();
     nameController.text = name;
 
@@ -32,12 +34,11 @@ class TaskName extends StatelessWidget {
           ),
           TextFormField(
             controller: nameController,
-            // onChanged: (value) {
-            //   context.read<TaskConfigManager>().task.name = value;
-            // },
-            onFieldSubmitted: (value) {
-              //context.read<TaskConfigManager>().task.name = value;
+            onChanged: (value) {
+              context.read<TaskConfigManager>().task.name = value;
+              
             },
+
             autovalidateMode: AutovalidateMode.always,
             validator: (value) {
               if (value == null || value.isEmpty) {
