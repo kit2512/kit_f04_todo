@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:intl/intl.dart';
-import '../screen/screen.dart';
+import 'package:provider/provider.dart';
+
+import '../../data/task_config_controller.dart';
 
 class TaskDate extends StatefulWidget {
   final TimeOfDay timeOfDay;
