@@ -6,16 +6,18 @@ class ButtonTask extends StatelessWidget {
   final int selectedIndex;
   final List<String> listButton;
   final Function() onPressed;
+  final double width;
   const ButtonTask(
       {required this.index,
       required this.selectedIndex,
       required this.listButton,
       required this.onPressed,
+      required this.width,
       super.key});
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.32.w,
+      width: width,
       child: TextButton(
         style: ButtonStyle(
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(

@@ -87,6 +87,7 @@ class HomeScreen extends StatelessWidget {
 
                   // );
                 },
+                width: MediaQuery.of(context).size.width * 0.3,
               ),
               itemCount: context.watch<AppBarButton>().appBarButton.length,
               scrollDirection: Axis.horizontal,
