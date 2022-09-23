@@ -30,7 +30,7 @@ class _TaskLevelState extends State<TaskLevel> {
           Column(
             children: [
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.06,
+                height: MediaQuery.of(context).size.height * 0.07,
                 child: ListView.builder(
                   itemBuilder: (context, index) => ButtonTask(
                     index: index,
