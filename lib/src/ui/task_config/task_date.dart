@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 
 import '../../data/task_config_controller.dart';
 
-
 class TaskDate extends StatefulWidget {
   final TimeOfDay timeOfDay;
   final DateTime dateTime;

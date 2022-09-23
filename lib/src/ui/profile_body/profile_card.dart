@@ -55,7 +55,7 @@ class ProfileCard extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 1,
+              flex: 2,
               child: IconButton(
                   onPressed: () {},
                   icon: const Icon(
