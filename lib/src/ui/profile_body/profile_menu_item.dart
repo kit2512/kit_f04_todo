@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileMenuItem extends StatelessWidget {
   const ProfileMenuItem({Key? key}) : super(key: key);
@@ -6,32 +7,30 @@ class ProfileMenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 10),
-      height: 80,
+      margin: EdgeInsets.only(top: 10.r),
+      height: 80.h,
       child: Card(
         //margin: EdgeInsets.only(top: 10),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(20.r),
         ),
         child: TextButton(
             onPressed: () {},
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [
+              children: [
                 CircleAvatar(
-                  radius: 30,
+                  radius: 30.r,
                   backgroundColor: Colors.black,
-                  child: Icon(Icons.star),
+                  child: const Icon(Icons.star),
                 ),
                 SizedBox(
-                  width: 20,
+                  width: 20.w,
                 ),
                 Text(
                   "My Daily",
-                  style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black),
+                  style: TextStyle(fontSize: 20.sp, color: Colors.black),
                 )
               ],
             )),

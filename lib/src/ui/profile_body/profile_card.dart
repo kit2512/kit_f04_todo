@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileCard extends StatelessWidget {
   const ProfileCard({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class ProfileCard extends StatelessWidget {
         Card(
       // /borderOnForeground: false,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.r),
       ),
       elevation: 6,
 
@@ -18,15 +19,15 @@ class ProfileCard extends StatelessWidget {
       //margin: const EdgeInsets.only(left: 20, right: 20, top: 50),
       child: Padding(
         padding:
-            const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
+            EdgeInsets.only(left: 20.r, right: 20.r, top: 10.r, bottom: 10.r),
         child: Row(
           //mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Expanded(
+            Expanded(
               flex: 3,
               child: CircleAvatar(
-                radius: 30,
-                backgroundImage: AssetImage("asset/profile/avatar.jpg"),
+                radius: 30.r,
+                backgroundImage: const AssetImage("asset/profile/avatar.jpg"),
               ),
             ),
             const Spacer(),
@@ -35,11 +36,11 @@ class ProfileCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Text(
                     "Trần Phương Bảo Ly",
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 18.sp,
                       fontWeight: FontWeight.w600,
                       fontStyle: FontStyle.normal,
                     ),
@@ -47,8 +48,8 @@ class ProfileCard extends StatelessWidget {
                   Text(
                     "teambatonct5d@gmail.com",
                     style: TextStyle(
-                      color: Color.fromARGB(255, 157, 155, 148),
-                      fontSize: 13,
+                      color: const Color.fromARGB(255, 157, 155, 148),
+                      fontSize: 13.sp,
                     ),
                   )
                 ],

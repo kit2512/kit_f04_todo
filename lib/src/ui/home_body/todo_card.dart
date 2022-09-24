@@ -1,6 +1,7 @@
 import 'package:demo_state_app/src/data/task.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
@@ -24,12 +25,11 @@ class TodoCard extends StatelessWidget {
     DateFormat dateFormat = DateFormat.yMMMMd('en_US');
 
     return Dismissible(
-      
-      background: const Align(
+      background: Align(
         child: Center(
           child: Icon(
             Icons.delete_forever_rounded,
-            size: 70,
+            size: 70.sp,
           ),
         ),
       ),
@@ -40,11 +40,11 @@ class TodoCard extends StatelessWidget {
       child: Card(
         color: task.color,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(20.r),
         ),
         child: Padding(
           padding:
-              const EdgeInsets.only(left: 30, top: 10, right: 15, bottom: 15),
+              const EdgeInsets.only(left: 30, top: 10, right: 15, bottom: 15).r,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,9 +54,8 @@ class TodoCard extends StatelessWidget {
                   OutlinedButton(
                     style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(10.r),
                       ),
-                      //backgroundColor: backgroundColor,
                     ),
                     onPressed: () {},
                     child: const Text(
@@ -66,13 +65,13 @@ class TodoCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    width: 15,
+                  SizedBox(
+                    width: 15.w,
                   ),
                   OutlinedButton(
                     style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(10.r),
                       ),
                       //backgroundColor: backgroundColor,
                     ),
@@ -94,17 +93,17 @@ class TodoCard extends StatelessWidget {
                         );
                       }));
                     },
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.mode_edit_outline_outlined,
-                      size: 27,
+                      size: 27.sp,
                     ),
                   )
                 ],
               ),
               Text(
                 task.name!,
-                style: const TextStyle(
-                  fontSize: 30,
+                style: TextStyle(
+                  fontSize: 30.sp,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -148,13 +147,8 @@ class TodoCard extends StatelessWidget {
     }
   }
 
-void setFinished(Task task, BuildContext context )
-{
-  task.isFinish = !task.isFinish;
-  context.read<TaskManager>().setFinishedTask(task);
-}
-  // void setFinished(Task task, BuildContext context, bool value) {
-  //   task.isFinish = value;
-  //   context.read<TaskManager>().updateTask2(task);
-  // }
+  void setFinished(Task task, BuildContext context) {
+    task.isFinish = !task.isFinish;
+    context.read<TaskManager>().setFinishedTask(task);
+  }
 }
