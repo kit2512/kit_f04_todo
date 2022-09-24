@@ -1,9 +1,8 @@
-import 'package:demo_state_app/src/data/task_manager.dart';
 import 'package:demo_state_app/src/ui/home_body/todo_card.dart';
 import 'package:demo_state_app/src/ui/screen/screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TodoCardScreen extends StatelessWidget {
   const TodoCardScreen({Key? key, this.value = 0}) : super(key: key);
@@ -13,13 +12,14 @@ class TodoCardScreen extends StatelessWidget {
     // List data = context.watch<TaskManager>().getTasks();
     // List data = [];
 
-    if (context.watch<TaskManager>().getData(value).isEmpty)
+    if (context.watch<TaskManager>().getData(value).isEmpty) {
       return buildNoData();
+    }
     return ListView.separated(
         reverse: false,
         separatorBuilder: (context, index) {
-          return const SizedBox(
-            height: 20,
+          return SizedBox(
+            height: 20.h,
           );
         },
         itemCount: context.watch<TaskManager>().getData(value).length,
@@ -46,16 +46,16 @@ class TodoCardScreen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [
+        children: [
           Text(
             "No task     ",
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 20.sp),
           ),
           Image(
             //color: Colors.amber,
-            height: 300,
-            width: 230,
-            image: AssetImage("asset/task/document.png"),
+            height: 300.h,
+            width: 230.w,
+            image: const AssetImage("asset/task/document.png"),
           )
         ],
       ),
