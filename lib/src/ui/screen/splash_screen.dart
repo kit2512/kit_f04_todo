@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:demo_state_app/src/ui/screen/home_screen.dart';
 import 'package:easy_splash_screen/easy_splash_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SplashScreenPage extends StatelessWidget {
   const SplashScreenPage({Key? key}) : super(key: key);
@@ -13,19 +14,19 @@ class SplashScreenPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return EasySplashScreen(
-      logo: Image.network(
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBp2FIyQApYfUL0xNZjDOl9k_LqZtE-Hd8lA&usqp=CAU'),
+      logo: Image.asset('asset/profile/avatar.jpg'),
       backgroundColor: const Color.fromARGB(255, 186, 172, 181),
-      backgroundImage: const NetworkImage(
-          'https://mir-s3-cdn-cf.behance.net/project_modules/disp/496ecb14589707.562865d064f9e.png'),
-
+      backgroundImage: Image.asset('asset/wallpaper/app_backgrounds.png').image,
       durationInSeconds: 2,
-      loadingText: const Text("Loading..."),
+      loadingText: const Text("Loading...", style: TextStyle(color: Colors.white),),
       title: const Text(
         'welcome to Todo app',
+         style: TextStyle(color: Colors.white),
         textScaleFactor: 2,
       ),
-navigator:  HomeScreen(),
+      loaderColor: Colors.white,
+      logoWidth: 50.w,
+      navigator: const HomeScreen(),
 
       // futureNavigator: futureCall(),
     );

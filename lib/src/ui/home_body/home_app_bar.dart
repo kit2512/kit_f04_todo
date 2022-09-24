@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:demo_state_app/src/ui/screen/profile_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -14,7 +15,7 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       leading: prefixIcon != null
           ? Padding(
-              padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+              padding: EdgeInsets.only(left: 20.r),
               child: GestureDetector(
                 child: CircleAvatar(
                     backgroundColor: Colors.black, child: prefixIcon),
@@ -40,7 +41,7 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: suffixIcon != null
           ? [
               Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                padding:  EdgeInsets.only(right: 20.r),
                 child: IconButton(
                     onPressed: () {}, icon: suffixIcon ?? suffixIcon!),
               )
@@ -53,5 +54,5 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
   // ignore: todo
   // TODO: implement preferredSize
   //Size get preferredSize => throw UnimplementedError();
-  Size get preferredSize => const Size.fromHeight(50);
+  Size get preferredSize =>  Size.fromHeight(50.h);
 }

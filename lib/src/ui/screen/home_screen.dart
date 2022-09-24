@@ -2,6 +2,7 @@ import 'package:demo_state_app/src/data/task.dart';
 import 'package:demo_state_app/src/ui/screen/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:demo_state_app/src/ui/home_body/home.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../home_body/todo_screen.dart';
 import 'task_screen.dart';
 import 'package:demo_state_app/src/ui/task_config/button_task.dart';
@@ -35,7 +36,7 @@ class HomeScreen extends StatelessWidget {
             color: Colors.black,
           )),
       body: Padding(
-        padding: const EdgeInsets.all(15),
+        padding:  EdgeInsets.all(15.r),
         child: Column(children: [
           // Padding(
           //padding: const EdgeInsets.all(20),
@@ -46,16 +47,16 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [
-                  const Text(
+                   Text(
                     "Welcome Back!",
-                    style: TextStyle(fontWeight: FontWeight.w200, fontSize: 20),
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.sp),
                   ),
-                  const SizedBox(
-                    height: 14,
+                   SizedBox(
+                    height: 14.h,
                   ),
-                  const Text(
+                   Text(
                     "Here's Update Today",
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 28),
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 28.sp),
                   ),
                 ],
               ),
@@ -64,8 +65,8 @@ class HomeScreen extends StatelessWidget {
                 child: Container(
                   decoration: const BoxDecoration(
                       shape: BoxShape.circle, color: Colors.black),
-                  width: 50,
-                  height: 50,
+                  width: 50.w,
+                  height: 50.h,
                   child: const Icon(Icons.search, color: Colors.white),
                 ),
               )
@@ -94,8 +95,8 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 500,
-            width: 500,
+            height: 600.h,
+            width: 500.w,
             child: TodoCardScreen(
               // value: context.watch<TaskManager>().index,
               value: context.watch<AppBarButton>().selectedIndex,
