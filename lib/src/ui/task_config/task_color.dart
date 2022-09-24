@@ -30,7 +30,7 @@ class TaskColor extends StatelessWidget {
               children: <Widget>[
                 Container(
                   margin: EdgeInsets.only(left: 2.r),
-                  width: MediaQuery.of(context).size.width.w - 90.w,
+                  width: 314.3.w,
                   child: ListView.builder(
                     shrinkWrap: true,
                     itemCount: colorLists.length,
@@ -64,7 +64,7 @@ class TaskColor extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(bottom: 20.r),
+                  margin: EdgeInsets.only(bottom: 23.r),
                   height: 20.h,
                   child: IconButton(
                     onPressed: () {},

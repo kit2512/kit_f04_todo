@@ -43,7 +43,7 @@ class _TaskLevelState extends State<TaskLevel> {
                         selectedIndex = index;
                       });
                     },
-                    width: MediaQuery.of(context).size.width.w * 0.275.w,
+                    width: 119.w,
                   ),
                   itemCount: taskLevel.length,
                   scrollDirection: Axis.horizontal,

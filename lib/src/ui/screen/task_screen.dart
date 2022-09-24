@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'screen.dart';
 import 'package:flutter/material.dart';
 
@@ -40,7 +42,7 @@ class TaskConfig extends StatelessWidget {
       appBar: BuildAppBar(title: titleAppBar),
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.only(left: 10, right: 10),
+          margin: EdgeInsets.only(left: 10.r, right: 10.r),
           child: Column(
             children: [
               TaskName(name: task2.name ?? ""),

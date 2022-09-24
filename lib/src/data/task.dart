@@ -21,7 +21,7 @@ class Task {
       : date = date ?? DateTime.now(),
         time = time ?? TimeOfDay.now();
 
-  Task listTask({
+  Task copyWith({
     String? name,
     Color? color,
     DateTime? date,

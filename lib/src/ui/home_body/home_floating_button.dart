@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:demo_state_app/src/ui/screen/task_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class FloatingButton extends StatelessWidget {
@@ -31,8 +32,8 @@ class FloatingButton extends StatelessWidget {
       );
     } else {
       return Container(
-          margin: const EdgeInsets.all(15),
-          width: double.infinity,
+          margin: EdgeInsets.all(15.r),
+          width: double.infinity.r,
           child: FloatingActionButton.extended(
             onPressed: onPressed,
             label: Text(

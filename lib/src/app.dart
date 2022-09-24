@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'ui/screen/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,6 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(390, 844),
+
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         debugShowMaterialGrid: false,
