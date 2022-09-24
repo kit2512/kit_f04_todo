@@ -93,9 +93,15 @@ class TodoCard extends StatelessWidget {
                         );
                       }));
                     },
-                    icon: Icon(
-                      Icons.mode_edit_outline_outlined,
-                      size: 27.sp,
+                    icon: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.circular(7.r)),
+                      child: const Icon(
+                        color: Colors.white,
+                        Icons.edit_outlined,
+                        //size: 23.sp,
+                      ),
                     ),
                   )
                 ],

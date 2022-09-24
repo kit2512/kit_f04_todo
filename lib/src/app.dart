@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(390, 844),
       builder: (context, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
         debugShowMaterialGrid: false,
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
