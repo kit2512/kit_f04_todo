@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -27,28 +29,19 @@ class ButtonTask extends StatelessWidget {
           ),
         ),
         onPressed: onPressed,
-        child: Container(
-          width: 180.w,
-          decoration: BoxDecoration(
-            color: selectedIndex == index ? Colors.black : Colors.transparent,
-            borderRadius: BorderRadius.circular(38.5.r),
-          ),
-          child: Chip(
-            shape: StadiumBorder(
-              side: BorderSide(
-                color:
-                    selectedIndex == index ? Colors.black : Colors.transparent,
-              ),
-            ),
-            label: Text(
+        child: Chip(
+          label: Container(
+            alignment: Alignment.center,
+            margin: EdgeInsets.only(bottom: 10.r),
+            child: Text(
               listButton[index],
               style: TextStyle(
                   color: selectedIndex == index ? Colors.white : Colors.black,
                   fontSize: 16.sp),
             ),
-            backgroundColor:
-                selectedIndex == index ? Colors.black : Colors.transparent,
           ),
+          backgroundColor:
+              selectedIndex == index ? Colors.black : Colors.transparent,
         ),
       ),
     );

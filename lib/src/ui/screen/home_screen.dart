@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
             color: Colors.black,
           )),
       body: Padding(
-        padding:  EdgeInsets.all(15.r),
+        padding: EdgeInsets.all(15.r),
         child: Column(children: [
           // Padding(
           //padding: const EdgeInsets.all(20),
@@ -47,16 +47,18 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [
-                   Text(
+                  Text(
                     "Welcome Back!",
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.sp),
+                    style:
+                        TextStyle(fontWeight: FontWeight.w500, fontSize: 20.sp),
                   ),
-                   SizedBox(
+                  SizedBox(
                     height: 14.h,
                   ),
-                   Text(
+                  Text(
                     "Here's Update Today",
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 28.sp),
+                    style:
+                        TextStyle(fontWeight: FontWeight.w500, fontSize: 28.sp),
                   ),
                 ],
               ),
