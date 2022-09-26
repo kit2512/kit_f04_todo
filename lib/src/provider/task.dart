@@ -38,4 +38,25 @@ class Task {
       level: level ?? this.level,
     );
   }
+
+  factory Task.fromJson(Map<String, dynamic> json) {
+    return Task(
+      name: json['name'] as String,
+      color: json['color'] as Color,
+      date: json['date'] as DateTime,
+      time: json['time'] as TimeOfDay,
+      place: json['place'] as String,
+      level: json['level'] as Level,
+    );
+  }
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'color': color.value.toString(),
+      'date': date.toString(),
+      'time': time.toString(),
+      'place': place,
+      'level': level.toString(),
+    };
+  }
 }

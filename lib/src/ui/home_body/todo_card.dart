@@ -1,11 +1,11 @@
-import 'package:demo_state_app/src/data/task.dart';
+import 'package:demo_state_app/src/provider/task.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-import '../../data/task_manager.dart';
+import '../../provider/task_manager.dart';
 
 import '../screen/task_screen.dart';
 

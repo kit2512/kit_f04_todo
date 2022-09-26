@@ -4,7 +4,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-import '../../data/task_config_controller.dart';
+import '../../provider/task_config_controller.dart';
 
 class TaskDate extends StatefulWidget {
   final TimeOfDay timeOfDay;

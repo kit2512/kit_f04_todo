@@ -18,10 +18,13 @@ class SplashScreenPage extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 186, 172, 181),
       backgroundImage: Image.asset('asset/wallpaper/app_backgrounds.png').image,
       durationInSeconds: 2,
-      loadingText: const Text("Loading...", style: TextStyle(color: Colors.white),),
+      loadingText: const Text(
+        "Loading...",
+        style: TextStyle(color: Colors.white),
+      ),
       title: const Text(
         'welcome to Todo app',
-         style: TextStyle(color: Colors.white),
+        style: TextStyle(color: Colors.white),
         textScaleFactor: 2,
       ),
       loaderColor: Colors.white,

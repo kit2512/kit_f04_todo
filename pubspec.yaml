@@ -37,6 +37,7 @@ dependencies:
   intl: ^0.17.0
   provider: ^6.0.3
   easy_splash_screen:
+  shared_preferences: ^2.0.15
 dev_dependencies:
 
   # The "flutter_lints" package below contains a set of recommended lints to

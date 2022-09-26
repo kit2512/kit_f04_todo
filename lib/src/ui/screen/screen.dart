@@ -1,9 +1,9 @@
 export 'dart:developer';
 
-export 'package:demo_state_app/src/data/list_color.dart';
-export 'package:demo_state_app/src/data/task.dart';
-export 'package:demo_state_app/src/data/task_config_controller.dart';
-export 'package:demo_state_app/src/data/task_manager.dart';
+export 'package:demo_state_app/src/provider/list_color.dart';
+export 'package:demo_state_app/src/provider/task.dart';
+export 'package:demo_state_app/src/provider/task_config_controller.dart';
+export 'package:demo_state_app/src/provider/task_manager.dart';
 export 'package:demo_state_app/src/ui/home_body/home.dart';
 
 export 'package:demo_state_app/src/ui/task_config/task_color.dart';

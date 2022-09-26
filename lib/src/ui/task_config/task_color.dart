@@ -1,5 +1,5 @@
-import 'package:demo_state_app/src/data/list_color.dart';
-import 'package:demo_state_app/src/data/task_config_controller.dart';
+import 'package:demo_state_app/src/provider/list_color.dart';
+import 'package:demo_state_app/src/provider/task_config_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';

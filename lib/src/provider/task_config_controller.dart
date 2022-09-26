@@ -1,4 +1,4 @@
-import 'package:demo_state_app/src/data/task.dart';
+import 'package:demo_state_app/src/provider/task.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

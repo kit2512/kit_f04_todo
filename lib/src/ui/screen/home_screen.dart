@@ -1,4 +1,4 @@
-import 'package:demo_state_app/src/data/task.dart';
+import 'package:demo_state_app/src/provider/task.dart';
 import 'package:demo_state_app/src/ui/screen/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:demo_state_app/src/ui/home_body/home.dart';
@@ -96,9 +96,7 @@ class HomeScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
             ),
           ),
-          SizedBox(
-            height: 600.h,
-            width: 500.w,
+          Expanded(
             child: TodoCardScreen(
               // value: context.watch<TaskManager>().index,
               value: context.watch<AppBarButton>().selectedIndex,

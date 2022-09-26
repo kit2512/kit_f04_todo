@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/provider.dart';
-import '../../data/task_config_controller.dart';
+import '../../provider/task_config_controller.dart';
 
 class TaskName extends StatelessWidget {
   final String name;
