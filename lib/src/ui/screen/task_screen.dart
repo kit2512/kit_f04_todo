@@ -36,16 +36,14 @@ class TaskConfig extends StatelessWidget {
             saveData(context);
             Navigator.pop(context);
           } else {
-            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-              content: Text('Please enter the name'),
-              elevation: 15,
-              behavior: SnackBarBehavior.floating,
-              duration: Duration(seconds: 2),
-              // action: SnackBarAction(
-              //   label: 'UNDO',
-              //   onPressed: () {},
-              // ),
-            ));
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Please enter the name'),
+                elevation: 15,
+                behavior: SnackBarBehavior.floating,
+                duration: Duration(seconds: 2),
+              ),
+            );
           }
         },
         title: titleFloatingActionButton,

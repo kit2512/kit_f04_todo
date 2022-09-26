@@ -12,3 +12,8 @@ export 'package:demo_state_app/src/ui/task_config/task_name.dart';
 export 'package:demo_state_app/src/ui/task_config/task_place.dart';
 export 'package:demo_state_app/src/ui/task_config/task_date.dart';
 export 'package:provider/provider.dart';
+
+export 'package:demo_state_app/src/ui/screen/screen.dart';
+export '../home_body/todo_screen.dart';
+export 'task_screen.dart';
+export 'package:demo_state_app/src/ui/task_config/button_task.dart';
