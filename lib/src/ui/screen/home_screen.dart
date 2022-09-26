@@ -1,11 +1,7 @@
 import 'package:demo_state_app/src/provider/task.dart';
 import 'package:demo_state_app/src/ui/screen/screen.dart';
 import 'package:flutter/material.dart';
-import 'package:demo_state_app/src/ui/home_body/home.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../home_body/todo_screen.dart';
-import 'task_screen.dart';
-import 'package:demo_state_app/src/ui/task_config/button_task.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -14,13 +10,18 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingButton(
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return TaskConfig(
-                titleFloatingActionButton: 'Save Task',
-                task: Task(name: ""),
-                titleAppBar: 'Add Task',
-              );
-            }));
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return TaskConfig(
+                    titleFloatingActionButton: 'Save Task',
+                    task: Task(name: ""),
+                    titleAppBar: 'Add Task',
+                  );
+                },
+              ),
+            );
           },
           title: 'Add Task',
           icon: const Icon(Icons.add_box)),
@@ -76,7 +77,7 @@ class HomeScreen extends StatelessWidget {
           ),
 
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.07,
+            height: 60.h,
             child: ListView.builder(
               itemBuilder: (context, index) => ButtonTask(
                 index: index,
@@ -90,7 +91,7 @@ class HomeScreen extends StatelessWidget {
 
                   // );
                 },
-                width: MediaQuery.of(context).size.width * 0.3,
+                width: 121.w,
               ),
               itemCount: context.watch<AppBarButton>().appBarButton.length,
               scrollDirection: Axis.horizontal,

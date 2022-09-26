@@ -43,7 +43,7 @@ class _TaskLevelState extends State<TaskLevel> {
                         selectedIndex = index;
                       });
                     },
-                    width: 119.w,
+                    width: 120.w,
                   ),
                   itemCount: taskLevel.length,
                   scrollDirection: Axis.horizontal,
