@@ -42,11 +42,18 @@ class Task {
   factory Task.fromJson(Map<String, dynamic> json) {
     return Task(
       name: json['name'] as String,
-      color: json['color'] as Color,
-      date: json['date'] as DateTime,
-      time: json['time'] as TimeOfDay,
+      color: Color(int.parse(
+        json['color'],
+      )),
+      date: DateTime.parse(json['date']),
+      time: (String time) {
+        time = time.split("(")[1].split(")")[0];
+        return TimeOfDay(
+            hour: int.parse(time.split(":")[0]),
+            minute: int.parse(time.split(":")[1]));
+      }(json['time']),
       place: json['place'] as String,
-      level: json['level'] as Level,
+      level: Level.basic,
     );
   }
   Map<String, dynamic> toJson() {
@@ -59,4 +66,17 @@ class Task {
       'level': level.toString(),
     };
   }
+
+  TimeOfDay stringToTimeOfDay(String time) {
+    time = time.split("(")[1].split(")")[0];
+    return TimeOfDay(
+        hour: int.parse(time.split(":")[0]),
+        minute: int.parse(time.split(":")[1]));
+  }
+
+//   String timeOfDayToString(TimeOfDay time) {
+//     DateFormat dateFormat = DateFormat.yMMMMd('en_US'); //"6:00 AM"
+//     return time.format();
+//   }
+// }
 }

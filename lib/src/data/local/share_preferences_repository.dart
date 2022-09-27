@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:demo_state_app/src/data/constants.dart';
 import 'package:demo_state_app/src/data/task_repository.dart';
@@ -11,9 +12,11 @@ class SharePreferencesRepository implements TaskRepository {
 
   @override
   void addTask(Task task) async {
+    //log(task.toJson().toString());
     final list = prefs.getStringList(kTaskList) ?? <String>[];
     list.add(jsonEncode(task.toJson()));
     prefs.setStringList(kTaskList, list);
+    //log(prefs.getStringList(kTaskList).toString());
   }
 
   @override
