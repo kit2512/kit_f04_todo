@@ -144,8 +144,9 @@ class TodoCard extends StatelessWidget {
                 value: task.isFinish,
                 onChanged: (value) {
                   int index = context.read<TaskManager>().getIndex(task);
-                   context.read<TaskManager>().updateTask(task,value!, index);
-
+                  context
+                      .read<TaskManager>()
+                      .updateTask(task, !task.isFinish, index);
                 },
               )
             ],

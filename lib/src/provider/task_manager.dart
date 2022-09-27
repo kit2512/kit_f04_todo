@@ -55,21 +55,9 @@ class TaskManager extends ChangeNotifier {
     tasks[index] = task;
     task.isFinish = isFinish;
     sharePreferencesRepository.updateTask(task, index);
+    log(task.toJson().toString());
     notifyListeners();
   }
-
-  void setFinishedTask(Task task) async {
-    SharePreferencesRepository sharePreferencesRepository =
-        SharePreferencesRepository(
-            prefs: await SharedPreferences.getInstance());
-    tasks[tasks.indexOf(task)] = task;
-    sharePreferencesRepository.updateTask(task, tasks.indexOf(task));
-    notifyListeners();
-  }
-  //   void setFinished(Task task, BuildContext context) {
-  //   task.isFinish = !task.isFinish;
-  //   context.read<TaskManager>().setFinishedTask(task);
-  // }
 
   List<Task> getTasksFinish() {
     List<Task> task = [];
