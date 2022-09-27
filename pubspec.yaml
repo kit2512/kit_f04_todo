@@ -76,7 +76,7 @@ flutter:
   fonts:
     - family: Roboto
       fonts:
-        - asset: font_text/Roboto-Regular.ttf
+        - asset: asset/font_text/Roboto-Regular.ttf
           weight: 500
   #   - family: Trajan Pro
   #     fonts:
