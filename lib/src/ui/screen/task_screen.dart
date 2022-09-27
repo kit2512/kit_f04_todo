@@ -81,7 +81,7 @@ class TaskConfig extends StatelessWidget {
       int index = context.read<TaskManager>().getIndex(task);
       log(index.toString());
       task2.isFinish = task.isFinish;
-      context.read<TaskManager>().updateTask(task2, index);
+      context.read<TaskManager>().updateTask(task2,task2.isFinish, index);
     }
     context.read<TaskConfigManager>().setDefault();
   }
