@@ -48,11 +48,12 @@ class TaskManager extends ChangeNotifier {
     notifyListeners();
   }
 
-  void updateTask(Task task, int index) async {
+  void updateTask(Task task, bool isFinish, int index) async {
     SharePreferencesRepository sharePreferencesRepository =
         SharePreferencesRepository(
             prefs: await SharedPreferences.getInstance());
     tasks[index] = task;
+    task.isFinish = isFinish;
     sharePreferencesRepository.updateTask(task, index);
     notifyListeners();
   }
@@ -65,6 +66,10 @@ class TaskManager extends ChangeNotifier {
     sharePreferencesRepository.updateTask(task, tasks.indexOf(task));
     notifyListeners();
   }
+  //   void setFinished(Task task, BuildContext context) {
+  //   task.isFinish = !task.isFinish;
+  //   context.read<TaskManager>().setFinishedTask(task);
+  // }
 
   List<Task> getTasksFinish() {
     List<Task> task = [];
