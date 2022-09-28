@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:demo_state_app/src/ui/screen/task_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-// ignore: must_be_immutable
 class FloatingButton extends StatelessWidget {
   const FloatingButton(
       {Key? key,

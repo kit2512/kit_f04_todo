@@ -1,10 +1,12 @@
 import 'package:demo_state_app/src/app.dart';
-import 'package:demo_state_app/src/data/local/share_preferences_repository.dart';
-import 'package:demo_state_app/src/data/task_repository.dart';
-import 'package:demo_state_app/src/ui/screen/home_screen.dart';
+import 'package:demo_state_app/src/provider/task.dart';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'src/data/local/share_preferences_repository.dart';
+import 'src/data/task_repository.dart';
+import 'src/provider/supplier_controller.dart';
 import 'src/ui/screen/screen.dart';
 
 void main() async {

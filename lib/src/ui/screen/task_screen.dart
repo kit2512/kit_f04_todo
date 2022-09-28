@@ -1,7 +1,10 @@
+import 'package:demo_state_app/src/provider/supplier_controller.dart';
+import 'package:demo_state_app/src/provider/task.dart';
+import 'package:demo_state_app/src/provider/task_config_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'screen.dart';
 import 'package:flutter/material.dart';
+import '../home_body/home.dart';
+import '../task_config/task_config.dart';
 
 class TaskConfig extends StatelessWidget {
   final Task task;
@@ -79,9 +82,8 @@ class TaskConfig extends StatelessWidget {
       context.read<TaskManager>().addTask(task2);
     } else {
       int index = context.read<TaskManager>().getIndex(task);
-      log(index.toString());
       task2.isFinish = task.isFinish;
-      context.read<TaskManager>().updateTask(task2,task2.isFinish, index);
+      context.read<TaskManager>().updateTask(task2, task2.isFinish, index);
     }
     context.read<TaskConfigManager>().setDefault();
   }

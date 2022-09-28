@@ -1,7 +1,11 @@
-import 'package:demo_state_app/src/provider/task.dart';
-import 'package:demo_state_app/src/ui/screen/screen.dart';
+import 'package:demo_state_app/src/provider/supplier_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../provider/task.dart';
+import '../home_body/home.dart';
+import '../task_config/button_task.dart';
+import 'screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -84,12 +88,7 @@ class HomeScreen extends StatelessWidget {
                 selectedIndex: context.watch<AppBarButton>().selectedIndex,
                 listButton: context.watch<AppBarButton>().appBarButton,
                 onPressed: () {
-                  // setState(() {
-                  // selectedIndex = index;
                   context.read<AppBarButton>().setSelectedIndex(index);
-                  // }
-
-                  // );
                 },
                 width: 121.w,
               ),
@@ -99,7 +98,6 @@ class HomeScreen extends StatelessWidget {
           ),
           Expanded(
             child: TodoCardScreen(
-              // value: context.watch<TaskManager>().index,
               value: context.watch<AppBarButton>().selectedIndex,
             ),
           ),
