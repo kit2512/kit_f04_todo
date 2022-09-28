@@ -87,8 +87,8 @@ class _TaskDateState extends State<TaskDate> {
                             pickedDate ?? DateTime.now(),
                             pickedTime ?? TimeOfDay.now());
                         setState(() {
-                          _timeOfDay = pickedTime;
-                          _dateTime = pickedDate;
+                          _timeOfDay = pickedTime ?? TimeOfDay.now();
+                          _dateTime = pickedDate ?? DateTime.now();
                         });
                       },
                       icon: Image(
