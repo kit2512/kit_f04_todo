@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ColorList extends ChangeNotifier {
+class ColorList {
   List<Color> colorLists = const [
     Color.fromARGB(255, 239, 236, 130),
     Color.fromARGB(255, 232, 226, 176),
@@ -14,8 +14,4 @@ class ColorList extends ChangeNotifier {
     Color.fromARGB(255, 247, 144, 245),
     Color.fromARGB(255, 131, 237, 161),
   ];
-  void setSelectedColor(int index) {
-    colorLists[index] = Colors.red;
-    notifyListeners();
-  }
 }
