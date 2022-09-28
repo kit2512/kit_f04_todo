@@ -1,6 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
-
 import 'package:demo_state_app/src/data/constants.dart';
 import 'package:demo_state_app/src/data/task_repository.dart';
 import 'package:demo_state_app/src/provider/task.dart';
@@ -12,11 +10,9 @@ class SharePreferencesRepository implements TaskRepository {
 
   @override
   void addTask(Task task) async {
-    //log(task.toJson().toString());
     final list = prefs.getStringList(kTaskList) ?? <String>[];
     list.add(jsonEncode(task.toJson()));
     prefs.setStringList(kTaskList, list);
-    //log(prefs.getStringList(kTaskList).toString());
   }
 
   @override
@@ -38,30 +34,4 @@ class SharePreferencesRepository implements TaskRepository {
     list[index] = jsonEncode(task.toJson());
     prefs.setStringList(kTaskList, list);
   }
-
-  // @override
-  // List<Task> getData(int index) {
-  //   final list = prefs.getStringList(kTaskList) ?? <String>[];
-
-  //   return list.map((e) => Task.fromJson(jsonDecode(e))).toList();
-  // }
-
-  // @override
-  // int getIndex(Task task) {
-  //   final list = prefs.getStringList(kTaskList) ?? <String>[];
-  //   return list.indexOf(jsonEncode(task.toJson()));
-  // }
-
-  // @override
-  // Future<List<Task>> getTasksFinish() {
-  //   // TODO: implement getTasksFinish
-  //   throw UnimplementedError();
-  // }
-
-  // @override
-  // void setFinishedTask(Task task) {
-  //     final list = prefs.getStringList(kTaskList) ?? <String>[];
-  //   list[index] = jsonEncode(task.toJson());
-  //   prefs.setStringList(kTaskList, list);
-  // }
 }

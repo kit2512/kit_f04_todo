@@ -52,6 +52,7 @@ class Task {
             hour: int.parse(time.split(":")[0]),
             minute: int.parse(time.split(":")[1]));
       }(json['time']),
+      isFinish: json['isFinish'] as bool,
       place: json['place'] as String,
       level: Level.basic,
     );
@@ -62,21 +63,9 @@ class Task {
       'color': color.value.toString(),
       'date': date.toString(),
       'time': time.toString(),
+      'isFinish': isFinish,
       'place': place,
       'level': level.toString(),
     };
   }
-
-  TimeOfDay stringToTimeOfDay(String time) {
-    time = time.split("(")[1].split(")")[0];
-    return TimeOfDay(
-        hour: int.parse(time.split(":")[0]),
-        minute: int.parse(time.split(":")[1]));
-  }
-
-//   String timeOfDayToString(TimeOfDay time) {
-//     DateFormat dateFormat = DateFormat.yMMMMd('en_US'); //"6:00 AM"
-//     return time.format();
-//   }
-// }
 }

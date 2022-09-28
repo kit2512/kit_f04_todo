@@ -9,13 +9,10 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: BuildAppBar(title: "Profile"),
       appBar: BuildAppBar(title: "Profile"),
       body: Container(
         margin: const EdgeInsets.only(left: 20, right: 20, top: 15).r,
         child: Column(
-          //mainAxisSize: MainAxisSize.max,
-
           children: [
             const ProfileCard(),
             SizedBox(height: 50.h),

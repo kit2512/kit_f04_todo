@@ -10,30 +10,32 @@ class ProfileMenuItem extends StatelessWidget {
       margin: EdgeInsets.only(top: 10.r),
       height: 80.h,
       child: Card(
-        //margin: EdgeInsets.only(top: 10),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.r),
         ),
-        child: TextButton(
-            onPressed: () {},
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                  radius: 30.r,
-                  backgroundColor: Colors.black,
-                  child: const Icon(Icons.star),
-                ),
-                SizedBox(
-                  width: 20.w,
-                ),
-                Text(
-                  "My Daily",
-                  style: TextStyle(fontSize: 20.sp, color: Colors.black),
-                )
-              ],
-            )),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20.r),
+          child: TextButton(
+              onPressed: () {},
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CircleAvatar(
+                    radius: 30.r,
+                    backgroundColor: Colors.black,
+                    child: const Icon(Icons.star),
+                  ),
+                  SizedBox(
+                    width: 20.w,
+                  ),
+                  Text(
+                    "My Daily",
+                    style: TextStyle(fontSize: 20.sp, color: Colors.black),
+                  )
+                ],
+              )),
+        ),
       ),
     );
   }

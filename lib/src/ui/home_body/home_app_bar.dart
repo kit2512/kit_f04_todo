@@ -4,11 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
-  BuildAppBar({Key? key, required this.title, this.prefixIcon, this.suffixIcon})
-      : super(key: key);
   String title;
   Icon? prefixIcon;
   Icon? suffixIcon;
+  BuildAppBar({Key? key, required this.title, this.prefixIcon, this.suffixIcon})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -33,15 +34,13 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       title: Text(
         title,
-        style: const TextStyle(
-            color: Colors.black,
-            fontSize: 18),
+        style: const TextStyle(color: Colors.black, fontSize: 18),
       ),
       backgroundColor: Colors.white,
       actions: suffixIcon != null
           ? [
               Padding(
-                padding:  EdgeInsets.only(right: 20.r),
+                padding: EdgeInsets.only(right: 20.r),
                 child: IconButton(
                     onPressed: () {}, icon: suffixIcon ?? suffixIcon!),
               )
@@ -51,8 +50,5 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // ignore: todo
-  // TODO: implement preferredSize
-  //Size get preferredSize => throw UnimplementedError();
-  Size get preferredSize =>  Size.fromHeight(50.h);
+  Size get preferredSize => Size.fromHeight(50.h);
 }

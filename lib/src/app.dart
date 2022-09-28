@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    context.read<TaskManager>().getDataFromLocalStorage();
+    //context.read<TaskManager>().getDataFromLocalStorage();
     return ScreenUtilInit(
       designSize: const Size(390, 844),
       builder: (context, child) => MaterialApp(
