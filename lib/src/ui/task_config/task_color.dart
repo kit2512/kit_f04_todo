@@ -1,12 +1,20 @@
 import 'package:demo_state_app/src/provider/list_color.dart';
 import 'package:demo_state_app/src/provider/task_config_controller.dart';
+import 'package:demo_state_app/src/ui/task_config/button_task_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/provider.dart';
 
-class TaskColor extends StatelessWidget {
+class TaskColor extends StatefulWidget {
   const TaskColor({super.key});
+
+  @override
+  State<TaskColor> createState() => _TaskColorState();
+}
+
+class _TaskColorState extends State<TaskColor> {
+  int? selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     ColorList colorList = ColorList();
@@ -35,32 +43,18 @@ class TaskColor extends StatelessWidget {
                     shrinkWrap: true,
                     itemCount: colorLists.length,
                     scrollDirection: Axis.horizontal,
-                    itemBuilder: (BuildContext context, int index) {
-                      return SizedBox(
-                        height: 20.h,
-                        child: OutlinedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: colorLists[index],
-                            shadowColor: colorLists[index],
-                            shape: const CircleBorder(),
-                            maximumSize: Size(22.w, 22.h),
-                            minimumSize: Size(22.w, 22.h),
-                          ),
-                          onPressed: () {
-                            context.read<TaskConfigManager>().task.color =
-                                colorLists[index];
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: colorLists[index],
-                              shape: BoxShape.circle,
-                            ),
-                            width: 23.w,
-                            height: 23.h,
-                          ),
-                        ),
-                      );
-                    },
+                    itemBuilder: (context, index) => BuildTaskColors(
+                      index: index,
+                      selectedIndex: selectedIndex,
+                      listCoLor: colorLists,
+                      onPressed: () {
+                        context.read<TaskConfigManager>().task.color =
+                            colorLists[index];
+                        setState(() {
+                          selectedIndex = index;
+                        });
+                      },
+                    ),
                   ),
                 ),
                 Container(
