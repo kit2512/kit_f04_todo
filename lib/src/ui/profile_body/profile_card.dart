@@ -6,22 +6,16 @@ class ProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-        //height: 100,
-        Card(
-      // /borderOnForeground: false,
+    return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20.r),
       ),
       elevation: 6,
-
       shadowColor: const Color.fromARGB(255, 110, 109, 105),
-      //margin: const EdgeInsets.only(left: 20, right: 20, top: 50),
       child: Padding(
         padding:
             EdgeInsets.only(left: 20.r, right: 20.r, top: 10.r, bottom: 10.r),
         child: Row(
-          //mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
               flex: 3,

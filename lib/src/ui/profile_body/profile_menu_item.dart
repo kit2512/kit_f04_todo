@@ -10,7 +10,6 @@ class ProfileMenuItem extends StatelessWidget {
       margin: EdgeInsets.only(top: 10.r),
       height: 80.h,
       child: Card(
-        //margin: EdgeInsets.only(top: 10),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.r),
         ),

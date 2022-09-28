@@ -1,13 +1,10 @@
 import 'package:demo_state_app/src/provider/task.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
 
-import '../../provider/task_manager.dart';
-
-import '../screen/task_screen.dart';
+import '../../provider/supplier_controller.dart';
+import '../screen/screen.dart';
 
 class TodoCard extends StatelessWidget {
   const TodoCard(
@@ -73,7 +70,6 @@ class TodoCard extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.r),
                       ),
-                      //backgroundColor: backgroundColor,
                     ),
                     onPressed: () {},
                     child: const Text(
@@ -100,7 +96,6 @@ class TodoCard extends StatelessWidget {
                       child: const Icon(
                         color: Colors.white,
                         Icons.edit_outlined,
-                        //size: 23.sp,
                       ),
                     ),
                   )

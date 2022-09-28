@@ -1,6 +1,6 @@
 import 'package:demo_state_app/src/data/task_repository.dart';
-import 'package:demo_state_app/src/ui/screen/screen.dart';
 import 'package:flutter/material.dart';
+import 'task.dart';
 
 class TaskManager extends ChangeNotifier {
   final List<Task> tasks;

@@ -4,14 +4,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../provider/supplier_controller.dart';
+
 class TodoCardScreen extends StatelessWidget {
   const TodoCardScreen({Key? key, this.value = 0}) : super(key: key);
   final int value;
   @override
   Widget build(BuildContext context) {
-    // List data = context.watch<TaskManager>().getTasks();
-    // List data = [];
-
     if (context.watch<TaskManager>().getData(value).isEmpty) {
       return buildNoData();
     }
@@ -52,7 +51,6 @@ class TodoCardScreen extends StatelessWidget {
             style: TextStyle(fontSize: 20.sp),
           ),
           Image(
-            //color: Colors.amber,
             height: 300.h,
             width: 230.w,
             image: const AssetImage("asset/task/document.png"),
