@@ -41,6 +41,7 @@ class TaskPlace extends StatelessWidget {
                       icon: Icon(
                         Icons.place_outlined,
                         color: HexColor("#000000"),
+                        size: 22.sp,
                       ),
                     ),
                   ],

@@ -55,54 +55,54 @@ class _TaskDateState extends State<TaskDate> {
           ),
           Column(
             children: [
-              SizedBox(
-                height: 35.h,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      _dateTime == null && _timeOfDay == null
-                          ? "${DateFormat('dd MMMM yyyy').format(widget.dateTime)},${widget.timeOfDay.format(context)}"
-                          : "${DateFormat('dd MMMM yyyy').format(_dateTime!)},${_timeOfDay!.format(context)}",
-                      style: TextStyle(
-                        color: HexColor("#191919"),
-                        fontStyle: FontStyle.normal,
-                        fontSize: 16.sp,
-                      ),
+              // SizedBox(
+              //   height: 35.h,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    _dateTime == null && _timeOfDay == null
+                        ? "${DateFormat('dd MMMM yyyy').format(widget.dateTime)},${widget.timeOfDay.format(context)}"
+                        : "${DateFormat('dd MMMM yyyy').format(_dateTime!)},${_timeOfDay!.format(context)}",
+                    style: TextStyle(
+                      color: HexColor("#191919"),
+                      fontStyle: FontStyle.normal,
+                      fontSize: 16.sp,
                     ),
-                    IconButton(
-                      onPressed: () async {
-                        final pickedDate = await showDatePicker(
-                          context: context,
-                          initialDate: DateTime.now(),
-                          firstDate: DateTime.now(),
-                          lastDate: DateTime(2100),
-                        );
-                        final pickedTime = await showTimePicker(
-                          context: context,
-                          initialTime: TimeOfDay.now(),
-                        );
-                        // ignore: use_build_context_synchronously
-                        context.read<TaskConfigManager>().setDateTime(
-                            pickedDate ?? DateTime.now(),
-                            pickedTime ?? TimeOfDay.now());
-                        setState(() {
-                          _timeOfDay = pickedTime ?? TimeOfDay.now();
-                          _dateTime = pickedDate ?? DateTime.now();
-                        });
-                      },
-                      icon: Image(
-                        image: const AssetImage(
-                          'asset/task/calendar.png',
-                        ),
-                        height: 19.31.h,
-                        width: 18.w,
-                        color: HexColor("#191919"),
+                  ),
+                  IconButton(
+                    onPressed: () async {
+                      final pickedDate = await showDatePicker(
+                        context: context,
+                        initialDate: DateTime.now(),
+                        firstDate: DateTime.now(),
+                        lastDate: DateTime(2100),
+                      );
+                      final pickedTime = await showTimePicker(
+                        context: context,
+                        initialTime: TimeOfDay.now(),
+                      );
+                      // ignore: use_build_context_synchronously
+                      context.read<TaskConfigManager>().setDateTime(
+                          pickedDate ?? DateTime.now(),
+                          pickedTime ?? TimeOfDay.now());
+                      setState(() {
+                        _timeOfDay = pickedTime ?? TimeOfDay.now();
+                        _dateTime = pickedDate ?? DateTime.now();
+                      });
+                    },
+                    icon: Image(
+                      image: const AssetImage(
+                        'asset/task/calendar.png',
                       ),
+                      height: 19.31.h,
+                      width: 18.w,
+                      color: HexColor("#191919"),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
+              // ),
               Divider(
                 color: Color.fromARGB(255, 208, 206, 206),
                 height: 20.h,

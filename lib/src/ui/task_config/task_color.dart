@@ -57,15 +57,17 @@ class _TaskColorState extends State<TaskColor> {
                     ),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 23.r),
-                  height: 20.h,
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.add_circle_outlined,
-                      color: Colors.grey,
-                      size: 25.sp,
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: 24.r, left: 11.r),
+                    // height: 20.h,
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.add_circle_outlined,
+                        color: Colors.grey,
+                        size: 25.sp,
+                      ),
                     ),
                   ),
                 ),

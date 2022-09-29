@@ -25,7 +25,7 @@ class TaskConfig extends StatelessWidget {
       floatingActionButton: FloatingButton(
         isFull: true,
         onPressed: () {
-          if (task.name != '') {
+          if (task.name!.trim() != '') {
             ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
               content: Text('saved'),
               elevation: 15,
