@@ -52,6 +52,9 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [
+                  SizedBox(
+                    height: 25.h,
+                  ),
                   Text(
                     "Welcome Back!",
                     style:
@@ -64,6 +67,9 @@ class HomeScreen extends StatelessWidget {
                     "Here's Update Today",
                     style:
                         TextStyle(fontWeight: FontWeight.w500, fontSize: 28.sp),
+                  ),
+                  SizedBox(
+                    height: 15.h,
                   ),
                 ],
               ),
@@ -95,6 +101,9 @@ class HomeScreen extends StatelessWidget {
               itemCount: context.watch<AppBarButton>().appBarButton.length,
               scrollDirection: Axis.horizontal,
             ),
+          ),
+          SizedBox(
+            height: 20.h,
           ),
           Expanded(
             child: TodoCardScreen(
