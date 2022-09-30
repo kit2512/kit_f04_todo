@@ -87,7 +87,7 @@ class HomeScreen extends StatelessWidget {
           ),
 
           SizedBox(
-            height: 40.w,
+            height: 50.w,
             child: ListView.builder(
               itemBuilder: (context, index) => ButtonTask(
                 index: index,

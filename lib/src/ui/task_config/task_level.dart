@@ -32,7 +32,7 @@ class _TaskLevelState extends State<TaskLevel> {
             children: [
               Container(
                 margin: EdgeInsets.only(right: 20.r),
-                height: 40.w,
+                height: 50.w,
                 child: ListView.builder(
                   itemBuilder: (context, index) => ButtonTask(
                     index: index,

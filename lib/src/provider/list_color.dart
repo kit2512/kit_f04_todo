@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class ColorList {
   List<Color> colorLists = const [
+    Color.fromARGB(255, 226, 226, 226),
     Color.fromARGB(255, 239, 236, 130),
     Color.fromARGB(255, 232, 226, 176),
     Color.fromARGB(255, 22, 211, 236),
