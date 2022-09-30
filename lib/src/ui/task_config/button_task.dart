@@ -20,28 +20,35 @@ class ButtonTask extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: width,
-      child: TextButton(
-        style: ButtonStyle(
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(38.5.r),
+      child: Container(
+        margin: EdgeInsets.only(top: 5.r, bottom: 5.r),
+        child: OutlinedButton(
+          style: OutlinedButton.styleFrom(
+            side: BorderSide(
+              width: 0.w,
+              color: selectedIndex == index ? Colors.grey : Colors.transparent,
             ),
-          ),
-        ),
-        onPressed: onPressed,
-        child: Chip(
-          label: Container(
-            alignment: Alignment.center,
-            margin: EdgeInsets.only(bottom: 10.r),
-            child: Text(
-              listButton[index],
-              style: TextStyle(
-                  color: selectedIndex == index ? Colors.white : Colors.black,
-                  fontSize: 16.sp),
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(30)),
             ),
+            padding: EdgeInsets.symmetric(vertical: 1.h),
           ),
-          backgroundColor:
-              selectedIndex == index ? Colors.black : Colors.transparent,
+          onPressed: onPressed,
+          child: Chip(
+            label: Container(
+              width: 100.w,
+              alignment: Alignment.center,
+              margin: EdgeInsets.only(bottom: 10.r),
+              child: Text(
+                listButton[index],
+                style: TextStyle(
+                    color: selectedIndex == index ? Colors.white : Colors.black,
+                    fontSize: 16.sp),
+              ),
+            ),
+            backgroundColor:
+                selectedIndex == index ? Colors.black : Colors.transparent,
+          ),
         ),
       ),
     );
