@@ -15,6 +15,7 @@ class TaskColor extends StatefulWidget {
 
 class _TaskColorState extends State<TaskColor> {
   int? selectedIndex = 0;
+  final indexController  = TextEditingController;
   @override
   Widget build(BuildContext context) {
     ColorList colorList = ColorList();
@@ -40,6 +41,7 @@ class _TaskColorState extends State<TaskColor> {
                   margin: EdgeInsets.only(left: 2.r),
                   width: 314.3.w,
                   child: ListView.builder(
+                    // controller: ,
                     shrinkWrap: true,
                     itemCount: colorLists.length,
                     scrollDirection: Axis.horizontal,

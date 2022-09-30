@@ -12,13 +12,13 @@ class TaskName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //String data = name;
-            context.read<TaskConfigManager>().task.name = name;
+    context.read<TaskConfigManager>().task.name = name;
 
     final nameController = TextEditingController();
     nameController.text = name;
 
     return Container(
-      margin:  EdgeInsets.only(top: 20.r),
+      margin: EdgeInsets.only(top: 20.r),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -34,9 +34,7 @@ class TaskName extends StatelessWidget {
             controller: nameController,
             onChanged: (value) {
               context.read<TaskConfigManager>().task.name = value;
-              
             },
-
             autovalidateMode: AutovalidateMode.always,
             validator: (value) {
               if (value == null || value.isEmpty) {
