@@ -20,7 +20,7 @@ class TaskManager extends ChangeNotifier {
   int getIndex(Task task) {
     return tasks.indexOf(task);
   }
-
+  
   void addTask(Task task) async {
     tasks.add(task);
     sharePreferencesRepository.addTask(task);

@@ -21,7 +21,7 @@ class ButtonTask extends StatelessWidget {
     return SizedBox(
       width: width,
       child: Container(
-        margin: EdgeInsets.only(top: 5.r, bottom: 5.r),
+        margin: EdgeInsets.only(top: 5.r, bottom: 6.r),
         child: OutlinedButton(
           style: OutlinedButton.styleFrom(
             side: BorderSide(
@@ -31,7 +31,7 @@ class ButtonTask extends StatelessWidget {
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(30)),
             ),
-            padding: EdgeInsets.symmetric(vertical: 1.h),
+            padding: EdgeInsets.symmetric(vertical: 0.h),
           ),
           onPressed: onPressed,
           child: Chip(

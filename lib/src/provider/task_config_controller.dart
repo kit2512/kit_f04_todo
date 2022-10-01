@@ -16,8 +16,8 @@ class TaskConfigManager extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setTaskName(String taskNmame) {
-    task.name = taskNmame;
+  void setTaskName(String taskName) {
+    task.name = taskName;
     notifyListeners();
   }
 

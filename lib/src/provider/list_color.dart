@@ -15,4 +15,4 @@ class ColorList {
     Color.fromARGB(255, 247, 144, 245),
     Color.fromARGB(255, 131, 237, 161),
   ];
-}
+} 

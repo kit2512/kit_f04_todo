@@ -31,7 +31,7 @@ class _TaskLevelState extends State<TaskLevel> {
           Column(
             children: [
               Container(
-                margin: EdgeInsets.only(right: 20.r),
+                margin: EdgeInsets.only(left: 6.r),
                 height: 50.w,
                 child: ListView.builder(
                   itemBuilder: (context, index) => ButtonTask(
@@ -43,7 +43,7 @@ class _TaskLevelState extends State<TaskLevel> {
                         selectedIndex = index;
                       });
                     },
-                    width: 120.w,
+                    width: 119.w,
                   ),
                   itemCount: taskLevel.length,
                   scrollDirection: Axis.horizontal,
