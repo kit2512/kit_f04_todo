@@ -1,3 +1,4 @@
+import 'package:demo_state_app/src/provider/list_color.dart';
 import 'package:demo_state_app/src/provider/task.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,10 @@ class TaskConfigManager extends ChangeNotifier {
 
   void setDefault() {
     task = Task(name: "");
+  }
+
+  int colorIndex(ColorList colorList) {
+    return colorList.colorLists.indexOf(task.color);
   }
 
   void setTask(Task task) {
