@@ -87,6 +87,7 @@ class HomeScreen extends StatelessWidget {
           ),
 
           SizedBox(
+            // margin: EdgeInsets.only(left: 6.r),
             height: 50.w,
             child: ListView.builder(
               itemBuilder: (context, index) => ButtonTask(
@@ -96,7 +97,7 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () {
                   context.read<AppBarButton>().setSelectedIndex(index);
                 },
-                width: 121.w,
+                width: 119.w,
               ),
               itemCount: context.watch<AppBarButton>().appBarButton.length,
               scrollDirection: Axis.horizontal,
