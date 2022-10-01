@@ -44,7 +44,9 @@ class TaskColor extends StatelessWidget {
                         itemBuilder: (context, index) => BuildTaskColors(
                           index: index,
                           selectedIndex:
-                              context.watch<ButtonColor>().selectedIndex,
+                              context.watch<TaskConfigManager>().colorIndex(
+                                    context.watch<ButtonColor>().colorList,
+                                  ),
                           listCoLor:
                               context.watch<ButtonColor>().colorList.colorLists,
                           onPressed: () {
@@ -76,7 +78,7 @@ class TaskColor extends StatelessWidget {
               ),
             ),
             Divider(
-              color: Color.fromARGB(255, 208, 206, 206),
+              color: const Color.fromARGB(255, 208, 206, 206),
               height: 20.h,
               thickness: 1.8,
             ),
@@ -89,9 +91,8 @@ class TaskColor extends StatelessWidget {
 
 class ButtonColor extends ChangeNotifier {
   ColorList colorList = ColorList();
-  int selectedIndex = 0;
+
   void setSelectedIndex(int index) {
-    selectedIndex = index;
     notifyListeners();
   }
 }
