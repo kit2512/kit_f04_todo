@@ -12,7 +12,7 @@ class Task {
   Level level;
   Task(
       {this.name,
-      this.color = Colors.white60,
+      this.color = const Color.fromARGB(255, 226, 226, 226),
       DateTime? date,
       TimeOfDay? time,
       this.place = "Viet Nam",
