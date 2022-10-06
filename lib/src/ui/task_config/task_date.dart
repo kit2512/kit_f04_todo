@@ -20,23 +20,6 @@ class TaskDate extends StatefulWidget {
 class _TaskDateState extends State<TaskDate> {
   DateTime? _dateTime;
   TimeOfDay? _timeOfDay;
-  void setTime(
-      BuildContext context, DateTime? pickedDate, TimeOfDay? pickedTime) async {
-    pickedDate = await showDatePicker(
-      context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime.now(),
-      lastDate: DateTime(2100),
-    );
-    _dateTime = pickedDate;
-    pickedTime = await showTimePicker(
-      context: context,
-      initialTime: TimeOfDay.now(),
-    );
-    _timeOfDay = pickedTime;
-    // ignore: use_build_context_synchronously
-    context.read<TaskConfigManager>().setDateTime(pickedDate, pickedTime);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,11 +67,19 @@ class _TaskDateState extends State<TaskDate> {
                       );
                       // ignore: use_build_context_synchronously
                       context.read<TaskConfigManager>().setDateTime(
-                          pickedDate ?? DateTime.now(),
-                          pickedTime ?? TimeOfDay.now());
+                          // ignore: use_build_context_synchronously
+                          pickedDate ??
+                              // ignore: use_build_context_synchronously
+                              context.watch<TaskConfigManager>().task.date,
+                          // ignore: use_build_context_synchronously
+                          pickedTime ??
+                              // ignore: use_build_context_synchronously
+                              context.watch<TaskConfigManager>().task.time);
                       setState(() {
-                        _timeOfDay = pickedTime ?? TimeOfDay.now();
-                        _dateTime = pickedDate ?? DateTime.now();
+                        _timeOfDay = pickedTime ??
+                            context.watch<TaskConfigManager>().task.time;
+                        _dateTime = pickedDate ??
+                            context.watch<TaskConfigManager>().task.date;
                       });
                     },
                     icon: Image(
